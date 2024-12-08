@@ -35,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Signup</title>
     <style>
-        
+       
     </style>
 </head>
 <body>
-    <h1 class= "oni ekk dan" >Signup</h1>
+    <h1 class= "oni ekk dann" >Signup</h1>
     <form method="POST">
         <label>Name:</label>
         <input type="text" name="name" required><br><br>
