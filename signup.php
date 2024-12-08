@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = "Invalid email address.";
-    } elseif ($age < 0 || $age > 50) {
+    } elseif ($age < 10 || $age > 30) {
         $error = "Please enter a valid age.";
     }
 
@@ -34,9 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Signup</title>
+    <style>
+        
+    </style>
 </head>
 <body>
-    <h1>Signup</h1>
+    <h1 class= "oni ekk dan" >Signup</h1>
     <form method="POST">
         <label>Name:</label>
         <input type="text" name="name" required><br><br>
