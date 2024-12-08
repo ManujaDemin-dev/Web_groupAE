@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 session_start();
 include '../../includes/db.php';
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = "Invalid email or password.";
     }
 }
-?>
+?>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div>
         <p>If you Dont have an account?<br> <a href="signup.php">Sign up</a></p>
     </div>
-    <?php if (isset($error)) echo "<p>$error</p>"; ?>
+  <!--<?php if (isset($error)) echo "<p>$error</p>"; ?> -->
 </body>
 </html>
