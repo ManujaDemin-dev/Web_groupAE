@@ -28,4 +28,8 @@ button {
     text-align: center;
   
 }
+input.bar {
+    padding:5px 5px 5px 5px;
+    width: 530px;
+}
 
