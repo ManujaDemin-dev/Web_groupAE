@@ -146,3 +146,17 @@ h1{
 
 }
 
+/* Responsive karamu :) */
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .container {
+        transform: scale(0.9);
+    }
+
+    .timer{
+        width: 90%; 
+        max-width: 500px; 
+    }
+}
+
+
