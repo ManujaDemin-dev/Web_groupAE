@@ -68,7 +68,7 @@
                 <div class="logo"><a href="#">LOGO</a></div>
                 <ul>
                     <li><a href="../index.php">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="./aboutus.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <button><a href="views/auth/login.php">Login</a></button>
                 </ul>
