@@ -1,0 +1,55 @@
+<!--<?php
+session_start();
+include '../../includes/db.php';
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Sanitize input
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+   
+    $query = "SELECT * FROM users WHERE email = :email";
+    $statement = $pdo->prepare($query);
+    $statement->execute(['email' => $email]);
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['user_id'];
+       
+        session_regenerate_id();
+        header('Location: ../user/dashboard.php');
+        exit();
+    } else {
+        $error = "Invalid email or password.";
+    }
+}
+?>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST"> 
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <div>
+        <p>If you Dont have an account?<br> <a href="signup.php">Sign up</a></p>
+    </div>
+  <!--<?php if (isset($error)) echo "<p>$error</p>"; ?> -->
+</body>
+</html>
