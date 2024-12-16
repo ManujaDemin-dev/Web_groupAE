@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  
     $age = trim($_POST['age']);
     $gender = trim($_POST['gender']);
-    $password = trim($_POST['password']);
+    
     $discription = trim($_POST['description']);
 
     // Validate inputs
@@ -41,15 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Invalid email format.';
     } else {
-        // Update user details in the database
+        
         try {
-            $updateStmt = $pdo->prepare('UPDATE users SET name = :name, email = :email, age = :age, gender = :gender, password = :password, discription = :discription WHERE id = :id');
+            $updateStmt = $pdo->prepare('UPDATE users SET name = :name, email = :email, age = :age, gender = :gender, discription = :discription WHERE id = :id');
             $updateStmt->execute([
                 'name' => $name,
                 'email' => $email,
                 'age' => $age,
                 'gender' => $gender,
-                'password' => $password,
                 'discription' => $discription,
                 'id' => $userId
             ]);
@@ -70,28 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-           /*
-        }
-        .profile-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-        }
-        .profile-container h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 15px;
+       
         }
         label {
             display: block;
@@ -103,19 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #0056b3;
-        }*/}
+       }
         .message {
             margin-bottom: 15px;
             padding: 10px;
@@ -154,10 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
         </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" value="<?= htmlspecialchars($user['password']) ?>" required>
-        </div>
+    
         <div class="form-group">
             <label for="age">Age</label>
             <input type="text" id="age" name="age" value="<?= htmlspecialchars($user['age']) ?>" required>

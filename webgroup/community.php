@@ -109,6 +109,8 @@ include 'views/userhead.html';
     <ul>
         <?php if (count($communities) > 0): ?>
             <?php foreach ($communities as $community): ?>
+
+
             <div class="card"  methna card ekka>
                 <h3><?= htmlspecialchars($community['name']) ?></h3>
                 <p><?= htmlspecialchars($community['description']) ?></p>
@@ -117,6 +119,8 @@ include 'views/userhead.html';
                     <button type="submit">Join</button>
                 </form>
             </div>
+
+            
             <?php endforeach; ?>
         <?php else: ?>
             <li>Not found.</li>
