@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pdo->commit();
 
         // Redirect back to the category page
-        redirect("index.php?category_id=$category_id");
+        // redirect("index.php?category_id=$category_id");
+        redirect("view.php?community_id=$community_id");
     } catch (PDOException $e) {
         // Rollback transaction on error
         $pdo->rollBack();
@@ -55,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-include '../views/userhead.html';
+include '../userhead.html';
 ?>
 <!DOCTYPE html>
 <html>

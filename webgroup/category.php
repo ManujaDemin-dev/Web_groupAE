@@ -23,58 +23,82 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         * {
             box-sizing: border-box;
         }
-        body {
-            margin-top: 100px;
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0;
+    body {
+        margin-top: 100px;
+        font-family: Arial, sans-serif;
+    }
+    .grid-container {
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 40px;
+        background: rgb(165, 196, 223);
+        width: 99vw;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+        .grid-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .community-card-alt {
+        width: 320px;
+        height: 200px;
+        display: block;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        border: 3px solid black;
+        font-family: Arial, Helvetica, sans-serif; 
+        text-decoration: none;
+        color: inherit;
+    }
+    .community-card-alt:hover {
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    }
+    .card-header {
+        background: linear-gradient(135deg, #58c316, #44ff15);
+        height: 60px;
+    }
+    .card-body {
+        padding: 20px;
+        text-align: center;
+    }
+    .card-body p {
+        font-size: 1.3em;
+        margin: 0;
+    }
+
+    
+    @media (max-width: 600px) {
+        .community-card-alt {
+            width: 160px; 
+            height: 120px;
+           
         }
         .grid-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 60px;
-            background: rgb(165, 196, 223);
-            width: 99vw;
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
-        @media (max-width: 600px) {
-            .grid-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        .community-card-alt {
-            width: 340px;
-            height: 210px;
-            display: block;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: 3px solid black;
-            font-family: Arial, Helvetica, sans-serif; 
-            text-decoration: none;
-            color: inherit;  
-        }
-        .community-card-alt:hover {
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-        }
-        .card-header {
-            background: linear-gradient(135deg, #58c316, #44ff15);
-            height: 60px;
-        }
-        .card-body {
-            padding: 20px;
-            text-align: center;
+        flex-wrap: wrap;
+        gap: auto; 
+        margin: 0 auto;
+        justify-content: center;
+           
         }
         .card-body p {
-            font-size: 1.3em;
-            margin: 0;
+            font-size: 0.9em;
+
         }
+        .card-header {
+            height: 30px;
+        }
+    }
     </style>
 </head>
 <body>

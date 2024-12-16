@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
     redirect("members.php?community_id=$community_id");
 }
 
-include '../userhead.html';
-include '../communityhead.html';
+// include '../userhead.html';
+// include '../communityhead.html';
 ?>
 <!DOCTYPE html>
 <html>

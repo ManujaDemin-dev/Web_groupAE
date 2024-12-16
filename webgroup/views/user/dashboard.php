@@ -22,20 +22,23 @@ include '../userhead.html'; // Navbar
     <title>Dashboard</title>
     <style>
         body {
-            display: flex;
+            
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: #efeeee;
+           
             font-family: Arial, Helvetica, sans-serif;
             margin-top: 100px;
         }
 
         .container {
+            display: flex;
             width: 1200px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            margin-top: 50px;
+            margin: 0 auto;
         }
 
         .book {
@@ -96,6 +99,11 @@ include '../userhead.html'; // Navbar
     </style>
 </head>
 <body>
+    <div>
+    <h1>Welcome to Your Dashboard</h1>
+    <h2>Your Communities</h2>
+    <h3>Hi <?php echo $_SESSION['username']; ?>!</h3>
+    </div><br>
     <div class="container">
         <?php foreach ($communities as $community): ?>
         
