@@ -1,5 +1,3 @@
-<!--
-
 <?php
 session_start();
 include '../../includes/db.php';
@@ -22,6 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['user_id'];
+
+        $_SESSION['username'] = $user['name'];
+
+
        
         session_regenerate_id();
         header('Location: ../user/dashboard.php');
@@ -31,14 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
--->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
-    <style>
-        
-    </style>
 </head>
 <body>
     <h1>Login</h1>
@@ -48,11 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Password:</label>
         <input type="password" name="password" required><br><br>
         <button type="submit">Login</button>
-    </form>
+    </form><br>
 
     <div>
-        <p>If you Dont have an account?<br> <a href="signup.php">Sign up</a></p>
+        <p>If you Do not have an account?</p><br> <button><a href="signup.php">Sign up</a></button>  <!-- text decoration none danna -->
     </div>
-    <!--<?php if (isset($error)) echo "<p>$error</p>"; ?>--->
+    <?php if (isset($error)) echo "<p>$error</p>"; ?>
 </body>
 </html>

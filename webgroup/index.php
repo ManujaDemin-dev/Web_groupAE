@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>web Group AE</title>
+    <title>web g</title>
   
 </head>
 <style>
@@ -81,3 +81,4 @@
 
 </body>
 </html>
+<?php include 'includes/footer.php'; ?>
