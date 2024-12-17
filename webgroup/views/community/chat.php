@@ -34,6 +34,7 @@ $username = $_SESSION['username'];
       align-items: center;
       justify-content: center;
       height: 100%;
+     
     }
     #title_container, #chat_container {
       width: 100%;
@@ -53,6 +54,7 @@ $username = $_SESSION['username'];
       font-size: 20px;
       font-family:Poppins;
       margin-bottom: 5px;
+      font-weight: 450;
      
     }
     #chat_input_container {
@@ -98,7 +100,7 @@ $username = $_SESSION['username'];
       font-size: 20px;
       word-spacing: 1px;
       letter-spacing: 0.5px;
-      font-weight: 550;
+      font-weight: 600;
      
       color: #333;
     }
@@ -111,9 +113,15 @@ $username = $_SESSION['username'];
       text-align: right;
       
     }
+    .back {
+      align-self: flex-start;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+  <button class="back" onclick="history.back()">Back to the community</button>
   <div id="title_container">
     <p>Welcome to the <?php echo $community_name;?> Chat, <span id="user_name"></span></p>
   </div>
