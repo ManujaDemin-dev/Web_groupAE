@@ -4,7 +4,7 @@ include '../../includes/db.php';
 include '../../includes/functions.php';
 
 if (!isLoggedIn()) {
-    redirect('../../index.php');
+    redirect('\Web_groupAE\webgroup\views\auth');
 }
 
 $query = "SELECT * FROM community_members 
@@ -14,12 +14,14 @@ $statement = $pdo->prepare($query);
 $statement->execute(['user_id' => $_SESSION['user_id']]);
 $communities = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+
+
 include '../userhead.html'; // Navbar
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title><?php echo $_SESSION['username']; ?> 's Dashboard</title>
     <style>
         body {
             
@@ -31,88 +33,104 @@ include '../userhead.html'; // Navbar
             margin-top: 100px;
         }
 
-        .container {
-            display: flex;
-            width: 1200px;
+               
+            .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr); */
             gap: 20px;
-            margin-top: 50px;
             margin: 0 auto;
+            width: 95%; 
+            max-width: 1300px;
         }
 
-        .book {
-            width: 100%;
+      
+        .community-card-alt {
+            max-width: 280px;
             height: 300px;
-            position: relative;
-            font-family: Arial, Helvetica, sans-serif;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            cursor: pointer; 
-           
-        }
-
-        .book:hover {
-           
-        }
-
-        .cover {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 3px solid black;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            background: linear-gradient(135deg, rgb(41, 170, 31), rgb(14, 129, 6));
-            color: white;
-            padding: 10px;
-            
+            background: #fff;
+            margin-bottom: 20px;
         }
 
-        .bookmark {
-            position: absolute;
-            top: 0px; 
-            right: 20px;
-            width: 50px;
-            height: 60px; 
-            
-            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        .community-card-alt:hover {
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+       
+        .card-header {
+            background: #44ff15;
+            height: 30px;
+        }
+
+        .card-footer {
+            background-color: #44ff15;
+            height: 30px;
+            margin-top: auto;
+        }
+
+        .card-body {
+            padding: 17px;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .h33 {
             font-size: 1.2em;
-            color: #fff;
-            text-align: center;
-            margin: 50px 0 12px;
+            margin: 0;
         }
 
         .pp {
-            font-size: 0.8em;
-            color: #fff;
-            line-height: 1.2;
-            text-align: center;
-            padding: 0 10px;
-            margin-top: 0;
+            margin-top: 10px;
         }
+
+        @media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+
+    .community-card-alt {
+        height: 250px; 
+       
+    }
+}
+
     </style>
 </head>
 <body>
     <div>
-    <h1>Welcome to Your Dashboard</h1>
+    <h1><?php echo $_SESSION['username']; ?>'s page</h1>
     <h2>Your Communities</h2>
     <h3>Hi <?php echo $_SESSION['username']; ?>!</h3>
     </div><br>
     <div class="container">
-        <?php foreach ($communities as $community): ?>
+
+    <?php foreach ($communities as $community): ?>
+        <?php
         
-        <a href="../community/view.php?community_id=<?= htmlspecialchars($community['community_id']) ?>" class="book">
-            <div class="cover"> <div class="bookmark"style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
-                <h3 class="h33"><?= htmlspecialchars($community['name']) ?></h3>
-                <p class="pp"><?= htmlspecialchars($community['description']) ?></p>
+        $description = htmlspecialchars($community['description']);
+        $limitedd = mb_substr($description, 0, 170); // Limit to 170 characters meken 0 to 170 characters
+        if (mb_strlen($description) > 170) {
+            $limitedd .= '...'; // if it has more than 270 char print ... a the end
+        }
+        ?>
+       
+        
+        <a href="../community/view.php?community_id=<?= htmlspecialchars($community['community_id']) ?>" class="community-card-alt">
+
+         <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
+         <div class="card-body">     
+         <h3 class="h33"><?= htmlspecialchars($community['name']) ?></h3>
+                <p class="pp"><?= $limitedd ?></p>
             </div>
-            <div class="bookmark"></div>
+            <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
         </a>
         <?php endforeach; ?>
     </div>
