@@ -80,8 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="file" name="file" required><br>
         <label>Name </label><br>
         <input type="text" name="name_for_file" required><br>
-        <label>Description</label>
-        <textarea name="description"></textarea required><br><br>
+        <label>Description  200 charaters only</label><br><br>
+        <textarea name="description" maxlength="200" ></textarea><br><br>
         <button type="submit">Upload</button>
     </form>
     <?php if (isset($error)) echo "<p>$error</p>"; ?>
