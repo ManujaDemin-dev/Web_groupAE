@@ -8,9 +8,9 @@ if (!isLoggedIn()) {
 }
 
 $community_id = $_GET['community_id'];
-$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; // Get search term from query parameters
+$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
 
-// Fetch community details
+
 $query = "SELECT * FROM communities WHERE community_id = :community_id";
 $stmt = $pdo->prepare($query);
 $stmt->execute(['community_id' => $community_id]);
@@ -23,7 +23,7 @@ $membersStmt = $pdo->prepare($membersQuery);
 $membersStmt->execute(['community_id' => $community_id]);
 $members = $membersStmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Fetch files shared in the community, with optional search
+
 if ($searchTerm) {
     $filesQuery = "SELECT * FROM files WHERE community_id = :community_id AND name_for_file LIKE :searchTerm";
     $filesStmt = $pdo->prepare($filesQuery);
@@ -32,7 +32,7 @@ if ($searchTerm) {
         'searchTerm' => "%$searchTerm%"
     ]);
 } else {
-    $filesQuery = "SELECT * FROM files WHERE community_id = :community_id";
+    $filesQuery = "SELECT * FROM files WHERE community_id = :community_id ORDER BY file_id DESC";
     $filesStmt = $pdo->prepare($filesQuery);
     $filesStmt->execute(['community_id' => $community_id]);
 }
@@ -88,6 +88,9 @@ include '../userhead.html';
                         <?= htmlspecialchars($file['name_for_file']) ?>
                     </a> (<?= htmlspecialchars($file['file_type']) ?>)
                     <p><?= htmlspecialchars($file['description']) ?></p>
+                    <p>by <?= htmlspecialchars($file['uploader']) ?></p>
+                    <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
+                    
                     
                 </div>
 

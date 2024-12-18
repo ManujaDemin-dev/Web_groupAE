@@ -8,6 +8,7 @@ if (!isLoggedIn()) {
 }
 
 $community_id = $_GET['community_id'];
+$username = $_SESSION['username'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_FILES['file']['name'])) {
@@ -39,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
         if (move_uploaded_file($file['tmp_name'], $filePath)) {
             
-            $query = "INSERT INTO files (community_id, file_name,name_for_file, file_path, uploaded_by, file_type, description, type, uploaded_at) 
-                      VALUES (:community_id, :file_name,:name_for_file, :file_path, :uploaded_by, :file_type, :description, :type, NOW())";
+            $query = "INSERT INTO files (community_id, file_name,name_for_file, file_path, uploaded_by, uploader, file_type, description, type, uploaded_at) 
+                      VALUES (:community_id, :file_name,:name_for_file, :file_path, :uploaded_by, :uploader, :file_type, :description, :type, NOW())";
             $stmt = $pdo->prepare($query);
 
             $stmt->execute([
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'file_name' => $newFileName,
                 'file_path' => $filePath,
                 'uploaded_by' => $_SESSION['user_id'],
+                'uploader' => $username,
                 'file_type' => $fileExtension,
                 'description' => $description,
                 'type' => $type,
