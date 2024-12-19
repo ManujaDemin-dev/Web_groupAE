@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name_for_file = $_POST['name_for_file'];
 
         $fileExtension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-        $allowedImageExtensions = ['jpg', 'jpeg', 'png', 'webp', 'bmp'];
+        $allowedImageExtensions = ['jpg', 'jpeg', 'png'];
 
     
         $isImage = in_array($fileExtension, $allowedImageExtensions);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
        
         }
-        $newFileName = uniqid() . '.' . $fileExtension;
+        $newFileName = $name_for_file . '.' . $fileExtension;
         $filePath = $uploadFolder . $newFileName;
 
    
