@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $updateStmt = $pdo->prepare("UPDATE users SET $setQuery WHERE user_id = :id");
             $updateStmt->execute($updateFields);
+            header('Location: ../auth/login.php');
+            exit;
 
         } catch (Exception $e) {
             $error = 'Error updating profile: ' . $e->getMessage();
@@ -103,11 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="message error"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
-    <?php if (isset($success)): ?>
-        <div class="message success"><?= htmlspecialchars($success) ?></div>
-    <?php endif; ?>
 
-    <form method="POST">
+    <form method="POST" >
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="<?= htmlspecialchars($user['name']) ?>" required>
@@ -148,6 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         button.addEventListener('click', () => {
             alert('Are you sure you want to update save your changes!');
+            
         });
 
 
