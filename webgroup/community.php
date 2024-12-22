@@ -81,15 +81,29 @@ include 'views/userhead.html';
         button {
             padding: 8px 12px;
         }
-    </style>
-    <script>
-        function confirmJoin(event, form) {
-            event.preventDefault(); // Prevent form submission
-            if (confirm("Are you sure you want to join this community?")) {
-                form.submit(); // Submit the form if confirmed
-            }
+        .wrap {
+            margin-bottom: 10px;
         }
-    </script>
+        .join {
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: 4px solid black;
+            color: black;
+            background-color:rgb(223, 35, 113);
+            text-decoration: bolt;
+            cursor: pointer;
+
+            
+        }
+        .join:hover {
+            border: 4px solid rgb(223, 35, 113);
+            color:black;
+            background-color:rgb(223, 35, 113);
+            
+
+        }
+    </style>
+    
 </head>
 <body>
     <h1>Communities</h1>
@@ -114,17 +128,26 @@ include 'views/userhead.html';
             <div class="card"  methna card ekka>
                 <h3><?= htmlspecialchars($community['name']) ?></h3>
                 <p><?= htmlspecialchars($community['description']) ?></p>
+                <div class ="wrap">
                 <form method="POST" onsubmit="confirmJoin(event, this)">
                     <input type="hidden" name="community_id" value="<?= $community['community_id'] ?>">
-                    <button type="submit">Join</button>
+                    <button class="join"type="submit">Join</button></div>
                 </form>
             </div>
 
             
             <?php endforeach; ?>
         <?php else: ?>
-            <li>Not found.</li>
+            <li>No communities</li>
         <?php endif; ?>
     </ul>
+    <script>
+        function confirmJoin(event, form) {
+            event.preventDefault(); 
+            if (confirm("Are you sure you want to join this community?")) {
+                form.submit(); 
+            }
+        }
+    </script>
 </body>
 </html>

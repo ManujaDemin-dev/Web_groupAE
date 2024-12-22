@@ -108,8 +108,10 @@ include '../userhead.html'; // Navbar
     <div>
     <h1><?php echo $_SESSION['username']; ?>'s page</h1>
     <h2>Your Communities</h2>
-    <h3>Hi <?php echo $_SESSION['username']; ?>!</h3>
+    <h3>Hi <?php echo $_SESSION['username']; ?></h3>
     </div><br>
+
+    <button><a href="./profile.php">edit profile</a></button>
     <div class="container">
 
     <?php foreach ($communities as $community): ?>
