@@ -24,6 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['username'] = $user['name'];
 
 
+        $updateQuery = "UPDATE users SET last_login = NOW() WHERE user_id = :user_id";
+        $updateStmt = $pdo->prepare($updateQuery);
+        $updateStmt->execute(['user_id' => $user['user_id']]);
+
        
         session_regenerate_id();
         header('Location: ../user/dashboard.php');
