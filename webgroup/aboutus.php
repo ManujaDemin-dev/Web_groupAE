@@ -23,7 +23,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Navbar Styling */
+        /* Navbar Styling
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -56,7 +56,7 @@
 
         .navbar ul li a:hover {
             text-decoration: underline;
-        }
+        } */
 
         /* Intro Section */
         .intro {
