@@ -13,8 +13,8 @@
 
             .navbar {
                 background-color: #90D076;
-                padding-left: 35px;
-                padding-right: 35px;
+                padding-left: 50px;
+                padding-right: 80px;
             }
 
             .navdiv {
@@ -57,7 +57,7 @@
                 background-color: #53AA43;
             }
 
-            button {
+            #nav_btn{
                 background-color: #F0D78C;
                 margin-left: 10px;
                 border-radius: 8px;
@@ -66,17 +66,18 @@
                 border: none;
                 transition: background-color 0.3s ease, color 0.3s ease;
             }
-
-            button a {
+            #nav_btn {
                 color: #296B8E;
                 font-weight: bold;
                 font-size: 18px;
             }
 
-            button:hover {
-                background-color: #0D3B66;
+            #nav_btn:hover {
                 color: #fff;
+                background-color: #0D3B66;
             }
+
+
         </style>
     </head>
     <body>
@@ -87,7 +88,7 @@
                     <li><a href="./index.php">Home</a></li>
                     <li><a href="./aboutus.php">About</a></li>
                     <li><a href="./contact.html">Contact Us</a></li>
-                    <button><a href="views/auth/login.php">Login</a></button>
+                    <a href="views/auth/login.php"><button id="nav_btn">Login</button></a>
                 </ul>
             </div>
         </nav>
