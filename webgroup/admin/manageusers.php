@@ -5,7 +5,7 @@ include '../includes/functions.php';
 
 $role = $_SESSION['role'];
 
-if ($role !== 'user') {
+if ($role == 'user') {
     redirect('//google.com');
     
 }
