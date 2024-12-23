@@ -5,306 +5,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Better Platform</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .intro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
-    background-color: #f6f6f6;
-}
-
-.intro .content {
-    flex: 1 1 300px;
-    max-width: 600px;
-    text-align: center;
-}
-
-.intro .content h1 {
-    font-size: 2.5em;
-    color: #0D3B66; /* Palette color for headings */
-    margin-bottom: 20px;
-}
-
-.intro .content p {
-    font-size: 1.2em;
-    color: #296B8E; /* Palette color for paragraphs */
-    margin-bottom: 30px;
-}
-
-.intro .content .btn {
-    background-color: #53AA43; /* Palette color for buttons */
-    color: white;
-    padding: 10px 20px;
-    font-size: 1em;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    scroll-behavior: smooth;
-}
-
-.intro .content .btn:hover {
-    background-color: #90D076; /* Alternate palette color for hover */
-}
-
-.intro img {
-    flex: 1 1 300px;
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-}
-
-/* Learn More Section */
-.learn-more {
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.learn-more h2 {
-    font-size: 2em;
-    color: #0D3B66; /* Palette color for headings */
-    margin-bottom: 10px;
-}
-
-.learn-more p {
-    font-size: 1.2em;
-    color: #296B8E; /* Palette color for paragraphs */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Features Sections */
-.features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.features img {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.features h2 {
-    font-size: 1.8em;
-    color: #296B8E; /* Palette color for headings */
-    margin-bottom: 20px;
-}
-
-.features p {
-    font-size: 1.2em;
-    color: #5a5858;
-    max-width: 600px;
-}
-
-/* Container 2 Section */
-.container2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: max-content;
-    margin: 0 auto;
-}
-
-.container2 h2 {
-    font-size: 3.5em;
-    color: #0D3B66; /* Palette color for headings */
-    margin-bottom: 50px;
-    margin-top: 100px;
-}
-
-.cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
-}
-
-.card {
-    background: white;
-    border: 5px solid transparent;
-    border-radius: 20px;
-    min-width: 100px;
-    max-width: 300px;
-    padding: 20px;
-    flex: 1;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* Gradient border */
-    border-image: linear-gradient(to right, #90D076, #296B8E) 1;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card p {
-    font-size: 1.2em;
-    color: #296B8E; /* Palette color for paragraphs */
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.card img {
-    height: auto;
-    max-width: 200px;
-    min-width: 60px;
-    margin-top: 30px;
-}
-
-
-        /* Media Queries for Responsiveness */
-      @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 10px 0;
+    html, body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        line-height: 1.5; /* Improved readability */
+        scroll-behavior: smooth; /* Smooth scrolling */
     }
 
-    .navbar ul li {
-        margin: 10px 0;
-    }
-
+    /* Intro Section */
     .intro {
-        flex-direction: column;
-        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 20px;
+        background-color: #f6f6f6;
+    }
+
+    .intro .content {
+        flex: 1 1 300px;
+        max-width: 600px;
+        text-align: center;
     }
 
     .intro .content h1 {
-        font-size: 2em;
-        line-height: 1.2; 
+        font-size: 2.5em;
+        color: #0D3B66;
+        margin-bottom: 20px;
     }
 
     .intro .content p {
-        font-size: 1.1em; 
-        margin-bottom: 20px; 
+        font-size: 1.2em;
+        color: #296B8E;
+        margin-bottom: 30px;
+    }
+
+    .intro .content .btn {
+        background-color: #53AA43;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1em;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .intro .content .btn:hover,
+    .intro .content .btn:focus {
+        background-color: #90D076;
+        outline: none; /* Accessibility enhancement */
     }
 
     .intro img {
-        max-width: 90%;
-        margin-top: 20px; 
+        flex: 1 1 300px;
+        max-width: 400px;
+        width: 100%;
+        height: auto;
     }
 
-    .features {
-        flex-direction: column;
-        padding: 20px; 
+    /* Learn More Section */
+    .learn-more {
+        padding: 30px 20px;
+        text-align: center;
     }
 
-    .features img {
+    .learn-more h2 {
+        font-size: 2em;
+        color: #0D3B66;
         margin-bottom: 10px;
     }
 
-    .features h2 {
-        font-size: 1.8em; 
-        margin-top: 10px;
-    }
-
-    .features p {
-        font-size: 1.1em;
-        margin-top: 5px;
-    }
-    .container2{
-        flex-direction: column;
-        padding: 20px;
-        
-    }
-    .container2 h2{
-        font-size: 3em;
-        text-align: center;
-    }
-    .cards{
-        flex-direction: column;
-        gap: 20px;
-        
-    }
-    .card{
-        max-width: 100%;
+    .learn-more p {
+        font-size: 1.2em;
+        color: #296B8E;
+        max-width: 800px;
         margin: 0 auto;
     }
-}
 
-
-
-@media (max-width: 480px) {
-    .intro .content h1 {
-        font-size: 1.8em;
-        line-height: 1.3;
-    }
-
-    .intro .content p {
-        font-size: 1em;
-        margin-bottom: 15px;
-    }
-
-    .btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
+    /* Features Section */
+    .features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-    }
-
-    .learn-more p {
-        font-size: 1em;
-        line-height: 1.4; 
-    }
-
-    .features h2 {
-        font-size: 1.5em;
-    }
-
-    .features p {
-        font-size: 1em;
-        line-height: 1.5;
+        padding: 30px 20px;
     }
 
     .features img {
-        margin-bottom: 15px; 
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
-    .container2 h2{
-        font-size: 2.8em;
-    }
-    .card p{
-        font-size: 1em;
-    }
-    .card img{
-        max-width: 100%;
-    }
-}
 
-    </style>
+    .features h2 {
+        font-size: 1.8em;
+        color: #296B8E;
+        margin-bottom: 20px;
+    }
+
+    .features p {
+        font-size: 1.2em;
+        color: #5a5858;
+        max-width: 600px;
+    }
+
+    /* Container 2 Section */
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .container2 h2 {
+        font-size: 3.5em;
+        color: #0D3B66;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+
+    .card {
+        background: white;
+        border: 5px solid transparent;
+        border-radius: 20px;
+        max-width: 300px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-image: linear-gradient(to right, #90D076, #296B8E) 1;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card p {
+        font-size: 1.2em;
+        color: #296B8E;
+        margin: 10px 0;
+    }
+
+    .card img {
+        height: auto;
+        max-width: 200px;
+        margin-top: 30px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .intro {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .intro .content h1 {
+            font-size: 2em;
+            line-height: 1.2;
+        }
+
+        .intro .content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .intro img {
+            max-width: 90%;
+            margin-top: 20px;
+        }
+
+        .features img {
+            margin-bottom: 10px;
+        }
+
+        .container2 h2 {
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .cards {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .intro .content h1 {
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+
+        .intro .content p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            font-size: 0.9em;
+            padding: 8px 16px;
+        }
+
+        .learn-more p {
+            font-size: 1em;
+        }
+
+        .features h2 {
+            font-size: 1.5em;
+        }
+
+        .features p {
+            font-size: 1em;
+        }
+
+        .container2 h2 {
+            font-size: 2.8em;
+        }
+
+        .card p {
+            font-size: 1em;
+        }
+
+        .card img {
+            max-width: 100%;
+        }
+    }
+</style>
 </head>
 <body>
     <?php
@@ -377,9 +326,7 @@
 
 </body>
 </html>
-
-
-
 <?php
     include("footer.html");
+    
 ?>
