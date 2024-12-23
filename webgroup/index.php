@@ -82,7 +82,7 @@
         }
 
         .button.cancel:hover {
-            background-color: #296B8E;
+            background-color:#0d3b66;
             color: #ffffff;
         }
 
@@ -115,8 +115,8 @@
             <h1>Welcome to StudyHub</h1>
             <p>Expand your knowledge, explore endless possibilities</p>
             <div class="button-group">
-                <button class="button submit">Submit</button>
-                <button class="button cancel">Cancel</button>
+                <a href = "./views/auth/signup.php" class="button submit">Sign Up</a>
+                <a class="button cancel" href = "./views/auth/login.php">Login</a>
             </div>
         </div>
         <div class="image">
