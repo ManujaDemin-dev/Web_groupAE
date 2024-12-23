@@ -119,7 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Leave blank if you don't want to change">
+      
+        <input type="password" id="password" name="password" placeholder="Leave blank if you don't want to change">
         </div>
 
         <div class="form-group">
@@ -140,10 +141,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" id="buttonon">Update Profile</button>
     </form>
 </div>
-<!-- <div>
-    // delete my profile
-    <button>
-    </div> -->
+
+    <div>
+        <form method="POST" action="./delete.php">
+            <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
+            <button type="submit" id="delete">Delete My Account</button>
+        </form>
+    </div>
+
 
 <script>
         const button = document.getElementById('buttonon');
@@ -154,8 +159,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
         });
 
+        const button = document.getElementById('delete');
+
+        button.addEventListener('click', () => {
+            alert('Are you sure you want to DELETE your account?');
+            
+        });
 
 </script>
+
+
 
 
 

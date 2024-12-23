@@ -4,7 +4,7 @@ include '../../includes/db.php';
 include '../../includes/functions.php';
 
 if (!isLoggedIn()) {
-    redirect('\Web_groupAE\webgroup\views\auth');
+    redirect('\Web_groupAE\webgroup\views\auth\login.php');
 }
 
 
