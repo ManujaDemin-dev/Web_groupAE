@@ -9,7 +9,6 @@
     <?php
         include("header.html");
     ?>
-    
     <style>
         * {
             margin: 0;
@@ -120,8 +119,6 @@
                 <button class="button cancel">Cancel</button>
             </div>
         </div>
-        
-        
         <div class="image">
             <img src="index-pic.png" alt="main-pic">
         </div>
