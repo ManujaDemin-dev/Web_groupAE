@@ -112,7 +112,6 @@
 </head>
 <body>
     <div class="main">
-        
         <div class="cen">
             <h1>Welcome to StudyHub</h1>
             <p>Expand your knowledge, explore endless possibilities</p>
@@ -133,4 +132,4 @@
     </footer>
 </body>
 </html>
-<?php include 'includes/footer.php'; ?>
+

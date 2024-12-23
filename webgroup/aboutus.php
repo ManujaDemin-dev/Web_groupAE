@@ -343,16 +343,9 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">LOGO</div>
-        <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./aboutus.html">About Us</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-    </div>
-
+    <?php
+        include("header.html");
+    ?>
     <!-- Intro Section -->
     <div class="intro">
         <div class="content">
