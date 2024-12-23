@@ -7,6 +7,16 @@ if (!isLoggedIn()) {
     redirect('\Web_groupAE\webgroup\views\auth');
 }
 
+
+$role = $_SESSION['role'];
+
+if ($role == 'admin') {
+   
+   echo'<button class="admin"><a href="../../admin/admin.php">Create Community</a></button>';
+
+    
+}
+
 $query = "SELECT * FROM community_members 
           JOIN communities ON community_members.community_id = communities.community_id 
           WHERE community_members.user_id = :user_id";

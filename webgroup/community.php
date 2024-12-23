@@ -7,7 +7,8 @@ if (!isLoggedIn()) {
     redirect('index.php');
 }
 
-$category_id = $_GET['category_id'];
+// $category_id = $_GET['category_id'];
+$category_id = base64_decode($_GET['category_id']);
 $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; // Get search term from query parameters
 
 

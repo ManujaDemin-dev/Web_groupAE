@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" placeholder="Leave blank if you don't want to change">
         </div>
 
         <div class="form-group">
@@ -140,6 +140,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" id="buttonon">Update Profile</button>
     </form>
 </div>
+<!-- <div>
+    // delete my profile
+    <button>
+    </div> -->
 
 <script>
         const button = document.getElementById('buttonon');
