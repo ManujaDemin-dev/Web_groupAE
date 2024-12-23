@@ -23,199 +23,163 @@
             scroll-behavior: smooth;
         }
 
-        /* Navbar Styling
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #0D3B66;
-            padding: 10px 20px;
-            color: white;
-            height: 8vh;
-        }
-
-        .navbar .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .navbar ul li {
-            margin: 0 15px;
-        }
-
-        .navbar ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1em;
-        }
-
-        .navbar ul li a:hover {
-            text-decoration: underline;
-        } */
-
-        /* Intro Section */
         .intro {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 20px;
-            background-color: #f6f6f6;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #f6f6f6;
+}
 
-        .intro .content {
-            flex: 1 1 300px;
-            max-width: 600px;
-            text-align: center;
-        }
+.intro .content {
+    flex: 1 1 300px;
+    max-width: 600px;
+    text-align: center;
+}
 
-        .intro .content h1 {
-            font-size: 2.5em;
-            color: #0D3B66;
-            margin-bottom: 20px;
-        }
+.intro .content h1 {
+    font-size: 2.5em;
+    color: #0D3B66; /* Palette color for headings */
+    margin-bottom: 20px;
+}
 
-        .intro .content p {
-            font-size: 1.2em;
-            color: #444;
-            margin-bottom: 30px;
-        }
+.intro .content p {
+    font-size: 1.2em;
+    color: #296B8E; /* Palette color for paragraphs */
+    margin-bottom: 30px;
+}
 
-        .intro .content .btn {
-            background-color: #0D3B66;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1em;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            scroll-behavior: smooth;
-        }
+.intro .content .btn {
+    background-color: #53AA43; /* Palette color for buttons */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    scroll-behavior: smooth;
+}
 
-        .intro .content .btn:hover {
-            background-color: #062F4F;
-        }
+.intro .content .btn:hover {
+    background-color: #90D076; /* Alternate palette color for hover */
+}
 
-        .intro img {
-            flex: 1 1 300px;
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-        }
+.intro img {
+    flex: 1 1 300px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
 
-        /* Learn More Section */
-        .learn-more {
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* Learn More Section */
+.learn-more {
+    padding: 30px 20px;
+    text-align: center;
+}
 
-        .learn-more h2 {
-            font-size: 2em;
-            color: #0D3B66;
-            margin-bottom: 10px;
-        }
+.learn-more h2 {
+    font-size: 2em;
+    color: #0D3B66; /* Palette color for headings */
+    margin-bottom: 10px;
+}
 
-        .learn-more p {
-            font-size: 1.2em;
-            color: #444;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.learn-more p {
+    font-size: 1.2em;
+    color: #296B8E; /* Palette color for paragraphs */
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        /* Features Sections */
-        .features {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px 20px;
-        }
+/* Features Sections */
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
 
-        .features img {
-            max-width: 500px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-          
-        }
+.features img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
 
-        .features h2 {
-            font-size: 1.8em;
-            color: #0D3B66;
-            margin-bottom: 20px 0 10px;
-        }
+.features h2 {
+    font-size: 1.8em;
+    color: #296B8E; /* Palette color for headings */
+    margin-bottom: 20px;
+}
 
-        .features p {
-            font-size: 1.2em;
-            color: #444;
-            max-width: 600px;
-        }
+.features p {
+    font-size: 1.2em;
+    color: #5a5858;
+    max-width: 600px;
+}
 
+/* Container 2 Section */
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    margin: 0 auto;
+}
 
-        /*container2 Section */
-        .container2 {
-            display: flex;
-            flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           max-width: max-content;
-           margin: 0 auto;
-        }
+.container2 h2 {
+    font-size: 3.5em;
+    color: #0D3B66; /* Palette color for headings */
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
 
-        .container2 h2 {
-            font-size: 3.5em;
-            color: #003366;
-            margin-bottom: 50px;
-            margin-top: 100px;
-        }
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
 
-        .cards {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-           margin-bottom: 100px;
-        }
+.card {
+    background: white;
+    border: 5px solid transparent;
+    border-radius: 20px;
+    min-width: 100px;
+    max-width: 300px;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-        .card {
-            background: white;
-            border: 5px solid transparent;
-            border-radius: 20px;
-            min-width: 100px;
-            max-width: 300px;
-            padding: 20px;
-            flex: 1;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            
-            /*gradient border*/
-            border-image: linear-gradient(to right, #0a4c86, #95b7db)1;
-        }    
+    /* Gradient border */
+    border-image: linear-gradient(to right, #90D076, #296B8E) 1;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-        .card p {
-            font-size: 1.2em;
-            color: #444;
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-        .card img{
-            height: auto;
-            max-width: 200px;
-            min-width: 60px;
-            margin-top: 30px;
-        }
+.card p {
+    font-size: 1.2em;
+    color: #296B8E; /* Palette color for paragraphs */
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.card img {
+    height: auto;
+    max-width: 200px;
+    min-width: 60px;
+    margin-top: 30px;
+}
+
 
         /* Media Queries for Responsiveness */
       @media (max-width: 768px) {
@@ -359,7 +323,7 @@
     <!-- Learn More Section -->
     <div id="learn-more-section" class="learn-more">
         <h2>Learn More About Our Platform</h2>
-        <p>Our features include background study music, community collaboration, a Pomodoro timer to monitor your study hours, and a ranking system to help you stay productive and inspired.</p>
+        <p>Our features include background study music, community collaboration, a Pomodoro timer to monitor your study hours and help you to stay productive and inspired.</p>
     </div>
 
     <!-- Fetaures Section 1 -->
@@ -395,7 +359,7 @@
                 <img src="about/notepad.jpg" alt="img2" style="padding: 20px;">
             </div>
             <div class="card">
-                <p>Track your study habits with detailed analytics that show your productivity levels, study hours, and rankings, helping you stay motivated and improve over time.</p>
+                <p>Track your study habits with our pomodoro timer to stay motivated and improve your consistency over time leading towards effective goal achievement.</p>
                 <img src="about/stop.jpg" alt="img3" style="padding: 15px;">
             </div>
     </div>
