@@ -4,7 +4,17 @@ include '../../includes/db.php';
 include '../../includes/functions.php';
 
 if (!isLoggedIn()) {
-    redirect('\Web_groupAE\webgroup\views\auth');
+    redirect('\Web_groupAE\webgroup\views\auth\login.php');
+}
+
+
+$role = $_SESSION['role'];
+
+if ($role == 'admin') {
+   
+   echo'<button class="admin"><a href="../../admin/admin.php">Create Community</a></button>';
+
+    
 }
 
 $query = "SELECT * FROM community_members 
@@ -110,7 +120,7 @@ include '../userhead.html'; // Navbar
     <h2>Your Communities</h2>
     <h3>Hi <?php echo $_SESSION['username']; ?></h3>
     </div><br>
-
+    <button><a href="./../../../Pomodoro Timer/pomodoro.html" target="_blank" >Start pomodoro</a></button>
     <button><a href="./profile.php">edit profile</a></button>
     <div class="container">
 

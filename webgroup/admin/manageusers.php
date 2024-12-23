@@ -3,7 +3,14 @@ session_start();
 include '../includes/db.php';
 include '../includes/functions.php';
 
-// want to add only for admins 
+$role = $_SESSION['role'];
+
+if ($role == 'user') {
+    redirect('//google.com');
+    
+}
+
+
 $query = "SELECT * FROM users";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
