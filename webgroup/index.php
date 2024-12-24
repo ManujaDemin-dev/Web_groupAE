@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        include("header.html");
+        include("header1.html");
     ?>
     <style>
         * {
@@ -21,6 +21,7 @@
         }
 
         body {
+            
             font-family: Arial, sans-serif;
             color: #0D3B66;
             background-color: rgb(247, 242, 237);
@@ -100,13 +101,13 @@
             
         }
 
-        footer {
+        /* footer {
             position: absolute;
             bottom: 10px;
             width: 100%;
             text-align: center;
             color: #296B8E;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -124,13 +125,13 @@
         </div>
     </div>
 
-    <footer>
+    <!-- <footer>
         &copy; 2024 Study Learning Platform
-    </footer>
+    </footer> -->
 </body>
 </html>
 
 <?php
-    include("footer.html");
+    include("footer1.html");
 ?>
 
