@@ -135,7 +135,7 @@
 <body>
 
   <?php
-    include("header.html");
+    include("header1.html");
   ?>
 
   <div class="container">
@@ -180,5 +180,5 @@
 </html>
 
 <?php
-  include("footer.html");
+  include("footer1.html");
 ?>
