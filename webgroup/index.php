@@ -1,135 +1,46 @@
-
-
-<!DOCTYPE html>
+<?php
+    include("header.html");
+?>
 <html>
-<head>
-    <title>web g</title>
-</head>
-<body>
-    <?php
-        include("header.html");
-    ?>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        body {
-            
-            font-family: Arial, sans-serif;
-            color: #0D3B66;
-            background-color: rgb(247, 242, 237);
-        }
-
-        .main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            gap: 20px;
-        }
-
-        .cen {
-            flex: 1;
-            text-align: left;
-        }
-
-        .cen h1 {
-            font-size: 3.5em;
-            color: #296B8E;
-            margin-bottom: 20px;
-            font-weight: bolder;
-        }
-
-        .cen p{
-            font-size: 1.1em;
-            font-weight: 500;
-            
-        }
-
-        .button-group {
-            margin-top: 20px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button.submit {
-            background-color: #90D076;
-            color: #ffffff;
-        }
-
-        .button.submit:hover {
-            background-color: #53AA43;
-        }
-
-        .button.cancel {
-            background-color: #F0D78C;
-            color: #0D3B66;
-        }
-
-        .button.cancel:hover {
-            background-color:#0d3b66;
-            color: #ffffff;
-        }
-
-        .image {
-            flex: 1.5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image img {
-            max-width: 100%;
-            height: auto;
+    <head>
+        <title>Landing page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="all">
+            <img src="newbg.png" class="landing">
     
-            
-        }
-
-        /* footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            color: #296B8E;
-        } */
-    </style>
-</head>
-<body>
-    <div class="main">
-        <div class="cen">
-            <h1>Welcome to StudyHub</h1>
-            <p>Expand your knowledge, explore endless possibilities</p>
-            <div class="button-group">
-                <a href = "./views/auth/signup.php" class="button submit">Sign Up</a>
-                <a class="button cancel" href = "./views/auth/login.php">Login</a>
+            <div class="con">
+                <div class="slider">
+                    <div class="list">
+                        <div class="item" style="--position: 1"><img src="ART.png" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="COM.png" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="computing.png" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="engineering.png" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="SCIENCE.png" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="study.png" alt=""></div> 
+                        <div class="item" style="--position: 7"><img src="computing.png" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="SCIENCE.png" alt=""></div>
+                    </div>
+                </div>
             </div>
+            <img src="machnpoints.png" class="machn">
+            <br>
         </div>
-        <div class="image">
-            <img src="index-pic.png" alt="main-pic">
-        </div>
-    </div>
-
-    <!-- <footer>
-        &copy; 2024 Study Learning Platform
-    </footer> -->
-</body>
-</html>
+        <table class="titleHead">
+            <tr class="titlerows">
+                <td class="titleDes" rowspan="2"> &nbsp; &nbsp; &nbsp; WELCOME TO <br> <p class="titleDesName"> &nbsp; &nbsp; &nbsp; Skill<span class="desname">Up<span></span></p></td>
+                <td class="titleAdds">Join A Community,Ignite <br> Your Learning Journey</td>
+                <td class="btnindex1" rowspan="2"><Button class="btnindex">Join now</Button></td>
+            </tr>
+            <tr class="titlerows2">
+                <td class="titleAdds1">Discover a vibrant platform where students connect, collaborate, <br> and grow together. Engage with like-minded peers and unlock <br> your potential through shared knowledge and experiences.</td>
+            </tr>
+        </table>
+        <br><br><br>
+        <h2>This is the sitijas section</h2>
+    </body>
+    </html>
 
 <?php
     include("footer.html");
