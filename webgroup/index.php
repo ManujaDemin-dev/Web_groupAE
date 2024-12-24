@@ -38,11 +38,18 @@
             </tr>
         </table>
         <br><br><br>
-        <h2>This is the sitijas section</h2>
+        <h2>This is the sitijas</h2>
+        <h2>This is the sitijas</h2>
+        <h2>This is the sitijas</h2>
+        <h2>This is the sitijas</h2>
+        <h2>This is the sitijas</h2>
+
+        <?php
+            include("comment.html");
+        ?>
     </body>
     </html>
 
 <?php
     include("footer.html");
 ?>
-
