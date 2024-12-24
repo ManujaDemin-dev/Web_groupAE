@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        include("header1.html");
+        include("header.html");
     ?>
     <style>
         * {
@@ -132,6 +132,6 @@
 </html>
 
 <?php
-    include("footer1.html");
+    include("footer.html");
 ?>
 

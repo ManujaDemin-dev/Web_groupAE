@@ -257,7 +257,7 @@
 </head>
 <body>
     <?php
-        include("header1.html");
+        include("header.html");
     ?>
     <!-- Intro Section -->
     <div class="intro">
@@ -327,6 +327,6 @@
 </body>
 </html>
 <?php
-    include("footer1.html");
+    include("footer.html");
     
 ?>

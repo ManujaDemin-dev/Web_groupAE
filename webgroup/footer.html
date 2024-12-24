@@ -1,156 +1,161 @@
-<style>
-  /* General Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Improved Responsive Footer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-  body {
-    font-family: 'Arial', sans-serif;
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-  /* Footer Styles */
-  footer {
-    padding-top: 20px;
-    background-color: #90d076;
-    color: #fff;
-  }
+        .bfoot {
+            background-color: #90d076;
+            color: #fff;
+            padding: 20px 10px 0;
+        }
 
-  footer h6 {
-    font-family: 'Poppins', sans-serif;
-    color: #0d3b66;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+        .bfoot h6 {
+            color: #0d3b66;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .text1 {
+            color: #252525;
+            font-size: 18px;
+            margin-bottom: 05px;
+            line-height: 1.2rem;
+            
+        }
+        .bfoot p, .bfoot a {
+            color: #353535;
+            font-size: 15px;
+            line-height: 1.9;
+            text-decoration: none;
+            margin: 5px 0;
+            font-weight: 500;
+        }
 
-  footer p,
-  footer a {
-    font-size: 14px;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    display: block;
-  }
+        .bfoot a:hover {
+            text-decoration: none;
+        }
 
-  footer a:hover {
-    color: #0056b3;
-  }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
 
-  footer .social-icons a {
-    font-size: 24px;
-    color: #fff;
-    background-color: #0077b5;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-  }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
 
-  footer .social-icons a:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-  }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
 
-  footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+        .footer-column {
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            min-width: 220px;
+        }
 
-  footer .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-  }
+        .footer-column:last-child p {
+            margin: 10px 0;
+        }
 
-  footer .col {
-    flex: 1 1 calc(25% - 20px); /* 4 columns with space in between */
-    min-width: 200px;
-  }
+        .footer-bottom {
+            background-color: #53aa43;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            margin-top: 0px;
+            color: #fff;
+        }
 
-  footer .text-center {
-    text-align: center;
-  }
+        .footer-bottom a {
+            color: #0e0e0e;
+            font-weight: bold;
+        }
 
-  footer .p-4 {
-    background-color: #53aa43;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-  }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    footer .row {
-      flex-direction: column;
-      align-items: center;
-    }
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    footer .col {
-      flex: 1 1 100%;
-      text-align: center;
-    }
-  }
-</style>
+            .footer-column {
+                flex: 1 1 100%;
+                text-align: center;
+                margin: 15px 0;
+            }
 
-<footer>
-  <section>
-    <div class="container">
-      <div class="row">
-        <!-- STUDY HUB Column -->
-        <div class="col">
-          <h6>STUDY HUB</h6>
-          <p>
-            Columns organize footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing.
-          </p>
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-
-        <!-- Pages Column -->
-        <div class="col">
-          <h6>Pages</h6>
-          <p><a href="#!">HOME</a></p>
-          <p><a href="#!">About us</a></p>
-          <p><a href="#!">Contact us</a></p>
-          <p><a href="#!">Sign up</a></p>
-        </div>
-
-        <!-- Support Mails Column -->
-        <div class="col">
-          <h6>Support Mails</h6>
-          <p><a href="#!">System errors</a></p>
-          <p><a href="#!">User feedback</a></p>
-          <p><a href="#!">Reports</a></p>
-          <p><a href="#!">Help</a></p>
-        </div>
-
-        <!-- Contact Column -->
-        <div class="col">
-          <h6>Contact</h6>
-          <p><i class="fas fa-home"></i> 345 Kadawatha, Sri Lanka</p>
-          <p><i class="fas fa-envelope"></i> WebgroupAE@gmisl.com</p>
-          <p><i class="fas fa-phone"></i> 01 234 567 88</p>
-          <p><i class="fas fa-print"></i> 01 234 567 99</p>
-        </div>
-      </div>
+            .social-icons img {
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bfoot">
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h6>Study Hub</h6>
+                    <p class="text1">Organize your footer content effectively. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="social-icons">
+                       <a href="//google.com" target="_blank"> <img src="https://img.icons8.com/fluency/96/facebook-new.png" alt="Facebook"></a>
+                        <img src="https://img.icons8.com/fluency/96/youtube-play.png" alt="YouTube">
+                        <img src="https://img.icons8.com/color/96/linkedin.png" alt="LinkedIn">
+                        <img src="https://img.icons8.com/color/96/github.png" alt="GitHub">
+                        <img src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1"/>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h6>Pages</h6>
+                    <p><a href="./index.php">Home</a></p>
+                    <p><a href="./aboutus.php">About Us</a></p>
+                    <p><a href="./contact.php">Contact Us</a></p>
+                    <p><a href="./views/auth/signup.php">Sign Up</a></p>
+                </div>
+                <div class="footer-column">
+                    <h6>Support</h6>
+                    <p><a href="//mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(adminAE@example.com)}" target="_blank">System Errors</a></p>
+                    <p><a href="//mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(adminAEfeedback@example.com)}" target="_blank">User Feedback</a></p>
+                    <p><a href="//mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(adminAEreports@example.com)}" target="_blank">Reports</a></p>
+                    <p><a href="//mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(adminAE@example.com)}"target="_blank">Help</a></p>
+                </div>
+                <div class="footer-column">
+                    <h6>Contact</h6>
+                    <p><i class="fas fa-home"></i> 345 Kadawatha, Sri Lanka</p>
+                    <p><i class="fas fa-envelope"></i> WebgroupAE@gmisl.com</p>
+                    <p><i class="fas fa-phone"></i> +01 234 567 88</p>
+                    <p><i class="fas fa-print"></i> +01 234 567 99</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Copyright: Web groupAE 
+                <a href="/localhost/Web_groupAE/webgroup/index.php">Study Hub</a>
+            </div>
+        </footer>
     </div>
-  </section>
 
-  <div class="text-center p-4">
-    © 2024 Copyright: Web groupAE
-    <a href="/Web_groupAE/webgroup/index.php" class="fw-bold">STUDY HUB</a>
-  </div>
-</footer>
+
+
+</body>
+</html>
