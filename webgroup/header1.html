@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+            
+            .custom-navbar {
+                font-family: 'Poppins', sans-serif;
+                background-color: #90D076;
+                padding: 10px 50px;
+            }
+
+            .custom-navbar .navdiv {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .custom-navbar .logo a {
+                font-size: 35px;
+                font-weight: 600;
+                color: #296B8E;
+                text-decoration: none;
+            }
+
+            .custom-navbar .nav-links {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .custom-navbar .nav-links li {
+                margin-right: 25px;
+            }
+
+            .custom-navbar .nav-links a {
+                text-decoration: none;
+                color: #296B8E;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            .custom-navbar .nav-links .active a:hover {
+                background-color: #53AA43;
+                color: white;
+            }
+
+            .custom-navbar .nav-btn {
+                background-color: #F0D78C;
+                color: #296B8E;
+                border: none;
+                border-radius: 10px;
+                padding: 8px 20px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            .custom-navbar .nav-btn:hover {
+               
+                background-color: #0D3B66;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="custom-navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <a href="#">LOGO</a>
+                </div>
+                <ul class="nav-links">
+                    <li class ="active"><a href="./index.php">Home</a></li>
+                    <li class="active"><a href="./aboutus.php">About</a></li>
+                    <li class="active"><a href="./contact.php">Contact Us</a></li>
+                    <li>
+                        <a href="views/auth/login.php">
+                            <button class="nav-btn">Login</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </body>
+</html>
