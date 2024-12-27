@@ -150,12 +150,138 @@ table{
 .item1{
     width: 600px;
 }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .section-n {
+           
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 20px; 
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            margin: 10px auto;
+            max-width: 1250px;
+        }
+
+        .videoyt {
+            flex: 1;
+            min-width: 300px;
+            max-width: 730px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .videoyt iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin: 0;
+        }
+
+        .content-n {
+            flex: 1;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+            margin: 0px;
+            
+        }
+
+        .content-n h2 {
+            font-size: 29px;
+            color:  #53AA43;
+            margin: 0 0 20px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .content-n img {
+            width: 100%;
+            max-width: 350px;
+            margin-top: 20px;
+            margin: 0px;
+        }
+
+        @media (max-width: 768px) {
+            .section-n {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .videoyt iframe {
+                height: 250px;
+            }
+
+            .content-n h2 {
+                font-size: 20px;
+            }
+
+            .content-n img {
+                margin-top: 15px;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-n {
+                padding: 20px 10px;
+            }
+
+            .videoyt iframe {
+                height: 200px;
+            }
+
+            .content-n h2 {
+                font-size: 18px;
+            }
+
+            .content-n img {
+                max-width: 200px;
+            }
+        }
+
+
+
     </style>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 </head>
 <body>
+
+
+    
+
+<!-- 
+    n -->
+
+    <div class="section-n">
+        <div class="videoyt">
+            <iframe 
+                src="https://www.youtube.com/embed/1gLnlE0mOmY" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="content-n">
+            <h2>
+                Collaborating with friends is the most effective way to enhance your academic skills.
+            </h2>
+            <img src="rb_2148170512.png" alt="Collaboration">
+        </div>
+    </div>
+
+
+
+
+
+
     <section id="testimonials">
         <!-- Heading -->
         <div class="testimonials-heading">
