@@ -62,19 +62,87 @@ include '../userhead.html';
 <html>
 <head>
     <title>Create Community</title>
+    <style>
+  
+        body {
+            display: flex;
+            
+            
+        }
+
+        .form {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 380px;
+        }
+
+        .form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .formin,
+        .formcolor {
+            padding: 10px;
+            border-radius: 5px;
+            width: 350px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+
+        .formcolor {
+            width: 90%;
+            height: 40px;
+            padding: 0;
+            appearance: none; 
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: transparent; 
+        }
+
+
+        
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            border: 3px solid blue;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color:blue;
+        }
+ 
+                
+           
+        </style>
 </head>
 <body>
     <h1>Create Community</h1>
-    <form action="" method="POST">
-        <label>Name:</label>
-        <input type="text" name="name" required><br><br>
-        <label>Description:</label>
-        <textarea name="description" required></textarea><br><br>
-        <label for="color">Select a main color for your Community:</label>
-        <input type="color" id="color" name="color" value="#ff0000"><br><br>
+    <form class="form" action="" method="POST">
+        <label>Community Name</label>
+        <input class="formin" type="text" name="name" maxlength="45" required><br><br>
+        <label>Commmunity Description</label> <br>
+        <textarea class="formin" name="description" rows="7" maxlength="300" required></textarea><br><br>
+        <label for="color">Select a main color for your Community</label>
+        <input class="formcolor" type="color" id="color" name="color" value="#ff0000"><br><br>
 
-        <button type="submit">Create</button>
-    </form>
+        <button class="btn" type="submit">Create</button>
+    </form> 
     <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
 </body>
 </html>
