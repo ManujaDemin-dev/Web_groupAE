@@ -7,7 +7,7 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-redirect('Web_groupAE/webgroup/index.php');
+header('Location:./../../index.php');
 exit();
 
 ?>
