@@ -28,7 +28,7 @@ include '../userhead.html'; // Navbar
     <style>
 
 body {
-    font-family: Poppins;
+    /* font-family: Poppins; */
     background-color: #fff;
     margin: 0;
     padding: 0;
@@ -63,6 +63,9 @@ h1 {
     color: #fff;
     line-height: 10px;
 }
+/* .welcome h2 {
+    font-size: 15px;
+} */
 
 /* Welcome Section */
 .welcome {
@@ -107,7 +110,7 @@ h1 {
 }
 
 .feature a:hover{
-    text-decoration:underline;
+    /* background-color: #53aa43; */
 }
 
 
@@ -117,7 +120,10 @@ h1 {
     gap: 10px;
     padding: 30px 0;
 }
-
+.search-bar h2{
+    
+    font-size: 25px;
+}
 .search {
     flex: 2; /* Make search box take up twice the space */
     display: flex;
@@ -130,7 +136,7 @@ h1 {
     width: 60%;
     height: 20px;
     border: 2px solid #296b8e;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px;
     font-size: 16px;
 }
@@ -159,6 +165,7 @@ h1 {
             margin: 0 auto;
             width: 95%; 
             max-width: 1300px;
+            
         }
 
       
@@ -175,6 +182,8 @@ h1 {
             flex-direction: column;
             background: #fff;
             margin-bottom: 20px;
+            text-decoration: none;
+            color: black;
         }
 
         .community-card-alt:hover {
