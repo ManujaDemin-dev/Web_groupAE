@@ -92,6 +92,7 @@ include '../userhead.html';
                     <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
                     
                     
+                    
                 </div>
 
 
@@ -107,6 +108,14 @@ include '../userhead.html';
    mokada karnne owner nam thaw nav bar ekak hari pannel ekek hari dann wenawa button set ekk.meyana widiyat comment dann wen na. kamk na<br> edit communit / del commu / del files/  owener change
     <a href="edit.php?community_id=<?= $community_id ?>">Edit Community</a>
     <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['name']) ?>">Group Chat</a>
+    <form method="POST" action="./gallery.php">
+        <input type="hidden" name="community_id" value="<?= $community_id ?>">
+        <button type="submit">Gallery</button>
+        </form>
+    
+
+
+
     <a href="members.php?community_id=<?= $community_id ?>">Community Members</a>
 </body>
 </html>
