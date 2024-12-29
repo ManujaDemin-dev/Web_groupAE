@@ -3,10 +3,10 @@ session_start();
 include '../includes/db.php';
 include '../includes/functions.php';
 
-// Ensure the user is authorized to access this page
+
 // if (!isAdmin()) {
-//     redirect('../index.php');
-// }
+//      redirect('../index.php');
+//  }
 
 $community_id = $_GET['community_id'];
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'community_id' => $community_id,
     ]);
 
-    redirect('manage_communities.php'); // Redirect after successful transfer
+    redirect('managecommunitie.php'); 
 }
 ?>
 <!DOCTYPE html>
@@ -67,6 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select>
         <button type="submit">Transfer</button>
     </form>
-    <a href="manage_communities.php">Back to Manage Communities</a>
+    <a href="managecommunitie.php">Back to Manage Communities</a>
 </body>
 </html>

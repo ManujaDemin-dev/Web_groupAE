@@ -8,7 +8,7 @@ if (!isLoggedIn()) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
+    $c_name = $_POST['c_name'];
     $description = $_POST['description'];
     $category_id = $_GET['category_id'];
     $color = $_POST['color'];
@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // for community user table 
     try {
         // Insert the new community into the communities table
-        $query = "INSERT INTO communities (name, description, category_id, created_by, current_owner_id, color) 
-                  VALUES (:name, :description, :category_id, :created_by, :current_owner_id, :color)";
+        $query = "INSERT INTO communities (c_name, description, category_id, created_by, current_owner_id, color) 
+                  VALUES (:c_name, :description, :category_id, :created_by, :current_owner_id, :color)";
         $stmt = $pdo->prepare($query);
         $stmt->execute([
-            'name' => $name,
+            'c_name' => $c_name,
             'description' => $description,
             'category_id' => $category_id,
             'created_by' => $_SESSION['user_id'],
@@ -35,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Insert the creator into the community_members table
         $memberQuery = "INSERT INTO community_members (community_id, user_id, joined_at) 
-                        VALUES (:community_id, :user_id, :joined_at)";
+                        VALUES (:community_id, :user_id, now())";
         $memberStmt = $pdo->prepare($memberQuery);
         $memberStmt->execute([
             'community_id' => $community_id,
             'user_id' => $_SESSION['user_id'],
-            'joined_at' => date('Y-m-d H:i:s')
+            // 'joined_at' => date('Y-m-d H:i:s')
         ]);
 
         // Commit transaction
@@ -48,7 +48,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Redirect back to the category page
         // redirect("index.php?category_id=$category_id");
-        redirect("view.php?community_id=$community_id");
+        //redirect("view.php?community_id=$community_id");
+
+
+
+$data = array(
+    'community_id' => $community_id
+    
+);
+
+
+$jsonData = json_encode($data);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+</head>
+<body>
+   
+    <form id="postForm" action="./view.php" method="post">
+        <?php
+       
+        foreach ($data as $key => $value) {
+            echo "<input type='hidden' name='".htmlspecialchars($key)."' value='".htmlspecialchars($value)."'>";
+        }
+        ?>
+    </form>
+
+    <!-- JavaScript to automatically submit the form -->
+    <script type="text/javascript">
+        document.getElementById('postForm').submit();
+    </script>
+</body>
+</html>
+
+
+
+
+<?php
+
     } catch (PDOException $e) {
         // Rollback transaction on error
         $pdo->rollBack();
@@ -135,7 +176,7 @@ include '../userhead.html';
     <h1>Create Community</h1>
     <form class="form" action="" method="POST">
         <label>Community Name</label>
-        <input class="formin" type="text" name="name" maxlength="45" required><br><br>
+        <input class="formin" type="text" name="c_name" maxlength="45" required><br><br>
         <label>Commmunity Description</label> <br>
         <textarea class="formin" name="description" rows="7" maxlength="300" required></textarea><br><br>
         <label for="color">Select a main color for your Community</label>

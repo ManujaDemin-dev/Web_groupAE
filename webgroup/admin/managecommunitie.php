@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $deleteQuery = "DELETE FROM communities WHERE community_id = :community_id";
     $deleteStmt = $pdo->prepare($deleteQuery);
     $deleteStmt->execute(['community_id' => $community_id]);
-    redirect('manage_communities.php');
+    redirect('managecommunitie.php');
 }
 
 // table boostrap karamu
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php foreach ($communities as $community): ?>
             <tr>
                 <td><?= htmlspecialchars($community['community_id']) ?></td>
-                <td><?= htmlspecialchars($community['name']) ?></td>
+                <td><?= htmlspecialchars($community['c_name']) ?></td>
                 <td><?= htmlspecialchars($community['category_name']) ?></td>
                 <td>
                

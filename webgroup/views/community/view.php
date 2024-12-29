@@ -7,7 +7,7 @@ if (!isLoggedIn()) {
     redirect('../../index.php');
 }
 
-$community_id = $_GET['community_id'];
+$community_id = $_POST['community_id'];
 $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
 
 
@@ -22,6 +22,8 @@ $membersQuery = "SELECT users.name, users.email FROM community_members
 $membersStmt = $pdo->prepare($membersQuery);
 $membersStmt->execute(['community_id' => $community_id]);
 $members = $membersStmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 
 if ($searchTerm) {
@@ -48,7 +50,7 @@ include '../userhead.html';
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= htmlspecialchars($community['name']) ?> Community</title>
+    <title><?= htmlspecialchars($community['c_name']) ?> Community</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,7 +67,7 @@ include '../userhead.html';
     </style>
 </head>
 <body>
-    <h1><?= htmlspecialchars($community['name']) ?></h1>
+    <h1><?= htmlspecialchars($community['c_name']) ?></h1>
     <p><?= htmlspecialchars($community['description']) ?></p>
 
     
@@ -83,12 +85,12 @@ include '../userhead.html';
 
 
 
-                <div class="card" this is for file card (me card eke space wadi nm margin-bottum: 0px; danna a p walata)>
+                <div class="card">
                     <a href="<?= htmlspecialchars($file['file_path']) ?>" download target="_blank">
                         <?= htmlspecialchars($file['name_for_file']) ?>
                     </a> (<?= htmlspecialchars($file['file_type']) ?>)
                     <p><?= htmlspecialchars($file['description']) ?></p>
-                    <p>by <?= htmlspecialchars($file['uploader']) ?></p>
+                    <p>by <?= htmlspecialchars($file['uploaded_by']) ?></p>
                     <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
                     
                     
@@ -107,7 +109,7 @@ include '../userhead.html';
     <a href="index.php">All Communities</a>
    mokada karnne owner nam thaw nav bar ekak hari pannel ekek hari dann wenawa button set ekk.meyana widiyat comment dann wen na. kamk na<br> edit communit / del commu / del files/  owener change
     <a href="edit.php?community_id=<?= $community_id ?>">Edit Community</a>
-    <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['name']) ?>">Group Chat</a>
+    <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['c_name']) ?>">Group Chat</a>
     <form method="POST" action="./gallery.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
         <button type="submit">Gallery</button>

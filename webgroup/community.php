@@ -7,13 +7,13 @@ if (!isLoggedIn()) {
     redirect('index.php');
 }
 
-// $category_id = $_GET['category_id'];
-$category_id = base64_decode($_GET['category_id']);
+
+$category_id = $_GET['category_id'];
 $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; // Get search term from query parameters
 
 
 if ($searchTerm) {
-    $query = "SELECT * FROM communities WHERE category_id = :category_id AND name LIKE :searchTerm";
+    $query = "SELECT * FROM communities WHERE category_id = :category_id AND c_name LIKE :searchTerm";
     $statement = $pdo->prepare($query);
     $statement->execute([
         'category_id' => $category_id,
@@ -29,34 +29,37 @@ $communities = $statement->fetchAll(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['community_id'])) {
     $community_id = $_POST['community_id'];
     $user_id = $_SESSION['user_id'];
-    $joined_at = date('Y-m-d H:i:s');
+    // $joined_at = date('Y-m-d H:i:s');
 
     $checkQuery = "SELECT * FROM community_members WHERE community_id = :community_id AND user_id = :user_id";
     $checkStmt = $pdo->prepare($checkQuery);
     $checkStmt->execute(['community_id' => $community_id, 'user_id' => $user_id]);
 
     if ($checkStmt->rowCount() === 0) {
-        $insertQuery = "INSERT INTO community_members (community_id, user_id, joined_at) VALUES (:community_id, :user_id, :joined_at)";
+        $insertQuery = "INSERT INTO community_members (community_id, user_id, joined_at) VALUES (:community_id, :user_id, now())";
         $insertStmt = $pdo->prepare($insertQuery);
 
         try {
             $insertStmt->execute([
                 'community_id' => $community_id,
                 'user_id' => $user_id,
-                'joined_at' => $joined_at
+                // 'joined_at' => $joined_at
             ]);
-            $message = "You have successfully joined the community!";
-            if (isset($message)) echo "<p class='message'>$message</p>"; 
+            // $message = "You have successfully joined the community!";
+            // if (isset($message)) echo "<p class='message'>$message</p>"; 
            
-            header('Location: views/community/view.php?community_id=' . $community_id);
+            //header('Location: views/community/view.php?community_id=' . $community_id);
         } catch (PDOException $e) {
             $message = "Error joining the community: " . $e->getMessage();
         }
     } else {
-        $message = "You are already a member of this community!";
+        $message = "You are already a member of this community! you can enter the community from your home page";
+        if (isset($message)) echo "<p class='message'>$message</p>";
 
-        header('Location: views/community/view.php?community_id=' . $community_id);
+        //header('Location: views/community/view.php?community_id=' . $community_id);
     }
+
+
 }
 
 include 'views/userhead.html';
@@ -197,8 +200,8 @@ include 'views/userhead.html';
             <?php foreach ($communities as $community): ?>
         <?php
         $description = htmlspecialchars($community['description']);
-        $limitedd = mb_substr($description, 0, 170); // Limit to 170 characters meken 0 to 170 characters
-        if (mb_strlen($description) > 170) {
+        $limitedd = mb_substr($description, 0, 120); // Limit to 170 characters meken 0 to 170 characters
+        if (mb_strlen($description) > 120) {
             $limitedd .= '...'; // if it has more than 270 char print ... a the end
         }
         ?>
@@ -208,27 +211,18 @@ include 'views/userhead.html';
 
         <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
         <div class="card-body">     
-        <h3 class="h33"><?= htmlspecialchars($community['name']) ?></h3>
+        <h3 class="h33"><?= htmlspecialchars($community['c_name']) ?></h3>
             <p class="pp"><?= $limitedd ?></p>
         </div>
         <div class ="wrap">
-                <form method="POST" onsubmit="confirmJoin(event, this)">
+                <form method="POST" action="./views/community/view.php" onsubmit="confirmJoin(event, this)">
                     <input type="hidden" name="community_id" value="<?= $community['community_id'] ?>">
                     <button class="join"type="submit">Join</button></div>
                 </form>
         <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
     </card>
 
-<!-- 
-            <div class="card"  methna card ekka>
-                <h3><//?= htmlspecialchars($community['name']) ?></h3>
-                <p><//?= htmlspecialchars($community['description']) ?></p>
-                <div class ="wrap">
-                <form method="POST" onsubmit="confirmJoin(event, this)">
-                    <input type="hidden" name="community_id" value="<//?= $community['community_id'] ?>">
-                    <button class="join"type="submit">Join</button></div>
-                </form>
-            </div> -->
+
 
             
             <?php endforeach; ?>

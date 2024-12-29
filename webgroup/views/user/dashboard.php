@@ -8,18 +8,40 @@ if (!isLoggedIn()) {
 }
 
 
+$searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 
 $query = "SELECT * FROM community_members 
           JOIN communities ON community_members.community_id = communities.community_id 
           WHERE community_members.user_id = :user_id";
+
+
+if ($searchQuery) {
+    $query .= " AND communities.c_name LIKE :searchQuery";
+}
+
 $statement = $pdo->prepare($query);
-$statement->execute(['user_id' => $_SESSION['user_id']]);
+$params = ['user_id' => $_SESSION['user_id']];
+
+if ($searchQuery) {
+    $params['searchQuery'] = '%' . $searchQuery . '%';
+}
+
+$statement->execute($params);
 $communities = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
+
+// $statement = $pdo->prepare($query);
+// $statement->execute(['user_id' => $_SESSION['user_id']]);
+// $communities = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 include '../userhead.html'; // Navbar
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -121,7 +143,7 @@ h1 {
     padding: 30px 0;
 }
 .search-bar h2{
-    
+    margin-top: 10px;
     font-size: 25px;
 }
 .search {
@@ -261,11 +283,12 @@ if ($role == 'admin') {
 
 <div class="search-bar">
     <h2>Your Communities</h2>
-    <div class="search">
-        <input type="text" placeholder="Search here">
-        <button class="search-button">Enter</button>
-    </div>
-   
+    <form method="GET" action="">
+        <div class="search">
+            <input type="text" name="search" placeholder="Search communities" value="<?= htmlspecialchars($searchQuery) ?>">
+            <button type="submit" class="search-button">Enter</button>
+        </div>
+    </form>
 </div>
 
 
@@ -274,7 +297,7 @@ if ($role == 'admin') {
 <!--cards-->
 
 <div class="container">
-
+<?php if ($communities): ?>
 <?php foreach ($communities as $community): ?>
 <?php
 
@@ -285,17 +308,49 @@ if (mb_strlen($description) > 170) {
 }
 ?>
 
-
-<a href="../community/view.php?community_id=<?= htmlspecialchars($community['community_id']) ?>" class="community-card-alt">
-
- <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
- <div class="card-body">     
- <h3 class="h33"><?= htmlspecialchars($community['name']) ?></h3>
+<a href="javascript:void(0);" class="community-card-alt" onclick="submitForm('<?= htmlspecialchars($community['community_id']) ?>', '<?= htmlspecialchars($community['color']) ?>');">
+    <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
+    <div class="card-body">     
+        <h3 class="h33"><?= htmlspecialchars($community['c_name']) ?></h3>
         <p class="pp"><?= $limitedd ?></p>
     </div>
     <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
 </a>
+
+<!-- Hidden Form -->
+<form id="communityForm" method="POST" action="../community/view.php" style="display: none;">
+    <input type="hidden" name="community_id" id="community_id">
+</form>
+
+<script>
+    function submitForm(communityId, color) {
+        // Populate the hidden form with the necessary data
+        document.getElementById('community_id').value = communityId;
+        
+        // Submit the form programmatically
+        document.getElementById('communityForm').submit();
+    }
+</script>
+
+
+
+<!--
+<a  method="POST" href="../community/view.php?community_id=<//?= htmlspecialchars($community['community_id']) ?>" class="community-card-alt">
+ < no form method="POST" action="../community/view.php">
+<input type="hidden" name="community_id" value="<//?= $community['community_id'] ?>"> no 
+
+
+ <div class="card-header" style="background-color: <//?= htmlspecialchars($community['color']) ?>;"></div>
+ <div class="card-body">     
+ <h3 class="h33">//?= htmlspecialchars($community['c_name']) ?></h3>
+        <p class="pp"><//?= $limitedd ?></p>
+    </div>
+    <div class="card-header" style="background-color: <//?= htmlspecialchars($community['color']) ?>;"></div>
+</a> -->
 <?php endforeach; ?>
+<?php else: ?>
+    <p>No communities found 🥲</p>
+<?php endif; ?>
 </div>
 
 </div>
