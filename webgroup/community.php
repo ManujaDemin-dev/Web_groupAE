@@ -9,7 +9,7 @@ if (!isLoggedIn()) {
 
 
 $category_id = $_GET['category_id'];
-$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; // Get search term from query parameters
+$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
 
 
 if ($searchTerm) {
@@ -45,21 +45,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['community_id'])) {
                 'user_id' => $user_id,
                 // 'joined_at' => $joined_at
             ]);
-            // $message = "You have successfully joined the community!";
+             $message = "You have successfully joined the community!";
             // if (isset($message)) echo "<p class='message'>$message</p>"; 
-           
+            
+            echo "<form id='redirectForm' method='POST' action='./views/community/view.php'>
+            <input type='hidden' name='community_id' value='" . htmlspecialchars($community_id) . "'>
+        </form>
+        <script>document.getElementById('redirectForm').submit();</script>";
+//   exit();
+            
             //header('Location: views/community/view.php?community_id=' . $community_id);
         } catch (PDOException $e) {
             $message = "Error joining the community: " . $e->getMessage();
         }
     } else {
-        $message = "You are already a member of this community! you can enter the community from your home page";
-        if (isset($message)) echo "<p class='message'>$message</p>";
+        $message = "You are already a member of this community!";
+        
 
-        //header('Location: views/community/view.php?community_id=' . $community_id);
+        echo "<form id='redirectForm' method='POST' action='./views/community/view.php'>
+        <input type='hidden' name='community_id' value='" . htmlspecialchars($community_id) . "'>
+    </form>
+    <script>document.getElementById('redirectForm').submit();</script>";
+       d);
     }
 
-
+    $_SESSION['message'] = $message;
 }
 
 include 'views/userhead.html';
@@ -215,7 +225,7 @@ include 'views/userhead.html';
             <p class="pp"><?= $limitedd ?></p>
         </div>
         <div class ="wrap">
-                <form method="POST" action="./views/community/view.php" onsubmit="confirmJoin(event, this)">
+                <form method="POST" action="" onsubmit="confirmJoin(event, this)"> 
                     <input type="hidden" name="community_id" value="<?= $community['community_id'] ?>">
                     <button class="join"type="submit">Join</button></div>
                 </form>

@@ -7,8 +7,14 @@ if (!isLoggedIn()) {
     redirect('../../index.php');
 }
 
+
+if (isset($_SESSION['message'])) {
+    echo "<p>" . htmlspecialchars($_SESSION['message']) . "</p>";
+    unset($_SESSION['message']); 
+}
+
 $community_id = $_POST['community_id'];
-$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
+$searchTerm = isset($_POST['search']) ? trim($_POST['search']) : ''; 
 
 
 $query = "SELECT * FROM communities WHERE community_id = :community_id";
@@ -26,18 +32,39 @@ $members = $membersStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+// if ($searchTerm) {
+//     $filesQuery = "SELECT * FROM files WHERE community_id = :community_id AND name_for_file LIKE :searchTerm";
+//     $filesStmt = $pdo->prepare($filesQuery);
+//     $filesStmt->execute([
+//         'community_id' => $community_id,
+//         'searchTerm' => "%$searchTerm%"
+//     ]);
+    
+// } else {
+//     $filesQuery = "SELECT * FROM files WHERE community_id = :community_id ORDER BY file_id DESC";
+//     $filesStmt = $pdo->prepare($filesQuery);
+//     $filesStmt->execute(['community_id' => $community_id]);
+// }
+
+
 if ($searchTerm) {
-    $filesQuery = "SELECT * FROM files WHERE community_id = :community_id AND name_for_file LIKE :searchTerm";
+    $filesQuery = "SELECT files.*, users.name AS uploader_name FROM files 
+                   JOIN users ON files.uploaded_by = users.user_id WHERE files.community_id = :community_id 
+                   AND files.name_for_file LIKE :searchTerm";
     $filesStmt = $pdo->prepare($filesQuery);
     $filesStmt->execute([
         'community_id' => $community_id,
         'searchTerm' => "%$searchTerm%"
     ]);
 } else {
-    $filesQuery = "SELECT * FROM files WHERE community_id = :community_id ORDER BY file_id DESC";
+    $filesQuery = "SELECT files.*, users.name AS uploader_name FROM files 
+                   JOIN users ON files.uploaded_by = users.user_id 
+                   WHERE files.community_id = :community_id 
+                   ORDER BY files.file_id DESC";
     $filesStmt = $pdo->prepare($filesQuery);
     $filesStmt->execute(['community_id' => $community_id]);
 }
+
 $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
 
 include '../userhead.html';
@@ -73,7 +100,7 @@ include '../userhead.html';
     
     <h2>Files</h2>
    
-    <form method="GET" action="">
+    <form method="POST" action="">
         <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
         <input type="text" name="search" placeholder="Search files here" value="<?= htmlspecialchars($searchTerm) ?>">
         <button type="submit">Search</button>
@@ -81,7 +108,7 @@ include '../userhead.html';
 
     <ul>
         <?php if (count($files) > 0): ?>
-            <?php foreach ($files as $file): ?>
+            <?php foreach ($files as $file ): ?>
 
 
 
@@ -90,7 +117,7 @@ include '../userhead.html';
                         <?= htmlspecialchars($file['name_for_file']) ?>
                     </a> (<?= htmlspecialchars($file['file_type']) ?>)
                     <p><?= htmlspecialchars($file['description']) ?></p>
-                    <p>by <?= htmlspecialchars($file['uploaded_by']) ?></p>
+                    <p>by <?= htmlspecialchars($file['uploader_name']) ?></p>
                     <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
                     
                     
@@ -110,6 +137,8 @@ include '../userhead.html';
    mokada karnne owner nam thaw nav bar ekak hari pannel ekek hari dann wenawa button set ekk.meyana widiyat comment dann wen na. kamk na<br> edit communit / del commu / del files/  owener change
     <a href="edit.php?community_id=<?= $community_id ?>">Edit Community</a>
     <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['c_name']) ?>">Group Chat</a>
+    
+    
     <form method="POST" action="./gallery.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
         <button type="submit">Gallery</button>
