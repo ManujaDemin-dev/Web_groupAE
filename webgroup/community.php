@@ -9,6 +9,7 @@ if (!isLoggedIn()) {
 
 
 $category_id = $_GET['category_id'];
+$category_name = $_GET['category_name'];
 $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
 
 
@@ -66,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['community_id'])) {
         <input type='hidden' name='community_id' value='" . htmlspecialchars($community_id) . "'>
     </form>
     <script>document.getElementById('redirectForm').submit();</script>";
-       d);
+    
     }
 
     $_SESSION['message'] = $message;
@@ -191,7 +192,7 @@ include 'views/userhead.html';
     
 </head>
 <body>
-    <h1>Communities</h1>
+    <h1> <?= htmlspecialchars($category_name) ?> Communities</h1>
 
     <button> <a href="category.php">Back to Categories</a></button>.............................................................................................................
     <button><a href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a></button><br>

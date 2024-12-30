@@ -106,8 +106,8 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <div class="grid-container">
         <?php foreach ($categories as $category): ?>
             <!-- <a href="community.php?category_id=<//?= base64_encode($category['category_id']) ?>" class="community-card-alt"> -->
+            <a href="community.php?category_id=<?= $category['category_id'] ?>&category_name=<?=urlencode($category['name']) ?>" class="community-card-alt">
                 
-          <a href="community.php?category_id=<?= $category['category_id'] ?>" class="community-card-alt">
                 <div class="card-header"></div>
                 <div class="card-body">
                     <p><?= htmlspecialchars($category['name']) ?></p>
