@@ -90,6 +90,24 @@
                 background-color: #53AA43;
             }
 
+            .login{
+                color: #296B8E;
+                background-color:#F0D78C;
+                padding: 6px;
+                border: none;
+                border-radius: 5px;
+                font-family: "Poppins", serif;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 18px;
+
+            }
+
+            .login:hover{
+                color: #ffff;
+                background-color: #0D3B66;
+            }
+
 
             /* nav response  */
             @media (max-width: 500px ){
@@ -168,8 +186,16 @@
                 }
                 
                 li a:hover {
-                    color: #000000;
+                    color: #0D3B66;
+                    background-color: #00000000;
                 }
+
+                .login:hover{
+                    color: #0D3B66;
+                    background-color: #0d3b6600;
+                }
+
+                
             }
 
 
@@ -199,11 +225,12 @@
                     <li>
                         <a href="#">Contact us</a>
                     </li>
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
                 </ul>
+
+                <a href="#"><button class="login">Login</button></a>
+                
             </div>
+
         </nav>
     </body>
 </html>
