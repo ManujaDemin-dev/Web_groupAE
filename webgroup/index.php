@@ -160,10 +160,7 @@
                     </div>
                 </div>
             </div>
-        </body>
-        </html>
-
-
+            
         <?php
             include("comment.html");
         ?>
