@@ -1,8 +1,9 @@
 <?php
-    include("header.html");
+    include("navbar.html");
 ?>
-<html>
-    <head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landing page</title>
         <link rel="stylesheet" href="styles.css">
     </head>

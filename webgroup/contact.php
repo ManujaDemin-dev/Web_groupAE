@@ -1,5 +1,5 @@
 <?php
-include("header.html");
+include("navbar.html");
 ?>
 
 <!DOCTYPE html>

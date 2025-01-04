@@ -257,7 +257,7 @@
 </head>
 <body>
     <?php
-        include("header.html");
+        include("navbar.html");
     ?>
     <!-- Intro Section -->
     <div class="intro">
