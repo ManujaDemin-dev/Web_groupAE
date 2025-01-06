@@ -5,54 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comments Section</title>
     <style>
-a {
-    text-decoration: none;
-}
+    a {
+            text-decoration: none;
+        }
 
-#testimonials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
+        #testimonials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
 
-.testimonials-heading {
-    letter-spacing: 1px;
-    margin: 30px 0;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        .testimonials-heading {
+            letter-spacing: 1px;
+            margin: 30px 0;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-.testimonials-heading h1 {
-    font-size: 1.6rem;
-    font-weight: 400;
-    background-color: #0D3B66;
-    color: #ffffff;
-    padding: 10px 20px;
-}
+        .testimonials-heading h1 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            background-color: #0D3B66;
+            color: #ffffff;
+            padding: 10px 20px;
+        }
 
-#heading{
-    font-size: 1.3rem;
-    color: #53AA43;
-    font-weight: 600;
-    margin-bottom: 5px;
-    letter-spacing: 5px;
-}
+        #heading {
+            font-size: 1.3rem;
+            color: #53AA43;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 5px;
+        }
 
 .testimonial-box {
-    background: linear-gradient(45deg, #ff7b7b, #ffc3a0); /* Gradient border */
-    padding: 4px; /* Border width */
-    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(45deg, #ff7b7b, #ffc3a0);
+    padding: 4px;
+    border-radius: 12px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     margin: 10px;
-    /* width: 100%; Allow the card to take up full space within its grid */
-    opacity: 0; /* Initially hidden */
-    transform: translateX(-100px); /* Start from the left (off-screen) */
-    animation: slideIn 1s forwards; /* Apply animation */
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 1s forwards;
 }
 
 .testimonial-box:nth-child(1) {
@@ -74,18 +73,18 @@ a {
 @keyframes slideIn {
     0% {
         opacity: 0;
-        transform: translateX(-100px); /* Slide from the left */
+        transform: translateX(-100px);
     }
     100% {
         opacity: 1;
-        transform: translateX(0); /* Final position */
+        transform: translateX(0);
     }
 }
 
 .testimonial-box .inner-box {
-    background-color: #ffffff; /* White inner content */
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px; /* Slightly smaller radius than border */
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -141,15 +140,17 @@ a {
     color: #4b4b4b;
 }
 
-table{
-    display: flex;
-    justify-content:center;
-    align-items: center;
+.comments-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+    gap: 20px; /* Space between grid items */
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.item1{
-    width: 600px;
-}
+
+
     
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -207,6 +208,10 @@ table{
         }
 
         @media (max-width: 768px) {
+            .comments-container{
+            grid-template-columns: repeat(1,1fr);
+            gap: 10px;
+           }
             .section-n {
                 flex-direction: column;
                 text-align: center;
@@ -227,6 +232,9 @@ table{
         }
 
         @media (max-width: 480px) {
+            .testimonial-box{
+                margin: 5px;
+            }
             .section-n {
                 padding: 20px 10px;
             }
@@ -279,148 +287,122 @@ table{
 
 
 
-
-
-
-    <section id="testimonials">
-        <!-- Heading -->
-        <div class="testimonials-heading">
-            <span id="heading">COMMENTS</span>
-            <h1>Users think</h1>
+ <!--comments section-->
+ <section id="testimonials">
+    <div class="testimonials-heading">
+        <span id="heading">COMMENTS</span>
+        <h1>Users think</h1>
+    </div>
+    <div class="comments-container">
+        <div class="testimonial-box">
+            <div class="inner-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="boy1.png" alt="pic">
+                        </div>
+                        <div class="name-user">
+                            <strong>Andrew Smith</strong>
+                            <span>@andrewsmith</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="user-comment">
+                    <p>This site is amazing! Helped me a lot</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Comment Cards -->
-        <div class="testimonials-box-container">
-
-            <!-- Card 3 -->
-
-            <!-- Card 4 -->
-    </section>
-    <table>
-        <tr>
-            <td>           <!-- Card 1 -->
-                <div class="item1">
-                    
-                        <div class="testimonial-box">
-                            <div class="inner-box">
-                                <div class="box-top">
-                                    <div class="profile">
-                                        <div class="profile-img">
-                                            <img src="boy1.png" alt="pic">
-                                        </div>
-                                        <div class="name-user">
-                                            <strong>Andrew Smith</strong>
-                                            <span>@andrewsmith</span>
-                                        </div>
-                                    </div>
-                                    <div class="reviews">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="user-comment">
-                                    <p>This site is amazing! Helped me a lot to stay motivated and focused.</p>
-                                </div>
-                            </div>
+        <div class="testimonial-box">
+            <div class="inner-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="boy1.png" alt="pic">
                         </div>
-                </div>
-             </td>
-             <td>
-                <div class="item1">
-
-                
-                    <div class="testimonial-box">
-                        <div class="inner-box">
-                            <div class="box-top">
-                                <div class="profile">
-                                    <div class="profile-img">
-                                        <img src="boy1.png" alt="pic">
-                                    </div>
-                                    <div class="name-user">
-                                        <strong>Emily Johnson</strong>
-                                        <span>@emilyj</span>
-                                    </div>
-                                </div>
-                                <div class="reviews">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="user-comment">
-                                <p>Excellent platform.I luv using this for my studies</p>
-                            </div>
+                        <div class="name-user">
+                            <strong>Emily Johnson</strong>
+                            <span>@emilyj</span>
                         </div>
                     </div>
-                </div>
-            </td>
-
-        </tr>
-        <tr>
-            <td>
-                <div class="item1">
-                    <div class="testimonial-box">
-                        <div class="inner-box">
-                            <div class="box-top">
-                                <div class="profile">
-                                    <div class="profile-img">
-                                        <img src="boy1.png" alt="pic">
-                                    </div>
-                                    <div class="name-user">
-                                        <strong>Michael Brown</strong>
-                                        <span>@mikebrown</span>
-                                    </div>
-                                </div>
-                                <div class="reviews">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="user-comment">
-                                <p>Fantastic! I’ve already recommended it to several friends.</p>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
-            </td>
-            <td>
-                <div class="item1">
-                    <div class="testimonial-box">
-                        <div class="inner-box">
-                            <div class="box-top">
-                                <div class="profile">
-                                    <div class="profile-img">
-                                        <img src="boy1.png" alt="pic">
-                                    </div>
-                                    <div class="name-user">
-                                        <strong>Sophia Williams</strong>
-                                        <span>@sophiaw</span>
-                                    </div>
-                                </div>
-                                <div class="reviews">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="user-comment">
-                                <p>Great experience overall. I loved the ease of use!</p>
-                            </div>
-                        </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
                     </div>
                 </div>
-            </td>
-        </tr>
-    </table>
+                <div class="user-comment">
+                    <p>Excellent platform. I love using this for my studies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-box">
+            <div class="inner-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="boy1.png" alt="pic">
+                        </div>
+                        <div class="name-user">
+                            <strong>Michael Brown</strong>
+                            <span>@mikebrown</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="user-comment">
+                    <p>Fantastic! I’ve already recommended it to several friends.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-box">
+            <div class="inner-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="boy1.png" alt="pic">
+                        </div>
+                        <div class="name-user">
+                            <strong>Sophia Williams</strong>
+                            <span>@sophiaw</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="user-comment">
+                    <p>Great experience overall. I loved the ease of use!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
+
+
+
+    
