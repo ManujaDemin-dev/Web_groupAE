@@ -3,10 +3,14 @@ session_start();
 include '../../includes/db.php';
 include '../../includes/functions.php';
 
-if (!isLoggedIn()) {
-    redirect('\Web_groupAE\webgroup\views\auth\login.php');
+// if (!isLoggedIn()) {
+//     redirect('\Web_groupAE\webgroup\views\auth\login.php');
+// }
+if (isLoggedIn()) {
+    
+} else {
+    redirect('\Web_groupAE\webgroup\index.php');
 }
-
 
 $searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
 

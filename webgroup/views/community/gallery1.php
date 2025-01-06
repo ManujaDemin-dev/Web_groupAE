@@ -8,7 +8,7 @@ include '../../includes/functions.php';
  }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$community_id =25;
+$community_id = $_POST['community_id'];
 
 // $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
 
@@ -18,9 +18,8 @@ $community_id =25;
 $stmt->execute(['community_id' => $community_id]);
 $community = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$_SESSION['username'] = $username;
-$_SESSION['user_id'] = $user_id;
-//ownner methide 
+$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username']
 
 
 

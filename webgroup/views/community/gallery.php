@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $community = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Set session details
-    $_SESSION['username'] = $username;
-    $_SESSION['user_id'] = $user_id;
+    $user_id = $_SESSION['user_id'];
+    $username = $_SESSION['username'];
 
     // Check if the user is the owner
     $ownerQuery = "SELECT current_owner_id FROM communities WHERE community_id = :community_id";

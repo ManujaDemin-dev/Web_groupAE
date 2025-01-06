@@ -7,14 +7,16 @@ if (!isLoggedIn()) {
     redirect('../../index.php');
 }
 
-$community_id = $_GET['community_id'];
+//$community_id = $_GET['community_id'];
 $username = $_SESSION['username'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $community_id = $_POST['community_id'];
     if (!empty($_FILES['file']['name'])) {
         $file = $_FILES['file'];
         $description = $_POST['description'];
         $name_for_file = $_POST['name_for_file'];
+        
 
         $fileExtension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
         $allowedImageExtensions = ['jpg', 'jpeg', 'png'];

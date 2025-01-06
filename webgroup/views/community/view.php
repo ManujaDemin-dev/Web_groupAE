@@ -22,13 +22,15 @@ $stmt = $pdo->prepare($query);
 $stmt->execute(['community_id' => $community_id]);
 $community = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
+
+
 $membersQuery = "SELECT users.name, users.email FROM community_members 
                  JOIN users ON community_members.user_id = users.user_id 
                  WHERE community_members.community_id = :community_id";
 $membersStmt = $pdo->prepare($membersQuery);
 $membersStmt->execute(['community_id' => $community_id]);
 $members = $membersStmt->fetchAll(PDO::FETCH_ASSOC);
-
 
 
 
@@ -98,6 +100,10 @@ include '../userhead.html';
     <p><?= htmlspecialchars($community['description']) ?></p>
 
     
+    <form method="POST" action="upload.php">
+        <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+        <button type="submit">Upload a File</button>
+    </form>
     <h2>Files</h2>
    
     <form method="POST" action="">
@@ -131,7 +137,10 @@ include '../userhead.html';
         <?php endif; ?>
     </ul>
 
-    <a href="./upload.php?community_id=<?= $community_id ?>">Upload a File</a><br>
+  
+
+   <a href="leave.php?community_id=<?= $community_id ?>">Leave Community</a>
+   <a href="upload.php?community_id=<?= $community_id ?>">Upload Files</a>
     <a href="delete.php?community_id=<?= $community_id ?>">Delete Community</a>
     <a href="index.php">All Communities</a>
    mokada karnne owner nam thaw nav bar ekak hari pannel ekek hari dann wenawa button set ekk.meyana widiyat comment dann wen na. kamk na<br> edit communit / del commu / del files/  owener change
@@ -144,7 +153,22 @@ include '../userhead.html';
         <button type="submit">Gallery</button>
         </form>
     
+        <form method="POST" action="./leave_community.php">
+    <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+    <button type="submit">Leave Community</button>
+</form>
 
+<?php
+$current_owner = $community['current_owner_id']; 
+echo "Current owner is: $current_owner";
+
+if ($current_owner == $_SESSION['user_id']) {
+    echo '<form method="POST" action="./editcommunity.php">
+        <input type="hidden" name="community_id" value="' . htmlspecialchars($community_id) . '">
+        <button type="submit">Edit Community</button>
+        </form>';
+}
+?>
 
 
     <a href="members.php?community_id=<?= $community_id ?>">Community Members</a>
