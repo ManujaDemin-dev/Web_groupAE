@@ -6,126 +6,383 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.all{
-    font-family: Poppins;
-}
-.landing{
-    width:100%;
+.all {
+    font-family: 'Poppins', sans-serif;
 }
 
-.temp{
+.landing {
     width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.con{
+.con {
     padding: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 99%;
-} 
-.slider{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     width: 100%;
-    border: 1px red;
+}
+
+.slider {
+    width: 100%;
     height: 200px;
     overflow: hidden;
-    /* mask-image: linear-gradient(to right, transparent , #000000 10% 90%, transparent); */
 }
 
-.slider .list{
+.slider .list {
     display: flex;
-    width: 100%;
-    min-width: calc(200) * (8);
     position: relative;
 }
 
-
-.slider .list .item{
+.slider .list .item {
     height: 200px;
     width: 200px;
     position: absolute;
     left: 100%;
-    animation: autoRun 10s linear infinite ;
-    transition: filter 0.5s;
+    animation: autoRun 10s linear infinite;
     animation-delay: calc((10s / 7) * (var(--position) - 1));
 }
 
-.slider .list .item img{
+.slider .list .item img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-@keyframes autoRun{
-    from{
+@keyframes autoRun {
+    from {
         left: 100%;
     }
-    to{
+
+    to {
         left: calc(200px * -1);
     }
 }
 
-.slider:hover .item{
-    animation-play-state: paused !important;
-    filter: grayscale(1);
-}
-
-.slider .item:hover{
-    filter: grayscale(0);
-}
-
-.machn{
+.machn {
     height: 490px;
     position: absolute;
     margin-left: 950px;
     margin-top: -339px;
-    
 }
 
-.machn:hover{
-    height: 500px;
+.titleHead {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
 }
 
-.titleDes{
-    width: 600px;
-    line-height: 12px;
-    font-weight: 800;
+.titleDes {
+    flex: 1;
     font-size: 64px;
+    font-weight: 800;
     color: #474646;
 }
 
-.titleAdds{
-    font-weight: 700;
+.titleAdds {
     font-size: 24px;
+    font-weight: 700;
     color: #474646;
 }
 
-.titleDesName{
-    font-weight: 800;
+.titleDesName {
     font-size: 64px;
+    font-weight: 800;
     color: #90D076;
-
 }
 
-.desname{
+.desname {
     color: #0D3B66;
 }
-
-.titleAdds1{
-    width: 550px;
-    font-weight: 300;
-    font-size: 15px;
+.btnindex1{
+    flex: 1;
 }
 
-
-.btnindex{
-    font-weight: 600;
+.btnindex {
     background-color: #0D3B66;
     border-radius: 15px;
     padding: 10px;
-    color: aliceblue;
-    width: 100;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.all-c {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-.titleHead{
-    width: 100%;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+}
+
+.content h1 {
+    font-size: 2rem;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section {
+    flex: 1;
+}
+
+.section h2 {
+    font-size: 1.2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(45deg, #90D076, #F0D78C);
+    border: none;
+    border-radius: 4px;
+}
+
+/* Media Queries */
+
+/* Screen size up to 1920px */
+@media only screen and (max-width: 1920px) {
+    .machn {
+        height: 550px;
+        margin-left: 1000px;
+        margin-top: -350px;
+        position: absolute;
+    }
+
+    .titleHead {
+        padding: 50px 50px;
+        max-width: 1920px;
+        text-align: center;
+    }
+
+    .titleDes {
+        font-size: 72px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .titleAdds {
+        margin-bottom: 30px;
+    }
+
+    .titleAdds1 {
+        font-size: 28px;
+    }
+
+    .btnindex {
+        font-size: 18px;
+        padding: 12px 18px;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slider .list .item {
+        height: 250px;
+        width: 250px;
+    }
+
+    .container {
+        max-width: 1400px;
+        padding: 30px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .sections {
+        gap: 30px;
+    }
+
+    .section h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Screen size up to 1200px */
+@media only screen and (max-width: 1200px) {
+    .machn {
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        position: static;
+    }
+
+    .titleDes {
+        font-size: 48px;
+        line-height: 1.2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .titleAdds,
+    .titleAdds1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .btnindex {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin: auto;
+    }
+
+    .slider {
+        height: 150px;
+    }
+
+    .slider .list .item {
+        height: 150px;
+        width: 150px;
+    }
+
+    .titleHead {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Screen size up to 768px */
+@media only screen and (max-width: 768px) {
+    .landing {
+        height: auto;
+        object-fit: cover;
+    }
+
+    .titleDes {
+        font-size: 36px;
+    }
+
+    .titleAdds,
+    .titleAdds1 {
+        font-size: 16px;
+    }
+
+    .btnindex {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .sections {
+        flex-direction: column;
+    }
+
+    .section h2 {
+        font-size: 1rem;
+    }
+
+    .image-placeholder {
+        height: 200px;
+    }
+}
+
+/* Screen size up to 480px */
+@media only screen and (max-width: 480px) {
+    .titleDes {
+        font-size: 28px;
+    }
+
+    .titleAdds,
+    .titleAdds1 {
+        font-size: 14px;
+    }
+
+    .btnindex {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .slider {
+        height: 100px;
+    }
+
+    .slider .list .item {
+        height: 100px;
+        width: 100px;
+    }
+
+    .content h1 {
+        font-size: 1.2rem;
+    }
+
+    .content p {
+        font-size: 0.8rem;
+    }
+
+    .sections {
+        gap: 10px;
+    }
+
+    .section h2 {
+        font-size: 0.9rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .image-placeholder {
+        height: 150px;
+    }
 }
