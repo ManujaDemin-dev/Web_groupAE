@@ -98,7 +98,7 @@ include 'views/userhead.html';
         
         .wrap {
             margin-bottom: 10px;
-            aligin-items: center;
+            align-items: center;
             text-align: center;
         }
         .join {
@@ -123,7 +123,7 @@ include 'views/userhead.html';
 
         .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin: 0 auto;
             width: 95%; 
