@@ -136,10 +136,6 @@ h1 {
     font-size: 23px;
 }
 
-.feature a:hover{
-    /* background-color: #53aa43; */
-}
-
 
 /* Search Box */
 .search-bar{
@@ -187,7 +183,7 @@ h1 {
     /*card-styling*/
             .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin: 0 auto;
             width: 95%; 
