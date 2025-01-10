@@ -142,13 +142,13 @@ $username = $_SESSION['username'];
     import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyAORTwd4wbeeMG-j5ov4PLx91V88Bt3l_s",
-      authDomain: "groupae-464ca.firebaseapp.com",
-      databaseURL: "https://groupae-464ca-default-rtdb.firebaseio.com",
-      projectId: "groupae-464ca",
-      storageBucket: "groupae-464ca.firebaseapp.com",
-      messagingSenderId: "753143668467",
-      appId: "1:753143668467:web:2b18a4b13fb211e1a5e186"
+      apiKey: "AIzaSyADKIObzHtPYSmySSCqXNCEWY4X4GdNB2k",
+      authDomain: "grpae-aecc7.firebaseapp.com",
+      databaseURL: "https://grpae-aecc7-default-rtdb.firebaseio.com",
+      projectId: "grpae-aecc7",
+      storageBucket: "grpae-aecc7.firebasestorage.app",
+      messagingSenderId: "363177740692",
+      appId: "1:363177740692:web:b35068e58d8130b8bd6781"
     };
 
     const app = initializeApp(firebaseConfig);
