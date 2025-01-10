@@ -127,7 +127,7 @@ include("navbar.html");
     }
 
     .contactUs .title h2 {
-      color: #fff;
+      color: #296b8e;
       font-weight: 500;
     }
 
