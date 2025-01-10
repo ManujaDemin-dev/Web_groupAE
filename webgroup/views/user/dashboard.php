@@ -7,7 +7,7 @@ include '../../includes/functions.php';
 //     redirect('\Web_groupAE\webgroup\views\auth\login.php');
 // }
 if (isLoggedIn()) {
-
+    
 } else {
     redirect('\Web_groupAE\webgroup\index.php');
 }
@@ -48,142 +48,150 @@ include '../userhead.html'; // Navbar
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_SESSION['username']; ?>'s Dashboard</title>
+    <title><?php echo $_SESSION['username']; ?> 's Dashboard</title>
     <style>
-        body {
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            margin-top: 70px;
-            font-family: Arial, sans-serif;
-        }
 
-        .dashboard {
-            padding: 20px;
-            color: #0d3b66;
-            background-color: #fff;
-            margin: 0 10px;
-        }
+body {
+    /* font-family: Poppins; */
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    margin-top: 70px;
+}
 
-        h1 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+.dashboard {
+    padding: 20px;
+    color: #0d3b66;
+    background-color: #fff;
+    margin: 0 10px;
+   
+   
+}
 
-        .welcome h2 {
-            font-size: 50px;
-        }
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+  
+}
 
-        .welcome p {
-            font-size: 24px;
-            font-weight: 600;
-        }
+.welcome h2{
+    font-size: 50px;
+}
 
-        .welcome h2,
-        .welcome p {
-            color: #fff;
-            line-height: 10px;
-        }
+.welcome p{
+    font-size: 24px;
+    font-weight: 600;
+}
 
-        .welcome {
-            text-align: center;
-            border: none;
-            border-radius: 10px;
-            background: url("table.jpg") no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            margin-bottom: 20px;
-            height: 200px;
-            opacity: 0.8;
-        }
+.welcome h2, .welcome p{
+    color: #fff;
+    line-height: 10px;
+}
+/* .welcome h2 {
+    font-size: 15px;
+} */
 
-        .row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    border:none;
+    border-radius: 10px;
+    background: url("table.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 200px;
+    opacity: 0.8;
+}
 
-        .feature {
-            width: 150px;
-            border-radius: 10px;
-            background: linear-gradient(to right, #53aa43, #f0d78c);
-            height: 100px;
-            font-size: 16px;
-            color: hsl(0, 0%, 100%);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* Flexbox Rows */
+.row {
+    display: flex;
+    gap: 10px; /* Space between items */
+    margin-bottom: 10px;
+}
 
-        .edit {
-            text-decoration: none;
-            color: hsl(0, 0%, 100%);
-            font-size: 16px;
-        }
+.feature{
+    border-radius: 10px;
+    border: none;
+    background:linear-gradient(to right, #53aa43, #f0d78c);
+    flex: 1; /* Make all items in a row equal width */
+    height: 100px;
+    font-size: larger;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            padding: 30px 0;
-            flex-wrap: wrap;
-        }
+.feature a{
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-family: Poppins;
+    font-size: 23px;
+}
 
-        .search-bar h2 {
-            margin-top: 10px;
-            font-size: 25px;
-        }
 
-        .search {
-            display: flex;
-            gap: 10px;
-            flex: 2;
-            justify-content: space-between;
-        }
+/* Search Box */
+.search-bar{
+    display: flex;
+    gap: 10px;
+    padding: 30px 0;
+}
+.search-bar h2{
+    margin-top: 10px;
+    font-size: 25px;
+}
+.search {
+    flex: 2; /* Make search box take up twice the space */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
 
-        .search input {
-            width: 100%;
-            max-width: 250px;
-            height: 30px;
-            border: 2px solid #296b8e;
-            border-radius: 10px;
-            padding: 5px;
-            font-size: 16px;
-        }
+.search input {
+    width: 60%;
+    height: 20px;
+    border: 2px solid #296b8e;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+.search-button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #296b8e;
+    border: none;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
 
-        .search-button {
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #296b8e;
-            border: none;
-            width: 100px;
-            height: 40px;
-            align-items: center;
-            color: #fff;
-            cursor: pointer;
-        }
+.search-button:hover{
+    background-color: #0d3b66
+}
 
-        .search-button:hover {
-            background-color: #0d3b66;
-        }
 
-        .container {
+    /*card-styling*/
+            .container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin: 0 auto;
-            width: 95%;
+            width: 95%; 
             max-width: 1300px;
+            
         }
 
+      
         .community-card-alt {
             max-width: 280px;
             height: 300px;
@@ -205,6 +213,7 @@ include '../userhead.html'; // Navbar
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
         }
 
+       
         .card-header {
             background: #44ff15;
             height: 30px;
@@ -231,147 +240,122 @@ include '../userhead.html'; // Navbar
             margin-top: 10px;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .feature {
-                width: 100%;
-                font-size: 14px;
-            }
-
-            .search-bar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .search input {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .community-card-alt {
-                height: 250px;
-            }
-
-            .welcome p {
-                font-size: 19px;
-                font-weight: 400;
-                line-height: 25px;
-            }
-
-            .feature a {
-                font-size: 19px;
-            }
-        }
-
         @media (max-width: 600px) {
-            .feature {
-                font-size: 14px;
-            }
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
 
-            .container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
+    .community-card-alt {
+        height: 250px; 
+       
+    }
+    .welcome p{
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+    .feature a{
+        font-size: 19px;
+    }
+}
 
-            .community-card-alt {
-                height: 230px;
-            }
-
-            .welcome p {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 20px;
-            }
-
-            .search input {
-                max-width: 100%;
-            }
-
-            .search-button {
-                width: 100%;
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
-
 <body>
-    <div class="dashboard">
+<div class="dashboard">
 
-        <h1>Dashboard</h1>
-        <div class="welcome">
-            <h2>Welcome</h2>
-            <p>Hey <?php echo $_SESSION['username']; ?>, Nice to have you on board!</p>
+<h1>Dashboard</h1>
+<div class="welcome">
+    <h2>Welcome</h2>
+    <p>Hey <?php echo $_SESSION['username']; ?>, Nice to have you on board!</p>
+</div>
+
+<div class="row">
+    <button class="feature"><a href="./../../../Pomodoro Timer/pomodoro.html" target="_blank"> Pomodoro timer </a></button>
+    <button class="feature"><a href="./music.php" target="_blank">Listen to music </a></button>
+<?php   $role = $_SESSION['role'];
+if ($role == 'admin') {
+   
+   echo'<button class="feature"><a href="../../admin/admin.php">Admin Panel</a></button>';   
+}
+?>
+</div>
+
+<div class="search-bar">
+    <h2>Your Communities</h2>
+    <form method="GET" action="">
+        <div class="search">
+            <input type="text" name="search" placeholder="Search communities" value="<?= htmlspecialchars($searchQuery) ?>">
+            <button type="submit" class="search-button">Enter</button>
         </div>
+    </form>
+</div>
 
-        <div class="row">
-            <a href="./../../../Pomodoro Timer/pomodoro.html" target="_blank" class="edit"><button
-                    class="feature">Pomodoro timer</button></a>
-            <a href="./music.php" target="_blank" class="edit"><button class="feature">Listen to music</button></a>
-            <?php if ($_SESSION['role'] == 'admin') { ?>
-                <a href="../../admin/admin.php" class="edit"><button class="feature">Admin Panel</button></a>
-            <?php } ?>
-        </div>
 
-        <div class="search-bar">
-            <h2>Your Communities</h2>
-            <form method="GET" action="">
-                <div class="search">
-                    <input type="text" name="search" placeholder="Search communities"
-                        value="<?= htmlspecialchars($searchQuery) ?>">
-                    <button type="submit" class="search-button">Enter</button>
-                </div>
-            </form>
-        </div>
 
-        <div class="container">
-            <?php if ($communities): ?>
-                <?php foreach ($communities as $community): ?>
-                    <?php
-                    $description = htmlspecialchars($community['description']);
-                    $limitedd = mb_substr($description, 0, 170);
-                    if (mb_strlen($description) > 170) {
-                        $limitedd .= '...';
-                    }
-                    ?>
-                    <a href="javascript:void(0);" class="community-card-alt"
-                        onclick="submitForm('<?= htmlspecialchars($community['community_id']) ?>', '<?= htmlspecialchars($community['color']) ?>');">
-                        <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
-                        <div class="card-body">
-                            <h3 class="h33"><?= htmlspecialchars($community['c_name']) ?></h3>
-                            <p class="pp"><?= $limitedd ?></p>
-                        </div>
-                        <div class="card-footer" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
-                    </a>
 
-                    <form id="communityForm" method="POST" action="../community/view.php" style="display: none;">
-                        <input type="hidden" name="community_id" id="community_id">
-                    </form>
+<!--cards-->
 
-                    <script>
-                        function submitForm(communityId, color) {
-                            document.getElementById('community_id').value = communityId;
-                            document.getElementById('communityForm').submit();
-                        }
-                    </script>
+<div class="container">
+<?php if ($communities): ?>
+<?php foreach ($communities as $community): ?>
+<?php
 
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No communities found 🥲</p>
-            <?php endif; ?>
-        </div>
+$description = htmlspecialchars($community['description']);
+$limitedd = mb_substr($description, 0, 170); // Limit to 170 characters meken 0 to 170 characters
+if (mb_strlen($description) > 170) {
+    $limitedd .= '...'; // if it has more than 270 char print ... a the end
+}
+?>
 
+<a href="javascript:void(0);" class="community-card-alt" onclick="submitForm('<?= htmlspecialchars($community['community_id']) ?>', '<?= htmlspecialchars($community['color']) ?>');">
+    <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
+    <div class="card-body">     
+        <h3 class="h33"><?= htmlspecialchars($community['c_name']) ?></h3>
+        <p class="pp"><?= $limitedd ?></p>
     </div>
-</body>
+    <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
+</a>
 
+<!-- Hidden Form -->
+<form id="communityForm" method="POST" action="../community/view.php" style="display: none;">
+    <input type="hidden" name="community_id" id="community_id">
+</form>
+
+<script>
+    function submitForm(communityId, color) {
+        // Populate the hidden form with the necessary data
+        document.getElementById('community_id').value = communityId;
+        
+        // Submit the form programmatically
+        document.getElementById('communityForm').submit();
+    }
+</script>
+
+
+
+<!--
+<a  method="POST" href="../community/view.php?community_id=<//?= htmlspecialchars($community['community_id']) ?>" class="community-card-alt">
+ < no form method="POST" action="../community/view.php">
+<input type="hidden" name="community_id" value="<//?= $community['community_id'] ?>"> no 
+
+
+ <div class="card-header" style="background-color: <//?= htmlspecialchars($community['color']) ?>;"></div>
+ <div class="card-body">     
+ <h3 class="h33">//?= htmlspecialchars($community['c_name']) ?></h3>
+        <p class="pp"><//?= $limitedd ?></p>
+    </div>
+    <div class="card-header" style="background-color: <//?= htmlspecialchars($community['color']) ?>;"></div>
+</a> -->
+<?php endforeach; ?>
+<?php else: ?>
+    <p>No communities found 🥲</p>
+<?php endif; ?>
+</div>
+
+</div>
+
+</body>
 </html>
+
