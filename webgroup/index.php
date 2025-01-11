@@ -114,7 +114,7 @@
                 }
 
                 .btn:hover {
-                    background: linear-gradient(45deg, #75b060, #d7bc74); 
+                    background: linear-gradient(45deg, #75b060, #d7bc74);
                     transform: scale(1.05);
                 }
 
