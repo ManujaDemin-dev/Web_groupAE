@@ -4,13 +4,13 @@ include("navbar.html");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <style>
-   
-   .hero-section {
+    .hero-section {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,9 +27,10 @@ include("navbar.html");
       margin-bottom: 20px;
       font-size: 3rem;
       margin-bottom: 10px;
-      color: #296b8e; /* Blue */
+      color: #296b8e;
+      /* Blue */
     }
-    
+
     .hero-image {
       max-width: 300px;
     }
@@ -48,7 +49,8 @@ include("navbar.html");
     }
 
     .contact-option {
-      background-color: #f0d78c; /* Soft yellow */
+      background-color: #f0d78c;
+      /* Soft yellow */
       padding: 20px;
       border-radius: 8px;
       width: 300px;
@@ -93,6 +95,19 @@ include("navbar.html");
         width: 100%;
       }
     }
+
+    @media (max-width: 576px) {
+      .contact-option {
+        font-size: 10px;
+        width: calc(50% - 10px);
+        /* Adjusted to allow two cards per row with a small gap */
+        box-sizing: border-box;
+      }
+      .contact-option a{
+        font-size: 9px
+      }
+    }
+
     @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
     * {
@@ -109,15 +124,18 @@ include("navbar.html");
     .contactUs {
       position: relative;
       width: 100%;
-      padding: 20px 60px; /* Reduced padding for smaller height */
+      padding: 20px 60px;
+      /* Reduced padding for smaller height */
     }
 
     .contactUs .title {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2em; /* Slightly smaller font */
-      margin-bottom: 10px; /* Reduce space below the title */
+      font-size: 2em;
+      /* Slightly smaller font */
+      margin-bottom: 10px;
+      /* Reduce space below the title */
     }
 
     .contactUs .title h2 {
@@ -129,16 +147,22 @@ include("navbar.html");
       position: relative;
       display: grid;
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 4fr 3fr; /* Reduced height for rows */
+      grid-template-rows: 4fr 3fr;
+      /* Reduced height for rows */
       grid-template-areas:
-          "form info"
-          "form map";
-      grid-gap: 15px; /* Smaller gap between sections */
-      margin-top: 20px; /* Adjusted margin */
+        "form info"
+        "form map";
+      grid-gap: 15px;
+      /* Smaller gap between sections */
+      margin-top: 20px;
+      /* Adjusted margin */
     }
 
-    .form, .info, .map {
-      padding: 20px; /* Reduced padding */
+    .form,
+    .info,
+    .map {
+      padding: 20px;
+      /* Reduced padding */
       border-radius: 10px;
     }
 
@@ -147,9 +171,11 @@ include("navbar.html");
     }
 
     .contact h3 {
-      color: #0d3b66; /* Deep blue */
+      color: #0d3b66;
+      /* Deep blue */
       font-weight: 500;
-      font-size: 1.4em; /* Slightly smaller text */
+      font-size: 1.4em;
+      /* Slightly smaller text */
       margin-bottom: 10px;
     }
 
@@ -161,7 +187,8 @@ include("navbar.html");
 
     .formBox .row50 {
       display: flex;
-      gap: 15px; /* Reduced gap */
+      gap: 15px;
+      /* Reduced gap */
     }
 
     .inputBox {
@@ -176,16 +203,20 @@ include("navbar.html");
     }
 
     .inputBox span {
-      color: #296b8e; /* Blue */
-      margin-top: 5px; /* Reduced spacing */
+      color: #296b8e;
+      /* Blue */
+      margin-top: 5px;
+      /* Reduced spacing */
       margin-bottom: 3px;
       font-weight: 500;
       font-size: 1em;
     }
 
     .inputBox input {
-      padding: 8px; /* Reduced padding */
-      font-size: 1em; /* Smaller font size */
+      padding: 8px;
+      /* Reduced padding */
+      font-size: 1em;
+      /* Smaller font size */
       outline: none;
       border: 1px solid #333;
       border-radius: 5px;
@@ -198,19 +229,22 @@ include("navbar.html");
       border: 1px solid #333;
       border-radius: 5px;
       resize: none;
-      min-height: 150px; /* Reduced height */
+      min-height: 150px;
+      /* Reduced height */
       margin-bottom: 10px;
     }
 
     .inputBox input[type="submit"] {
-      background: #53aa43; /* Green */
+      background: #53aa43;
+      /* Green */
       color: #fff;
       border: none;
       font-size: 1em;
       max-width: 120px;
       font-weight: 500;
       cursor: pointer;
-      padding: 10px 12px; /* Reduced button size */
+      padding: 10px 12px;
+      /* Reduced button size */
       border-radius: 5px;
     }
 
@@ -220,27 +254,32 @@ include("navbar.html");
 
     /* Info Section */
     .info {
-      background: #0d3b66; /* Deep blue */
+      background: #0d3b66;
+      /* Deep blue */
       padding: 20px;
     }
 
     .info h3 {
       color: black !important;
-      font-size: 1.4em; /* Slightly smaller headers */
+      font-size: 1.4em;
+      /* Slightly smaller headers */
       margin-bottom: 15px;
     }
 
     .info .infoBox div {
       display: flex;
       align-items: center;
-      margin-bottom: 10px; /* Reduced spacing */
+      margin-bottom: 10px;
+      /* Reduced spacing */
     }
 
     .info .infoBox div span {
-      min-width: 40px; /* Smaller icons */
+      min-width: 40px;
+      /* Smaller icons */
       height: 40px;
       color: #fff;
-      background: #53aa43; /* Green */
+      background: #53aa43;
+      /* Green */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -251,7 +290,8 @@ include("navbar.html");
 
     .info .infoBox div p {
       color: black !important;
-      font-size: 1em; /* Smaller text */
+      font-size: 1em;
+      /* Smaller text */
     }
 
     /* Map Section */
@@ -267,7 +307,8 @@ include("navbar.html");
 
     /* Social Media Icons */
     .sci {
-      margin-top: 30px; /* Reduced spacing */
+      margin-top: 30px;
+      /* Reduced spacing */
       display: flex;
     }
 
@@ -278,7 +319,8 @@ include("navbar.html");
 
     .sci li a {
       color: #ccc;
-      font-size: 1.5em; /* Smaller icons */
+      font-size: 1.5em;
+      /* Smaller icons */
       transition: color 0.3s;
     }
 
@@ -293,20 +335,22 @@ include("navbar.html");
       }
 
       .contactUs {
-        padding: 10px; /* Reduced padding */
+        padding: 10px;
+        /* Reduced padding */
       }
 
       .box {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas:
-            "form"
-            "info"
-            "map";
+          "form"
+          "info"
+          "map";
       }
 
       .map {
-        min-height: 250px; /* Reduced height */
+        min-height: 250px;
+        /* Reduced height */
       }
 
       .formBox .row50 {
@@ -428,7 +472,7 @@ include("navbar.html");
           </div>
         </form>
       </div>
-      
+
       <!-- Info Box -->
       <div class="contact info">
         <h3>Contact Info</h3>
@@ -458,14 +502,18 @@ include("navbar.html");
 
       <!-- Map -->
       <div class="contact map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.481375056299!2d79.85604919392105!3d6.906103939491147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259706bfa613f%3A0xf79d7adae85305f7!2sCinnamon%20Gardens%2C%20Colombo!5e0!3m2!1sen!2slk!4v1735411581779!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.481375056299!2d79.85604919392105!3d6.906103939491147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259706bfa613f%3A0xf79d7adae85305f7!2sCinnamon%20Gardens%2C%20Colombo!5e0!3m2!1sen!2slk!4v1735411581779!5m2!1sen!2slk"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
+  </body>
+
 </html>
 <?php
 include("footer.html");
