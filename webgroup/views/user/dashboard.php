@@ -297,8 +297,9 @@ font-size: 16px;
 }
 .feature {
 height: 70px;
-font-size: 14px;
+font-size: 10px;
 margin-bottom: 0px;
+weight: 100;
 
 }
 .dashbord {
