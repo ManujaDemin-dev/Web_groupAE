@@ -105,7 +105,7 @@ $username = $_SESSION['username'];
       color: #333;
     }
     #chat_messages {
-      max-height: 570px;
+      max-height: 510px;
       overflow-y: auto;
       margin-bottom: 10px;
       padding: 10px;           /* Adds some inner spacing for better readability */
