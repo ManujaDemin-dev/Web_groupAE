@@ -41,12 +41,12 @@ $username = $_SESSION['username'];
       max-width: 800px;
       padding: 0 0 10 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background: #fff;
+      /* background: #fff; */
       border-radius: 8px;
       margin-bottom: 10px;
       margin-top: 5px;
       margin-bottom:5px;
-      background-color:red;
+      background:#90D076;
     }
     #title_container p {
       text-align: center;
@@ -92,7 +92,7 @@ $username = $_SESSION['username'];
     .message_user {
       font-weight: bold;
       margin-bottom: 5px;
-      color:rgb(196, 24, 208);
+      color:rgb(12, 118, 176);
     }
     .message_text {
       margin: 0;
@@ -108,7 +108,14 @@ $username = $_SESSION['username'];
       max-height: 570px;
       overflow-y: auto;
       margin-bottom: 10px;
+      padding: 10px;           /* Adds some inner spacing for better readability */
+      border: 1px solid #ddd; /* Adds a border around the chat messages container */
+      border-radius: 8px;     /* Rounds the corners for a modern look */
+      background-color: #f4f4f4; /* Gives a light background color to separate it visually */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
     }
+
+
     .creadit {
       text-align: right;
       
@@ -224,9 +231,11 @@ $username = $_SESSION['username'];
                   <p class="message_text">${msg.message}</p>
                 `;
                 chatMessages.appendChild(messageEl);
+
               });
 
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+
           }
         });
       }
