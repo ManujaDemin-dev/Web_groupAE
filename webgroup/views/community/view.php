@@ -123,10 +123,10 @@ include '../userhead.html';
                         <?= htmlspecialchars($file['name_for_file']) ?>
                     </a> (<?= htmlspecialchars($file['file_type']) ?>)
                     <p><?= htmlspecialchars($file['description']) ?></p>
-                    <p>by <?= htmlspecialchars($file['uploader_name']) ?></p>
+                    <p>by <a href="../user/userprofile.php?name=<?= urlencode($file['uploader_name']) ?>"><?= htmlspecialchars($file['uploader_name']) ?></a></p>
                     <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
                     
-                    
+                     
                     
                 </div>
 

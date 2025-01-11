@@ -8,9 +8,15 @@ if (!isLoggedIn()) {
 }
 
 $username = $_SESSION['username'];
-$friend = $_GET['user'];
+$User_id = $_SESSION['user_id'];
 
-$query = "SELECT * FROM users WHERE name = :friend";
+
+$thatuser = $_GET['name'];
+
+echo"that user is: $thatuser";
+
+$query = "SELECT * FROM users WHERE name = :thatuser";
+
 
 
 

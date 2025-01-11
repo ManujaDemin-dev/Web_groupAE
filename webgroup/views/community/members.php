@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
         <tbody>
             <?php foreach ($members as $member): ?>
             <tr>
-                <td><?= htmlspecialchars($member['name']) ?></td>
+            <td><a href="../user/userprofile.php?name=<?= urlencode($member['name']) ?>"><?= htmlspecialchars($member['name']) ?></a></td>
                 <td><?= htmlspecialchars($member['email']) ?></td>
                 <td>
                     <?php if ($isOwner && $member['user_id'] != $owner['current_owner_id']): ?>
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
                             <button type="submit">Remove</button>
                         </form>
                     <?php elseif ($member['user_id'] == $_SESSION['user_id']): ?>
-                        (You)
+                        You
                     <?php else: ?>
                         
                     <?php endif; ?>
@@ -91,6 +91,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="view.php?community_id=<?= $community_id ?>">Back to Community</a>
+    <form method="POST" action = "./view.php">
+        <input type="hidden" name="community_id" value="<?= $community_id ?>">
+        <button type="submit">Back to community</button>
+    </form>
 </body>
 </html>
