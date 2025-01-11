@@ -241,23 +241,67 @@ h1 {
         }
 
         @media (max-width: 600px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; 
-    }
 
-    .community-card-alt {
-        height: 250px; 
-       
-    }
-    .welcome p{
-        font-size: 19px;
-        font-weight: 400;
-        line-height: 25px;
-    }
-    .feature a{
-        font-size: 19px;
-    }
+.container {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+}
+
+.community-card-alt {
+    height: 250px; 
+   
+}
+
+} 
+
+
+@media (max-width: 768px){
+.welcome h2{
+    font-size: 40px;
+}
+.welcome p{
+    font-size: 21px;
+    font-weight:500;
+}
+.welcome{
+    height: 150px;
+}
+.feature{
+    height: 80px;
+    font-size: 16px;
+}
+.feature a{
+    font-size: 19px;
+}
+.search-bar{
+flex-direction: column;
+}
+.search{
+width: 100%;
+}
+.search input{
+width:90%;
+}
+}
+
+
+
+@media (max-width: 576px){
+.welcome h2{
+font-size: 35px;
+}
+.welcome p{
+font-size: 16px;
+}
+.feature {
+height: 70px;
+font-size: 14px;
+}
+.feature a{
+font-size: 16px;
+}
+ 
+
 }
 
     </style>
@@ -284,11 +328,9 @@ if ($role == 'admin') {
 
 <div class="search-bar">
     <h2>Your Communities</h2>
-    <form method="GET" action="">
-        <div class="search">
+    <form method="GET" action="" class="search">
             <input type="text" name="search" placeholder="Search communities" value="<?= htmlspecialchars($searchQuery) ?>">
             <button type="submit" class="search-button">Enter</button>
-        </div>
     </form>
 </div>
 
