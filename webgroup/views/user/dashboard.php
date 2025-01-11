@@ -246,6 +246,41 @@ h1 {
         font-size: 16px;
     }
     .feature a{
+        font-size: 19px;
+    }
+}
+
+        @media (max-width: 600px) {
+            .feature {
+                font-size: 14px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .community-card-alt {
+                height: 230px;
+            }
+
+            .welcome p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+            }
+
+            .search input {
+                max-width: 100%;
+                max-width: 400px; 
+    
+            }
+
+            .search-button {
+                width: 30%;
+                font-size: 16px;
+            }
+        }
         font-size: 18px;
     }
     .search-bar{
