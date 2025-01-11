@@ -99,52 +99,53 @@ h1 {
     justify-content: center;
 }
 
-.feature a{
-    text-decoration: none;
-    color: hsl(0, 0%, 100%);
-    font-family: Poppins;
-    font-size: 23px;
-}
+        .edit {
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 16px;
+        }
 
-.feature a:hover{
-    text-decoration:underline;
-}
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            padding: 30px 0;
+            flex-wrap: wrap; 
+        }
 
+        .search-bar h2 {
+            margin-top: 10px;
+            font-size: 25px;
+        }
 
-/* Search Box */
-.search-bar{
-    display: flex;
-    gap: 10px;
-    padding: 30px 0;
-}
+        .search {
+            display: flex;
+            gap: 10px;
+            flex: 2;
+            justify-content: center;
+           
+        }
 
-.search {
-    flex: 2; /* Make search box take up twice the space */
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
+        .search input {
+            width: 100%;
+            max-width: 400px;
+            height: 30px;
+            border: 2px solid #296b8e;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
 
-.search input {
-    width: 60%;
-    height: 20px;
-    border: 2px solid #296b8e;
-    border-radius: 20px;
-    padding: 5px;
-    font-size: 16px;
-}
-.search-button{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #296b8e;
-    border: none;
-    width: 100px;
-    height: 40px;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-}
+        .search-button {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #296b8e;
+            border: none;
+            width: 100px;
+            height: 40px;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+        }
 
 .search-button:hover{
     background-color: #0d3b66
@@ -281,6 +282,37 @@ h1 {
 
 
 
+        @media (max-width: 600px) {
+            .feature {
+                font-size: 14px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .community-card-alt {
+                height: 230px;
+            }
+
+            .welcome p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+            }
+
+            .search input {
+                max-width: 100%;
+                max-width: 400px; 
+    
+            }
+
+            .search-button {
+                width: 30%;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -303,18 +335,14 @@ if ($role == 'admin') {
 ?>
 </div>
 
-<div class="search-bar">
-    <h2>Your Communities</h2>
-    <form method="GET" action="" class="search">
-            <input type="text" name="search" placeholder="Search communities" value="<?= htmlspecialchars($searchQuery) ?>">
-            <button type="submit" class="search-button">Enter</button>
-    </form>
-</div>
-
-
-
-
-<!--cards-->
+        <div class="search-bar">
+            <h2>Your Communities</h2>
+            <form method="GET" action="" class="search">
+                    <input type="text" name="search" placeholder="Search communities"
+                        value="<?= htmlspecialchars($searchQuery) ?>">
+                    <button type="submit" class="search-button">Enter</button>
+            </form>
+        </div>
 
 <div class="container">
 
