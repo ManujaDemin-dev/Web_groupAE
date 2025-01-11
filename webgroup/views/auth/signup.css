@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+.signup-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.signup-container h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-container input,
+.signup-container select {
+    width: 92%;
+    padding: 13px;
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.signup-container .password-container {
+    position: relative;
+}
+
+.signup-container .password-container input {
+    width: 92%;
+}
+
+.signup-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #53AA43;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-container button:hover {
+    background: #296b8e;
+}
+
+.signup-container p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+.signup-container .login-help button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.signup-container .login-help button a {
+    text-decoration: none;
+    color: #6a11cb;
+    font-weight: bold;
+}
+
+.signup-container .login-help button:hover a {
+    color: red;
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .signup-container h2 {
+        font-size: 22px;
+    }
+}
