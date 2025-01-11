@@ -133,7 +133,7 @@ h1 {
 .feature a{
     text-decoration: none;
     color: hsl(0, 0%, 100%);
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 23px;
 }
 
@@ -259,7 +259,7 @@ h1 {
 
 @media (max-width: 768px){
 .welcome h2{
-    font-size: 17px;
+    font-size: 40px;
 }
 .welcome p{
     font-size: 18px;
@@ -269,8 +269,8 @@ h1 {
     height: 150px;
 }
 .feature{
-    height: 80px;
-    font-size: 16px;
+    height: 70px;
+    font-size: 30px;
 }
 .feature a{
     font-size: 15px;
