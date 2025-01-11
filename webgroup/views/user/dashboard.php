@@ -59,14 +59,14 @@ body {
     background-color: #fff;
     margin: 0;
     padding: 0;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .dashboard {
     padding: 20px;
     color: #0d3b66;
     background-color: #fff;
-    margin: 0 10px;
+    margin: 0 0px;
    
    
 }
@@ -119,7 +119,7 @@ h1 {
     border: none;
     background:linear-gradient(to right, #53aa43, #f0d78c);
     flex: 1; /* Make all items in a row equal width */
-    height: 100px;
+    height:80px;
     font-size: larger;
     text-align: center;
     color: hsl(0, 0%, 100%);
@@ -127,6 +127,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .feature a{
@@ -144,7 +145,8 @@ h1 {
     padding: 30px 0;
 }
 .search-bar h2{
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     font-size: 25px;
 }
 .search {
@@ -257,10 +259,10 @@ h1 {
 
 @media (max-width: 768px){
 .welcome h2{
-    font-size: 40px;
+    font-size: 17px;
 }
 .welcome p{
-    font-size: 21px;
+    font-size: 18px;
     font-weight:500;
 }
 .welcome{
@@ -271,7 +273,7 @@ h1 {
     font-size: 16px;
 }
 .feature a{
-    font-size: 19px;
+    font-size: 15px;
 }
 .search-bar{
 flex-direction: column;
@@ -296,11 +298,20 @@ font-size: 16px;
 .feature {
 height: 70px;
 font-size: 14px;
+margin-bottom: 0px;
+
+}
+.dashbord {
+    padding: 5px;
 }
 .feature a{
 font-size: 16px;
 }
- 
+.search-bar h2{
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
 
 }
 
