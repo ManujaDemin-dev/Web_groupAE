@@ -273,7 +273,7 @@ h1 {
     font-size: 30px;
 }
 .feature a{
-    font-size: 15px;
+    font-size: 20px;
 }
 .search-bar{
 flex-direction: column;
@@ -294,6 +294,7 @@ font-size: 35px;
 }
 .welcome p{
 font-size: 16px;
+line-height: 1.5;
 }
 .feature {
 height: 70px;
