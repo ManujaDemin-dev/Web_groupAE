@@ -6,11 +6,10 @@ include '../../includes/functions.php';
 if (!isLoggedIn()) {
     redirect('../../index.php');
 }
-
-//$community_id = $_GET['community_id'];
+$community_id = $_POST['community_id'];
 $username = $_SESSION['username'];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name_for_file'])) {
     $community_id = $_POST['community_id'];
     if (!empty($_FILES['file']['name'])) {
         $file = $_FILES['file'];
@@ -59,7 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
             ]);
 
-            redirect("./view.php?community_id=$community_id");
+            echo "<form id='redirectForm' method='POST' action='./view.php'>
+            <input type='hidden' name='community_id' value='" . htmlspecialchars($community_id) . "'>
+        </form>
+        <script>document.getElementById('redirectForm').submit();</script>";
         } else {
             $error = "File upload failed.";
         }
@@ -78,6 +80,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      <p>in this system if you are upload a imges it will shows only the wall and other files will be shows in commu.</p>
     <h1>Upload a File</h1>
     <form method="POST" enctype="multipart/form-data">
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['community_id'])) {
+            Echo "<input type='hidden' name='community_id' value='" . $_POST['community_id'] . "'>";
+        }      
+        ?>
         <label>Choose a File</label>
         <input type="file" name="file" required><br>
         <label>Name </label><br>
@@ -87,5 +94,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Upload</button>
     </form>
     <?php if (isset($error)) echo "<p>$error</p>"; ?>
+
+
+    <script>
+        function confirmJoin(event, form) {
+            event.preventDefault(); 
+             {
+                form.submit(); 
+            }
+        }
+    </script>
 </body>
 </html>
