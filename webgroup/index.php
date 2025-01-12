@@ -31,114 +31,20 @@ include("navbar.html");
     </div>
     <div class="title-container">
         <div class="title-description">
-            &nbsp; &nbsp; WELCOME TO <br>
-            <p class="titleDesName"> &nbsp; &nbsp; Skill<span class="desname">Up</span></p>
+            <p class="welcome">
+                WELCOME TO <br>
+            </p>
+            <p class="titleDesName">Skill<span class="desname">Up</span></p>
         </div>
         <div class="title-details">
             <p>Join A Community, Ignite Your Learning Journey</p>
-            <p>Discover a vibrant platform where students connect, collaborate, and grow together. Engage with like-minded peers and unlock your potential through shared knowledge and experiences.</p>
+            <p>Discover a vibrant platform where students connect, collaborate, and grow together. <br> Engage with like-minded peers and unlock your potential through shared knowledge and experiences.</p>
         </div>
         <div class="join-button-container">
             <button class="join-button">Join Now</button>
         </div>
     </div>
-
-    <head>
-        <style>
-            .all-c {
-                font-family: poppins;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-            }
-
-            .container {
-                display: flex;
-                max-width: 1200px;
-                background-color: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            .content {
-                padding: 40px;
-                flex: 1;
-            }
-
-            .content h1 {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .content p {
-                font-size: 1rem;
-                margin-bottom: 20px;
-                color: #555;
-                line-height: 1.6;
-            }
-
-            .sections {
-                display: flex;
-                gap: 20px;
-                margin-bottom: 20px;
-            }
-
-            .section {
-                flex: 1;
-            }
-
-            .section h2 {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-
-            .section p {
-                font-size: 0.9rem;
-                color: #666;
-            }
-
-            .buttons {
-                display: flex;
-                gap: 10px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                background: linear-gradient(45deg, #90D076, #F0D78C);
-                transition: background 0.3s ease, transform 0.2s ease;
-            }
-
-            .btn:hover {
-                background: linear-gradient(45deg, #75b060, #d7bc74);
-                transform: scale(1.05);
-            }
-
-            .image-placeholder {
-                flex: 1;
-                background-color: #e0e0e0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .image-placeholder img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-            }
-        </style>
-    </head>
-
-    <body>
+    
         <div class="all-c">
 
             <div class="container">
@@ -163,7 +69,7 @@ include("navbar.html");
                     </div>
                 </div>
                 <div class="image-placeholder">
-                    <img src="placeholder.png" alt="Placeholder image" />
+                    <img src="Thumbnails-3_aZkToGu.webp" alt="Placeholder image" />
                 </div>
             </div>
         </div>
