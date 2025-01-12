@@ -6,7 +6,7 @@ include '../../includes/functions.php';
 if (!isLoggedIn()) {
     redirect('../../index.php');
 }
-
+include '../usernav.php';
 $community_id = $_GET['community_id'];
 
 // Fetch current owner of the community

@@ -44,7 +44,7 @@ $communities = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-include '../userhead.html'; // Navbar
+include '../usernav.php'; // Navbar
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ body {
     background-color: #fff;
     margin: 0;
     padding: 0;
-    margin-top: 50px;
+    
 }
 
 .dashboard {
@@ -159,7 +159,7 @@ h1 {
 
 .search input {
     width: 60%;
-    height: 20px;
+    height: 35px;
     border: 2px solid #296b8e;
     border-radius: 10px;
     padding: 5px;
@@ -189,7 +189,8 @@ h1 {
             gap: 20px;
             margin: 0 auto;
             width: 95%; 
-            max-width: 1300px;
+            max-width: 1250px;
+            
             
         }
 
@@ -202,7 +203,7 @@ h1 {
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            border: 3px solid black;
+            border: 2px solid black;
             display: flex;
             flex-direction: column;
             background: #fff;
@@ -217,12 +218,12 @@ h1 {
 
        
         .card-header {
-            background: #44ff15;
+           
             height: 30px;
         }
 
         .card-footer {
-            background-color: #44ff15;
+           
             height: 30px;
             margin-top: auto;
         }
@@ -236,26 +237,94 @@ h1 {
         .h33 {
             font-size: 1.2em;
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
         .pp {
             margin-top: 10px;
+            font-family: 'Arial', sans-serif;
         }
 
         @media (max-width: 600px) {
 
 .container {
     grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    gap: 9px; 
+    margin: 0 auto;
+    width: 98%;
+
 }
 
 .community-card-alt {
-    height: 250px; 
+    height: 230px; 
    
 }
+ 
 
-} 
+.card-header {
+           
+           height: 12px;
+       }
 
+       .card-footer {
+          
+           height: 12px;
+          
+       }
+
+       .card-body {
+           padding: 9px;
+           text-align: center;
+           flex-grow: 1;
+       }
+
+       .h33 {
+           font-size: 0.8em;
+           margin: 0;
+           
+       }
+
+       .pp {
+           margin-top: 5px;
+           font-size: 0.8em;
+       }
+
+
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card-header {
+           
+           height: 17px;
+       }
+
+       .card-footer {
+          
+           height: 17px;
+          
+       }
+
+       .card-body {
+           padding: 10px;
+           text-align: center;
+           flex-grow: 1;
+       }
+
+       .h33 {
+           font-size: 1.2em;
+           margin: 0;
+           
+       }
+
+       .pp {
+           margin-top: 10px;
+           font-size: 1em;
+       }
+    
+}
 
 @media (max-width: 768px){
 .welcome h2{
@@ -282,11 +351,10 @@ flex-direction: column;
 width: 100%;
 }
 .search input{
-width:90%;
+width:80%;
+height: 30px;
 }
 }
-
-
 
 @media (max-width: 576px){
 .welcome h2{
@@ -320,6 +388,8 @@ font-size: 16px;
     </style>
 </head>
 <body>
+
+
 <div class="dashboard">
 
 <h1>Dashboard</h1>

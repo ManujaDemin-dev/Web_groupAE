@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['community_id'])) {
     $_SESSION['message'] = $message;
 }
 
-include 'views/userhead.html';
+include 'views/usernav.php';
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +82,8 @@ include 'views/userhead.html';
     <title>Communities</title>
     <style>
         body {
-            margin-top: 100px;
+            margin: 0;
+            padding: 0;
         }
         .message {
             color: green;

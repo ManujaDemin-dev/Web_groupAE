@@ -6,7 +6,7 @@ include 'includes/functions.php';
 if (!isLoggedIn()) {
     redirect('index.php');
 }
-include 'views/userhead.html';
+include 'views/usernav.php';
 
 // Fetch all categories
 $query = "SELECT * FROM categories";
@@ -24,7 +24,8 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
             box-sizing: border-box;
         }
     body {
-        margin-top: 100px;
+        margin: 0;
+        padding: 0;
         font-family: Arial, sans-serif;
     }
     .grid-container {

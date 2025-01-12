@@ -97,7 +97,7 @@ $jsonData = json_encode($data);
     }
 }
 
-include '../userhead.html';
+include '../usernav.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -106,8 +106,9 @@ include '../userhead.html';
     <style>
   
         body {
-            display: flex;
             
+            margin: 0;
+            padding: 0;
             
         }
 
@@ -118,8 +119,7 @@ include '../userhead.html';
             flex-direction: column;
             padding: 20px;
             border-radius: 10px;
-            
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
             width: 380px;
         }
 

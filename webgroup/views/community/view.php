@@ -6,7 +6,7 @@ include '../../includes/functions.php';
 if (!isLoggedIn()) {
     redirect('../../index.php');
 }
-
+include '../usernav.php';
 
 if (isset($_SESSION['message'])) {
     echo "<p>" . htmlspecialchars($_SESSION['message']) . "</p>";
@@ -69,7 +69,7 @@ if ($searchTerm) {
 
 $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
 
-include '../userhead.html';
+
 //include '../communityhead.html' // navbar  2  we can add nav bar as bottom bar or side bar
 
 // normal nav bar
@@ -83,7 +83,9 @@ include '../userhead.html';
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin-top: 100px;
+           
+            margin: 0;
+            padding: 0;
         }
         input[type="text"] {
             padding: 8px;

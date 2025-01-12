@@ -6,6 +6,7 @@ include '../../includes/functions.php';
 if (!isLoggedIn()) {
     redirect('../../index.php');
 }
+include './../usernav.php';
 
 $username = $_SESSION['username'];
 $User_id = $_SESSION['user_id'];
