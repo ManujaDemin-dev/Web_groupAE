@@ -7,9 +7,15 @@ if (!isLoggedIn()) {
     redirect('../../index.php');
 }
 
-$community_id = $_GET['community_id'];
-$community_name = $_GET['community_name'];
-$username = $_SESSION['username'];
+// $username = $_SESSION['username'];
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $community_id = $_POST['community_id'];
+  $community_name = $_POST['community_name'];
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +134,10 @@ $username = $_SESSION['username'];
   </style>
 </head>
 <body>
-  <button class="back" onclick="history.back()">Back to the community</button>
+  <form action="view.php" method="POST">
+    <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+    <button type="submit">BackToCommunity</button>
+  </form>
   <div id="title_container">
     <p>Welcome to the <?php echo $community_name;?> Chat, <span id="user_name"></span></p>
   </div>
@@ -162,7 +171,7 @@ $username = $_SESSION['username'];
     const db = getDatabase(app);
     // meken thama firebase ekata names id yanne
     const username = "<?php echo addslashes($_SESSION['username']); ?>";
-    const communityId = "<?php echo addslashes($_GET['community_id']); ?>";
+    const communityId = "<?php echo addslashes($_POST['community_id']); ?>";
     document.getElementById("user_name").textContent = username;
    //meka thama e class eka chat app  ara 4 15 watune  methanin 
     class ChatApp {

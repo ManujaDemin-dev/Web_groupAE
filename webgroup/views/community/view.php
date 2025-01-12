@@ -13,6 +13,8 @@ if (isset($_SESSION['message'])) {
     unset($_SESSION['message']); 
 }
 
+// $username = $_SESSION['username'];
+
 $community_id = $_POST['community_id'];
 $searchTerm = isset($_POST['search']) ? trim($_POST['search']) : ''; 
 
@@ -108,9 +110,16 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
     </form>
 
     <form action="./members.php" method="GET">
-        <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+        <input type="hidden" name="community_id" value="<?= ($community_id) ?>">
         <button type="submit">Community members</button>
     </form>
+
+    <form action="chat.php" method="POST">
+        <input type="hidden" name="community_id" value="<?= ($community_id) ?>">
+        <input type="hidden" name="community_name" value="<?= ($community['c_name']) ?>">
+        <button type="submit">Group Chat</button>
+    </form>
+
 
     <h2>Files</h2>
    
