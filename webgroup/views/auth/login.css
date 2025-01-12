@@ -1,0 +1,363 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto);
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.panda {
+    position: relative;
+    width: 200px;
+    margin: 50px auto;
+}
+
+.face {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 50px auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0, 0.15);
+    z-index: 50;
+    position: relative;
+}
+
+.ear,
+.ear:after {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #000;
+    z-index: 5;
+    border: 15px solid #fff;
+    left: -15px;
+    top: -15px;
+    border-radius: 100%;
+}
+
+.ear:after {
+    content: '';
+    left: 125px;
+}
+
+.eye-shade {
+    background: #000;
+    width: 50px;
+    height: 80px;
+    margin: 10px;
+    position: absolute;
+    top: 35px;
+    left: 25px;
+    transform: rotate(220deg);
+    border-radius: 25px/20px 30px 35px 40px;
+}
+
+.eye-shade.rgt {
+    transform: rotate(140deg);
+    left: 105px;
+}
+
+.eye-white {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    left: 40px;
+    top: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 500;
+}
+
+.eye-white.rgt {
+    right: 40px;
+    left: auto;
+}
+
+.eye-ball {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 20px;
+    top: 20px;
+    max-width: 10px;
+    max-height: 10px;
+    transition: 0.1s;
+}
+
+.eye-ball:after {
+    content: '';
+    background: #000;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 100%;
+}
+
+.nose {
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    bottom: 40px;
+    background: #000;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50px 20px/30px 15px;
+    transform: rotate(15deg);
+}
+
+.body {
+    background: #fff;
+    width: 250px;
+    height: 282px;
+    position: absolute;
+    top: 200px;
+    left: -20px;
+    border-radius: 100px 100px 100px 100px/126px 126px 96px 96px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hand,
+.hand:after,
+.hand:before {
+    width: 40px;
+    height: 30px;
+    border-radius: 50px;
+    background: #000;
+    margin: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 70px;
+    left: -25px;
+}
+
+.hand:after,
+.hand:before {
+    content: '';
+    left: -5px;
+    top: 11px;
+}
+
+.hand:before {
+    top: 26px;
+}
+
+.hand.rgt,
+.rgt.hand:after,
+.rgt.hand:before {
+    left: auto;
+    right: -25px;
+}
+
+.hand.rgt:after,
+.hand.rgt:before {
+    left: auto;
+    right: -5px;
+}
+
+.foot {
+    top: 360px;
+    left: -80px;
+    position: absolute;
+    background: #000;
+    width: 82px;
+    height: 120px;
+    z-index: 2000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 40px 40px 39px 40px/26px 26px 63px 63px;
+}
+
+.foot:after {
+    content: '';
+    width: 55px;
+    height: 65px;
+    background: #222;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+    margin: auto;
+    border-radius: 100%;
+    position: absolute;
+}
+
+.foot .finger,
+.foot .finger:after,
+.foot .finger:before {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background: #222;
+    border-radius: 100%;
+    top: 10px;
+    right: 5px;
+}
+
+.foot .finger:after,
+.foot .finger:before {
+    content: '';
+    right: 30px;
+    width: 20px;
+    top: 0;
+}
+
+.foot .finger:before {
+    right: 55px;
+    top: 5px;
+}
+
+.foot.rgt {
+    left: auto;
+    right: -80px;
+}
+
+.foot.rgt .finger,
+.foot.rgt .finger:after,
+.foot.rgt .finger:before {
+    left: 5px;
+    right: auto;
+}
+
+.foot.rgt .finger:after {
+    left: 30px;
+    right: auto;
+}
+
+.foot.rgt .finger:before {
+    left: 55px;
+    right: auto;
+}
+
+.toggle-password {
+    position: absolute;
+    /* Position the eye icon at the right corner */
+    right: 10px;
+    /* Distance from the right edge of the password input */
+    top: 50%;
+    /* Center the icon vertically */
+    transform: translateY(-50%);
+    /* Correct for vertical centering */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    z-index: 10;
+}
+
+form {
+    display: none;
+    max-width: 400px;
+    padding: 20px 40px;
+    background: #fff;
+    height: 300px;
+    margin: auto;
+    display: block;
+    z-index: 500;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    border: 1px solid #eee;
+    position: relative;
+}
+
+form.up {
+    -webkit-transform: translateY(-180px);
+    transform: translateY(-180deg);
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    border: 1px solid #53AA43;
+    border-radius: 8px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 50px #53AA43 inset;
+}
+
+.btn:hover {
+    box-shadow: 0 0 #53AA43 inset;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn:focus {
+    outline: none
+}
+
+.form-group {
+    position: relative;
+    font-size: 15px;
+    color: #666;
+}
+
+.form-group+.form-group {
+    margin-top: 20px;
+}
+
+.form-group .form-label {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 5px;
+    transition: 0.3s;
+}
+
+.form-group .form-control {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    background: none;
+    height: 35px;
+    border: none;
+    transition: 0.3s;
+    border-bottom: 1px solid #777;
+    color: #555;
+    padding: 5px 0;
+}
+
+.form-group .form-control:invalid {
+    outline: none;
+}
+
+.form-group .form-control:focus,
+.form-group .form-control:valid {
+    outline: none;
+    box-shadow: 0 1px #53AA43;
+    border-color: #53AA43;
+}
+
+.form-group .form-control:focus+.form-label,
+.form-group .form-control:valid+.form-label {
+    font-size: 12px;
+    color: #53AA43;
+    transform: translateY(-15px);
+}
+
+@keyframes eye-blink {
+    to {
+        height: 30px;
+    }
+}
