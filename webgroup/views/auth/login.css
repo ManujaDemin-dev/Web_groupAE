@@ -287,12 +287,13 @@ h1 {
     cursor: pointer;
     transition: 0.3s;
     color: #fff;
+    font-size: 16px;
     font-weight: 700;
     box-shadow: 0 50px #53AA43 inset;
 }
 .btn:hover{
     box-shadow: 0 0 #53AA43 inset;
-    color: #000;
+    color: #fff;
     font-weight: 500;
 }
 .btn:focus{
