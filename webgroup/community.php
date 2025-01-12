@@ -203,6 +203,7 @@ include 'views/usernav.php';
     
     <form method="GET" action="">
         <input  type="hidden" name="category_id" value="<?= htmlspecialchars($category_id) ?>">
+        <input type="hidden" name="category_name" value="<?= htmlspecialchars($category_name) ?>">
         <input class= "input" type="text" name="search" placeholder="Search communities..." value="<?= htmlspecialchars($searchTerm) ?>">
         <button class="search" type="submit">Search</button>
     </form>

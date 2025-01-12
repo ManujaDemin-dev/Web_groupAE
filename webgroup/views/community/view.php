@@ -119,8 +119,30 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
         <input type="hidden" name="community_name" value="<?= ($community['c_name']) ?>">
         <button type="submit">Group Chat</button>
     </form>
+    <form method="POST" action="./gallery.php">
+        <input type="hidden" name="community_id" value="<?= $community_id ?>">
+        <button type="submit">Gallery</button>
+        </form>
+    
+        <form method="POST" action="./leave_community.php">
+    <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+    <button type="submit">Leave Community</button>
+</form>
 
 
+
+
+        <?php
+    $current_owner = $community['current_owner_id']; 
+    //echo "Current owner is: $current_owner";
+
+    if ($current_owner == $_SESSION['user_id']) {
+        echo '<form method="POST" action="./editcommunity.php">
+            <input type="hidden" name="community_id" value="' . htmlspecialchars($community_id) . '">
+            <button type="submit">Edit Community</button>
+            </form>';
+    }
+    ?>
     <h2>Files</h2>
    
     <form method="POST" action="">
@@ -156,38 +178,15 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
 
   
 
-   <a href="leave.php?community_id=<?= $community_id ?>">Leave Community</a>
+  
    <a href="upload.php?community_id=<?= $community_id ?>">Upload Files</a>
-    <a href="delete.php?community_id=<?= $community_id ?>">Delete Community</a>
-    <a href="index.php">All Communities</a>
-   mokada karnne owner nam thaw nav bar ekak hari pannel ekek hari dann wenawa button set ekk.meyana widiyat comment dann wen na. kamk na<br> edit communit / del commu / del files/  owener change
-    <a href="edit.php?community_id=<?= $community_id ?>">Edit Community</a>
+  
+    
     <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['c_name']) ?>">Group Chat</a>
     
     
-    <form method="POST" action="./gallery.php">
-        <input type="hidden" name="community_id" value="<?= $community_id ?>">
-        <button type="submit">Gallery</button>
-        </form>
     
-        <form method="POST" action="./leave_community.php">
-    <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
-    <button type="submit">Leave Community</button>
-</form>
 
-<?php
-$current_owner = $community['current_owner_id']; 
-echo "Current owner is: $current_owner";
-
-if ($current_owner == $_SESSION['user_id']) {
-    echo '<form method="POST" action="./editcommunity.php">
-        <input type="hidden" name="community_id" value="' . htmlspecialchars($community_id) . '">
-        <button type="submit">Edit Community</button>
-        </form>';
-}
-?>
-
-
-    <a href="members.php?community_id=<?= $community_id ?>">Community Members</a>
+  //  <a href="members.php?community_id=<?= $community_id ?>">Community Members</a>
 </body>
 </html>
