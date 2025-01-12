@@ -106,6 +106,12 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
         <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
         <button type="submit">Upload a File</button>
     </form>
+
+    <form action="./members.php" method="GET">
+        <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
+        <button type="submit">Community members</button>
+    </form>
+
     <h2>Files</h2>
    
     <form method="POST" action="">

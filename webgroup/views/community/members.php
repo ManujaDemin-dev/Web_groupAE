@@ -7,7 +7,9 @@ if (!isLoggedIn()) {
     redirect('../../index.php');
 }
 include '../usernav.php';
+//if($_SERVER['REQUEST_METHOD'] == 'GET'){
 $community_id = $_GET['community_id'];
+
 
 // Fetch current owner of the community
 $ownerQuery = "SELECT current_owner_id FROM communities WHERE community_id = :community_id";
