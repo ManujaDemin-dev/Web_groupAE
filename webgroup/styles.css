@@ -82,37 +82,76 @@ body {
 .machn:hover{
     height: 500px;
 }
+.title-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
 
-.titleDes{
-    width: 600px;
-    line-height: 12px;
-    font-weight: 800;
-    font-size: 64px;
-    color: #474646;
-}
+  .title-description {
+    flex: 1;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
-.titleAdds{
-    font-weight: 700;
-    font-size: 24px;
-    color: #474646;
-}
+  .title-description .titleDesName {
+    font-size: 2rem;
+    color: #007bff;
+  }
 
-.titleDesName{
-    font-weight: 800;
-    font-size: 64px;
-    color: #90D076;
+  .title-details {
+    flex: 2;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+  }
 
-}
+  .title-details p {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
 
-.desname{
-    color: #0D3B66;
-}
+  .join-button-container {
+    flex: 1;
+    text-align: center;
+  }
 
-.titleAdds1{
-    width: 550px;
-    font-weight: 300;
-    font-size: 15px;
-}
+  .join-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .join-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .title-description, .title-details, .join-button-container {
+      flex: 1 1 100%;
+    }
+
+    .title-description {
+      font-size: 1.2rem;
+    }
+
+    .title-details {
+      font-size: 0.9rem;
+    }
+  }
 
 
 .btnindex{
