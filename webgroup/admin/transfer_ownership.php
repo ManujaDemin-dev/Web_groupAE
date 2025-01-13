@@ -4,9 +4,12 @@ include '../includes/db.php';
 include '../includes/functions.php';
 
 
-// if (!isAdmin()) {
-//      redirect('../index.php');
-//  }
+$role = $_SESSION['role'];
+
+if ($role == 'user') {
+    redirect('//google.com');
+    
+}
 
 $community_id = $_GET['community_id'];
 
@@ -15,11 +18,9 @@ $membersStmt = $pdo->prepare($membersQuery);
 $membersStmt->execute(['community_id' => $community_id]);
 $members = $membersStmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Handle the form submission to transfer ownership
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $newOwnerId = $_POST['new_owner_id'];
 
-    // Update the community's current owner
     $updateQuery = "
         UPDATE communities 
         SET current_owner_id = :new_owner_id 
@@ -40,13 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body {
             font-family: Arial, sans-serif;
+
         }
         form {
             margin: 20px 0;
         }
-        select, button {
+        select {
             padding: 10px;
             margin: 5px 0;
+            width: 25%;
+            font-size: 15px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px 0;
+
         }
         a {
             text-decoration: none;
@@ -57,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Transfer Ownership</h1>
     <form method="POST">
-        <label for="new_owner_id">Select New Owner:</label>
+        <label for="new_owner_id">Select New Owner</label>
         <select id="new_owner_id" name="new_owner_id" required>
             <?php foreach ($members as $member): ?>
                 <option value="<?= htmlspecialchars($member['user_id']) ?>">

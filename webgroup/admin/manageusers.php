@@ -35,26 +35,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         redirect('manageusers.php');
     }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Manage Users</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .table {
-            margin-top: 20px;
-            width: 90%;
-            border-collapse: collapse;
-        }
-       
-    </style>
+    <link rel="stylesheet" href="./adminstyle1.css">
 </head>
 <body>
     <h1>Manage Users</h1>
+    <a class="navbtn" href="manageusers.php">Manage Users</a>
+    <a class="navbtn" href="managecommunitie.php">Manage Community</a>
+    <a class="navbtn" href="admin.php">Admin Pannel</a>
+
+
     <table class="table">
+
         <thead>
             <tr>
                 <th>ID</th>
@@ -85,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td>
                     <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');" style="display: inline-block;">
                         <input type="hidden" name="user_id" value="<?= htmlspecialchars($user['user_id']) ?>">
-                        <button type="submit" name="delete_user">Delete</button>
+                        <button class="btdel" type="submit" name="delete_user">Delete</button>
                     </form>
                 </td>
             </tr>

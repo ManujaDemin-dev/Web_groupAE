@@ -10,6 +10,7 @@ if ($role == 'user') {
     
 }
 
+include '../views/usernav.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +18,28 @@ if ($role == 'user') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Admin pannel</title>
+    <style>
+        .navbtn{
+            background-color: #0d3b66;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+           
+            cursor: pointer;
+        }
+        
+    </style>
 </head>
 <body>
     <h1>Admin Dashboard</h1>
-    <p>Welcome, <?php echo $_SESSION['username']; ?></p>
-    <p><a href="manageusers.php">Manage Users</a></p>
-    <p><a href="managecommunitie.php">Manage Community</a></p>
+    <p>Welcome, <?php echo $_SESSION['username'];?> to Admin Pannel </p>
+    <a class="navbtn" href="manageusers.php">Manage Users</a>
+    <a class="navbtn" href="managecommunitie.php">Manage Community</a>
     
 </body>
 </html>
