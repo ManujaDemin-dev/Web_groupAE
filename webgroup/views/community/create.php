@@ -178,7 +178,7 @@ include '../usernav.php';
         <label>Community Name</label>
         <input class="formin" type="text" name="c_name" maxlength="45" required><br><br>
         <label>Commmunity Description</label> <br>
-        <textarea class="formin" name="description" rows="7" maxlength="300" required></textarea><br><br>
+        <textarea class="formin" name="description" rows="7" maxlength="400" required></textarea><br><br>
         <label for="color">Select a main color for your Community</label>
         <input class="formcolor" type="color" id="color" name="color" value="#ff0000"><br><br>
 

@@ -101,8 +101,8 @@ $username = $_SESSION['username'];
         }
 
         .custom-navbar-login {
-            color: #296B8E;
-            background-color: #F0D78C;
+            color: white;
+            background-color: #0d3b66;
             padding: 6px;
             border: none;
             border-radius: 5px;
@@ -113,8 +113,8 @@ $username = $_SESSION['username'];
         }
 
         .custom-navbar-login:hover {
-            color: #ffff;
-            background-color: #0D3B66;
+            color: black;
+            background-color: #f0d78c;
         }
 
         @media (max-width: 760px) {
