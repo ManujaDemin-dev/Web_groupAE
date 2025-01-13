@@ -3,6 +3,11 @@ session_start();
 include '../includes/db.php';
 include '../includes/functions.php';
 
+if (!isLoggedIn()) {
+    redirect('./../index.php');
+}
+
+
 $query = "SELECT communities.*, categories.name AS category_name 
           FROM communities 
           JOIN categories ON communities.category_id = categories.category_id";
