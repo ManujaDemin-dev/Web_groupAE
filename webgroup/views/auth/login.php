@@ -111,6 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div>
             <button class="btn" type="submit">Login</button>
         </div>
+
+        
+        <div class="login-help">
+            <p >Don't have an account?</p> <button class="logindir"><a href="signup.php">Sign up</a></button>
+        </div>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>

@@ -88,10 +88,11 @@ include 'views/usernav.php';
         .message {
             color: green;
             font-weight: bold;
+            font-family: Arial, sans-serif;
         }
         .input {
             padding: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             width: 300px;
         }
        
@@ -105,7 +106,7 @@ include 'views/usernav.php';
         .join {
             padding: 5px 15px;
             border-radius: 5px;
-            border: 3px solid #0d3b66;
+            border: 2px solid #0d3b66;
             color: black;
             background-color: white;
             text-decoration: none;
@@ -115,7 +116,7 @@ include 'views/usernav.php';
             
         }
         .join:hover {
-            border: 3px solid #0d3b66;
+            border: 2px solid #0d3b66;
             color: white;
             background-color:#0d3b66;
             
@@ -127,20 +128,20 @@ include 'views/usernav.php';
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin: 0 auto;
-            width: 95%; 
-            max-width: 1300px;
+            width: 96%; 
+            max-width: 1250px;
         }
 
       
         .community-card-alt {
             max-width: 280px;
-            height: 300px;
+            height: 290px;
             border-radius: 12px;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            border: 3px solid black;
+            border: 2px solid black;
             display: flex;
             flex-direction: column;
             background: #fff;
@@ -153,18 +154,18 @@ include 'views/usernav.php';
 
        
         .card-header {
-            background: #44ff15;
-            height: 30px;
+           
+            height: 22px;
         }
 
         .card-footer {
-            background-color: #44ff15;
-            height: 30px;
+            
+            height: 22px;
             margin-top: auto;
         }
 
         .card-body {
-            padding: 17px;
+            padding: 12px;
             text-align: center;
             flex-grow: 1;
         }
@@ -172,30 +173,113 @@ include 'views/usernav.php';
         .h33 {
             font-size: 1.2em;
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
         .pp {
             margin-top: 10px;
+            font-family: 'Arial', sans-serif;
         }
 
         @media (max-width: 600px) {
     .container {
         grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; 
+        gap: 9px; 
     }
 
     .community-card-alt {
-        height: 250px; 
+        height: 235px; 
+       
+
+    }
+    
+    .card-header {
+           
+           height: 14px;
+       }
+
+       .card-footer {
+          
+           height: 14px;
+          
+       }
+
+       .card-body {
+           padding: 9px;
+           text-align: center;
+           flex-grow: 1;
+       }
+
+       .h33 {
+           font-size: 0.8em;
+           margin: 0;
+           
+       }
+
+       .pp {
+           margin-top: 5px;
+           font-size: 0.8em;
+       }
+       .join {
+        padding: 4px 7px;
+        font-size: 12px;
+       }
+       .wrap {
+        margin-bottom: 5px;
+       }
+        .community-card-alt {
+            margin-bottom: 10px;
+        }
+}
+
+    
+@media (min-width: 701px) and (max-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card-header {
+           
+           height: 17px;
+       }
+
+       .card-footer {
+          
+           height: 17px;
+          
+       }
+       .community-card-alt {
+        height: 260px; 
        
     }
-}
+       .card-body {
+           padding: 10px;
+           text-align: center;
+       }
+       .h33 {
+           font-size: 1.1em;
+           margin: 0;
+           
+       }
+       .wrap {
+        margin-bottom: 5px;
+       }
+       .pp {
+           margin-top: 10px;
+           font-size: 0.9em;
+       }
+
+       .join {
+        padding: 5px 8px;
+        font-size: 14px;
+       }
+    }
     </style>
     
 </head>
 <body>
     <h1> <?= htmlspecialchars($category_name) ?> Communities</h1>
 
-    <button> <a href="category.php">Back to Categories</a></button>.............................................................................................................
+    <button> <a href="category.php">Back to Categories</a></button>
     <button><a href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a></button><br>
 
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
@@ -213,8 +297,8 @@ include 'views/usernav.php';
             <?php foreach ($communities as $community): ?>
         <?php
         $description = htmlspecialchars($community['description']);
-        $limitedd = mb_substr($description, 0, 120); // Limit to 170 characters meken 0 to 170 characters
-        if (mb_strlen($description) > 120) {
+        $limitedd = mb_substr($description, 0, 145); // Limit to 170 characters meken 0 to 170 characters
+        if (mb_strlen($description) > 145) {
             $limitedd .= '...'; // if it has more than 270 char print ... a the end
         }
         ?>

@@ -197,7 +197,7 @@ h1 {
       
         .community-card-alt {
             max-width: 280px;
-            height: 300px;
+            height: 279px;
             border-radius: 12px;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
             overflow: hidden;
@@ -219,12 +219,12 @@ h1 {
        
         .card-header {
            
-            height: 30px;
+            height: 25px;
         }
 
         .card-footer {
            
-            height: 30px;
+            height: 25px;
             margin-top: auto;
         }
 
