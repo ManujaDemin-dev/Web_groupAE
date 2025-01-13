@@ -135,7 +135,7 @@ include 'views/usernav.php';
       
         .community-card-alt {
             max-width: 280px;
-            height: 290px;
+            height: 300px;
             border-radius: 12px;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
             overflow: hidden;
