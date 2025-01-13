@@ -41,7 +41,9 @@ include("navbar.html");
             <p>Discover a vibrant platform where students connect, collaborate, and grow together. <br> Engage with like-minded peers and unlock your potential through shared knowledge and experiences.</p>
         </div>
         <div class="join-button-container">
-            <button class="join-button">Join Now</button>
+            <a href="./views/auth/signup.php">
+                <button class="join-button">Join Now</button>
+            </a>
         </div>
     </div>
     
