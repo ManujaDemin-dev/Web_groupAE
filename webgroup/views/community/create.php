@@ -186,9 +186,6 @@ include '../usernav.php';
       margin: auto;
       width: 88%;
       max-width: 800px;
-  
-      border: 1px solid #ddd;
-      border-radius: 8px;
       padding: 20px;
  
     }
@@ -207,7 +204,7 @@ include '../usernav.php';
 
     .form-group label {
       display: block;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: bold;
       margin-bottom: 5px;
       color: #555;
@@ -227,7 +224,7 @@ include '../usernav.php';
     .form-group textarea {
       height: 100px;
       resize: none;
-      margin: 0px;
+     
     }
 
     .form-group input[type="color"] {
@@ -269,7 +266,7 @@ include '../usernav.php';
         <input class="formin" type="text" name="c_name" maxlength="45" required><br><br>
     </div>
     <div class="form-group">
-        <label>Commmunity Description</label> <br>
+        <label>Commmunity Description</label>
         <textarea class="formin" name="description" rows="7" maxlength="400" required></textarea><br><br>
     </div>
     <div class="form-group">

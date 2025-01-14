@@ -81,20 +81,211 @@ include 'views/usernav.php';
 <head>
     <title>Communities</title>
     <style>
-        body {
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+    
+    
+}
+
+.containeris {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;    
+    margin: 0 0;
+   
+}
+
+
+.btn {
+    background-color: #296b8e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 200px;
+    margin: 20px 20px;
+}
+
+.btn:hover {
+    background-color: #0d3b66;
+}
+
+.main-content {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    height: 9vh;
+    background-color: #90d076;
+    width: 95%;
+
+}
+
+.main-content h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+    width: 60%;
+   
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 7px;
+    border: 2px solid #296b8e;
+    border-radius: 5px;
+    margin: auto;
+    font-size: 16px;
+   
+}
+
+.search-bar .search-btn {
+    background-color: #53aa43;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+   
+}
+
+.search-bar .search-btn:hover {
+    background-color: #0d3b66;
+}
+
+#create-btn{
+    background-color: rgb(159, 56, 76);
+
+}
+
+
+
+@media (max-width: 768px){
+    .containeris{
+        padding: 10px 0;
+    }
+
+    .main-content{
+        height: auto;
+        width: 90%;
+    }
+
+    .main-content h1{
+        font-size: 25px;
+    }
+
+    .buttons{
+        width: 100%;
+        
+    }
+
+    .btn{
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .search-bar input{
+        width: 60%;
+        margin: 0 auto;
+        padding: 4px;
+    }
+
+    .search-bar .search-btn{
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .containeris {
+        padding: 5px 0;
+    }
+
+    .main-content {
+        height: auto;
+        width: 85%;
+    }
+
+    .main-content h1 {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 5px 10px;
+        width: 140px;
+        margin: 13px 10px;
+
+    }
+
+    .search-bar input{
+        width: 60%;
+        font-size: 12px;
+   
+
+       
+    }
+
+    .search-bar .search-btn{
+        width: 30%;
+        padding: 8px 10px;
+       
+    }
+    .search-bar{
+        width: 85%;
+       
+    }
+}
+
+
+
+
+
+        /* body {
             margin: 0;
             padding: 0;
-        }
+        } */
         .message {
             color: green;
             font-weight: bold;
             font-family: Arial, sans-serif;
         }
-        .input {
+        /* .input {
             padding: 8px;
             margin-bottom: 5px;
             width: 300px;
-        }
+        } */
        
            
         
@@ -277,20 +468,27 @@ include 'views/usernav.php';
     
 </head>
 <body>
+<div class="containeris">
+<div class="main-content">
     <h1> <?= htmlspecialchars($category_name) ?> Communities</h1>
+    <p>css crashed because classes ,.</p>
+    </div>
 
-    <button> <a href="category.php">Back to Categories</a></button>
-    <button><a href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a></button><br>
-
+    <div class="buttons">
+     <a class="btn" href="category.php">Back to Categories</a>
+    <a class="btn" id="create-btn" href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a>
+    </div>
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
 
-    
+     <div class="search-bar">
     <form method="GET" action="">
         <input  type="hidden" name="category_id" value="<?= htmlspecialchars($category_id) ?>">
         <input type="hidden" name="category_name" value="<?= htmlspecialchars($category_name) ?>">
         <input class= "input" type="text" name="search" placeholder="Search communities..." value="<?= htmlspecialchars($searchTerm) ?>">
         <button class="search" type="submit">Search</button>
     </form>
+    </div>
+    </div>
 
     <div class="container">
         <?php if (count($communities) > 0): ?>
