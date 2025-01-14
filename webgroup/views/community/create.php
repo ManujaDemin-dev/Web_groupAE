@@ -104,7 +104,7 @@ include '../usernav.php';
 <head>
     <title>Create Community</title>
     <style>
-  
+/*   
         body {
             
             margin: 0;
@@ -167,23 +167,119 @@ include '../usernav.php';
             background-color: white;
             color:blue;
         }
+  */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body {
+      font-family: poppins;
+      margin: 0;
+      padding: 0;
+      
+     
+   
+    }
+
+    .container {
+     margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      width: 88%;
+      max-width: 800px;
+  
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
  
-                
+    }
+
+    .container h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .form-group textarea {
+      height: 100px;
+      resize: none;
+      margin: 0px;
+    }
+
+    .form-group input[type="color"] {
+      height: 50px;
+      border: none;
+      cursor: pointer;
+      
+    }
+
+    .btn {
+      display: block;
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      background-color: #0d3b66;;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
            
         </style>
 </head>
 <body>
+<div class="container">
     <h1>Create Community</h1>
     <form class="form" action="" method="POST">
+    <div class="form-group">
         <label>Community Name</label>
         <input class="formin" type="text" name="c_name" maxlength="45" required><br><br>
+    </div>
+    <div class="form-group">
         <label>Commmunity Description</label> <br>
         <textarea class="formin" name="description" rows="7" maxlength="400" required></textarea><br><br>
+    </div>
+    <div class="form-group">
         <label for="color">Select a main color for your Community</label>
-        <input class="formcolor" type="color" id="color" name="color" value="#ff0000"><br><br>
 
-        <button class="btn" type="submit">Create</button>
+        <input class="formcolor" type="color" id="color" name="color" value="#ff0000"><br><br>
+    </div>
+        <button class="btn" type="submit">Create a Community</button>
     </form> 
     <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
+</div>
 </body>
 </html>
