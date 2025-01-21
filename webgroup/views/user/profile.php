@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $updateStmt = $pdo->prepare("UPDATE users SET $setQuery WHERE user_id = :id");
             $updateStmt->execute($updateFields);
-            header('Location: ../auth/login.php');
+            header('Location: ../user/logout.php');
             exit;
 
         } catch (Exception $e) {
@@ -144,26 +144,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div>
         <form method="POST" action="./delete.php">
             <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
-            <button type="submit" id="delete">Delete My Account</button>
+            <button onclick="del()">Delete My Account</button>
         </form>
     </div>
 
 
 <script>
-        const button = document.getElementById('buttonon');
-
-
-        button.addEventListener('click', () => {
-            alert('Are you sure you want to update save your changes!');
-            
-        });
-
-        const button = document.getElementById('delete');
-
-        button.addEventListener('click', () => {
-            alert('Are you sure you want to DELETE your account?');
-            
-        });
+        function del(){
+            confirm("Are you sure want to DELETE your account?");
+        }
 
 </script>
 
