@@ -75,6 +75,13 @@ include("navbar.html");
                 </div>
             </div>
         </div>
+        <div class="Add">
+                    <h2>Add what you want</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit rerum asperiores atque illo delectus? 
+                        Magni quam blanditiis repellat dolor, molestias suscipit quasi delectus explicabo, possimus aut 
+                        quas recusandae, ex quae.
+                    </p>
+                </div>
 
         <?php
         include("comment.html");
