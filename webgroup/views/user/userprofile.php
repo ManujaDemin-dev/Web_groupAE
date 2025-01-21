@@ -43,12 +43,13 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
             flex-direction: column;
             justify-content: center;
             text-align: left;
-            background-color: #ffffff;
+            background-color:#ffff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
             max-width: 400px;
             width: 100%;
+            margin-left: 10px;
         }
 
         .subcon p {
@@ -56,12 +57,14 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
             margin: 10px 0;
             /* color: #555; */
             text-align: left;
+            margin-left: 10px;
         }
 
         .subcon p:first-of-type {
             font-size: 18px;
             font-weight: bold;
             color: #222;
+            
         }
 
         .subcon a {
