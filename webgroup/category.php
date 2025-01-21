@@ -28,6 +28,11 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         padding: 0;
         font-family: Arial, sans-serif;
     }
+
+    .h11 {
+        text-align: center;
+
+    }
     .grid-container {
         max-width: 1200px;
         display: flex;
@@ -46,6 +51,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
             justify-content: space-between;
         }
     }
+    
     .community-card-alt {
         width: 320px;
         height: 200px;
@@ -99,11 +105,14 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         .card-header {
             height: 30px;
         }
+        .h11{
+        font-size: 23px;
+    }
     }
     </style>
 </head>
 <body>
-    <h1>Categories</h1>
+    <h1 class="h11">Categories</h1>
     <div class="grid-container">
         <?php foreach ($categories as $category): ?>
             <!-- <a href="community.php?category_id=<//?= base64_encode($category['category_id']) ?>" class="community-card-alt"> -->

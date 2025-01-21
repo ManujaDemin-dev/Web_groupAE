@@ -10,7 +10,13 @@ if (!isLoggedIn()) {
 
 $category_id = $_GET['category_id'];
 $category_name = $_GET['category_name'];
-$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : ''; 
+
+if (isset($_GET['search'])) {
+    $searchTerm = trim($_GET['search']); 
+} else {
+    $searchTerm = ''; 
+}
+
 
 
 if ($searchTerm) {
@@ -166,10 +172,11 @@ body {
     background-color: #53aa43;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
    
 }
 
@@ -179,6 +186,8 @@ body {
 
 #create-btn{
     background-color: rgb(159, 56, 76);
+    text-decoration: none;
+    padding: 10px 10px;
 
 }
 
@@ -239,6 +248,7 @@ body {
 
     .buttons {
         width: 100%;
+        text-decoration: none;
     }
 
     .btn {
@@ -246,6 +256,7 @@ body {
         padding: 5px 10px;
         width: 140px;
         margin: 13px 10px;
+        text-decoration: none;
 
     }
 
@@ -471,11 +482,11 @@ body {
 <div class="containeris">
 <div class="main-content">
     <h1> <?= htmlspecialchars($category_name) ?> Communities</h1>
-    <p>css crashed because classes ,.</p>
+    
     </div>
 
     <div class="buttons">
-     <a class="btn" href="category.php">Back to Categories</a>
+     <a id="btn" href="category.php">Back to Categories</a>
     <a class="btn" id="create-btn" href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a>
     </div>
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>

@@ -1,6 +1,7 @@
 <?php
 
 $username = $_SESSION['username'];
+$user_id = $_SESSION['user_id'];
 ?>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -223,7 +224,8 @@ $username = $_SESSION['username'];
                     <a href="#">Any</a>
                 </li>
                 <li class="custom-navbar-item">
-                    <a href="/Web_groupAE/webgroup/views/user/userprofile.php?name=<?= urlencode($username) ?>">Profile</a>
+                   
+                    <a href="/Web_groupAE/webgroup/views/user/userprofile.php?user_id=<?= urlencode($user_id) ?>">Profile</a> 
                 </li>
             </ul>
             <a href="/Web_groupAE/webgroup/views/user/logout.php">
