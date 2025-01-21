@@ -15,7 +15,7 @@ $User_myid = $_SESSION['user_id'];
 
 $thatuserid = $_GET['user_id'];
 
-echo"that user id  is: $thatuserid";
+// echo"that user id  is: $thatuserid";
 
 $stmt = $pdo->prepare('SELECT * FROM users WHERE user_id = :id');
 $stmt->execute(['id' => $thatuserid]);
@@ -42,7 +42,7 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            text-align: left;
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,9 +52,10 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         .subcon p {
-            font-size: 16px;
+            font-size: 17px;
             margin: 10px 0;
-            color: #555;
+            /* color: #555; */
+            text-align: left;
         }
 
         .subcon p:first-of-type {
@@ -64,6 +65,7 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         .subcon a {
+            text-align: center;
             text-decoration: none;
             font-size: 14px;
             color: #ffffff;
@@ -97,15 +99,18 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
+    
     <div class="con">
+        
         <div class="subcon">
-            <p>Name: <?php echo $that_user['name']; ?></p>
-            <p>Email: <?php echo $that_user['email']; ?></p>
-            <p>Gender: <?php echo $that_user['gender']; ?></p>
-            description: <?php echo $that_user['description']; ?> 
+            <p> <?php echo $that_user['name']; ?></p>
+            <p> <?php echo $that_user['email']; ?></p>
+         
+          <!-- <p> DISCRIPTION </p>   -->
+          <p>  <?php echo $that_user['description']; ?> </p><br>
             <p>Signup Date: <?php echo $that_user['sign_up_date']; ?></p>  
-            <p>Age: <?php echo $that_user['age'] ?></p>  
-            <p>Gender : <?php echo $that_user['gender'] ?></p>   
+            <p>Age : <?php echo $that_user['age'] ?></p>  
+            <p>Gender  <?php echo $that_user['gender'] ?></p>   
 
             <?php
             if($User_myid == $thatuserid){
