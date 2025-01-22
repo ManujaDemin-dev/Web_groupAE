@@ -19,7 +19,7 @@ $stmt->execute(['community_id' => $community_id]);
 $community = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $user_id = $_SESSION['user_id'];
-$username = $_SESSION['username']
+$username = $_SESSION['username'];
 
 
 
