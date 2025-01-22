@@ -114,11 +114,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       max-height: 510px;
       overflow-y: auto;
       margin-bottom: 10px;
-      padding: 10px;           /* Adds some inner spacing for better readability */
-      border: 1px solid #ddd; /* Adds a border around the chat messages container */
-      border-radius: 8px;     /* Rounds the corners for a modern look */
-      background-color: #f4f4f4; /* Gives a light background color to separate it visually */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+      padding: 10px;          
+      border: 1px solid #ddd;
+      border-radius: 8px;    
+      background-color:rgb(255, 255, 255); 
+     
     }
 
 
@@ -131,12 +131,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       margin-left: 20px;
       margin-top: 10px;
     }
+    .nav-button {
+      padding: 10px 10px;
+      background: #0d3b66;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <form action="view.php" method="POST">
     <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
-    <button type="submit">BackToCommunity</button>
+    <button class="nav-button" type="submit">Back To Community</button>
   </form>
   <div id="title_container">
     <p>Welcome to the <?php echo $community_name;?> Chat, <span id="user_name"></span></p>

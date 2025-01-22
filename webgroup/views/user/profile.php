@@ -49,7 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $updateStmt = $pdo->prepare("UPDATE users SET $setQuery WHERE user_id = :id");
             $updateStmt->execute($updateFields);
-            header('Location: ../user/logout.php');
+            //header('Location: ../user/logout.php');
+            
+        echo "<form id='redirectForm' method='GET' action='./logout.php'>
+        <input type='hidden' name='community_id' value='" . htmlspecialchars($community_id) . "'>
+    </form>
+    <script>document.getElementById('redirectForm').submit();</script>";
             exit;
 
         } catch (Exception $e) {
@@ -141,24 +146,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </div>
 
-    <div>
-        <form method="POST" action="./delete.php">
-            <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
-            <button onclick="del()">Delete My Account</button>
-        </form>
-    </div>
-
+<div>
+    <form id="deleteForm" method="POST" action="./delete.php">
+        <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
+        <button type="button" onclick="del()">Delete My Account</button>
+    </form>
+</div>
 
 <script>
-        function del(){
-            confirm("Are you sure want to DELETE your account?");
+    function del() {
+        const confirmation = confirm("Are you sure you want to delete your account?");
+        if (confirmation) {
+            document.getElementById('deleteForm').submit();
         }
-
+    }
 </script>
-
-
-
-
+   
 
 </body>
 </html>

@@ -90,14 +90,14 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
             padding: 0;
         }
         input[type="text"] {
-            padding: 8px;
+            padding: 8px 8px;
             margin-bottom: 10px;
-            width: 300px;
+            width: 500px;
+            border: 2px solid #0d3b66;
+            border-radius: 20px;
+            font-size: 16px;
         }
-        /* button {
-            padding: 8px 12px;
-        } */
-        /* Table Styling */
+        
 .table {
     margin: auto;
     width: 96%;
@@ -234,12 +234,84 @@ form {
     margin: auto;
     
 }
+.editbutton {
+    padding: 8px 7px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.files {
+    font-size:22px;
+    margin-left: 8%;
+
+}
+
+.serch{
+    margin-left: 6%;
+    
+}
+.searchbutton {
+    background-color:  #0d3b66;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    
+}
+
 @media (max-width: 768px) {
     .card {
         margin: 15px 5px;
     }
-}
+    }
 
+    .mobile-view {
+        display: none;
+    }
+    .desktop-view {
+        display: table;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-view {
+            display: block;
+        }
+        .desktop-view {
+            display: none;
+        }
+    }
+    @media (max-width: 480px) {
+        .namebord {
+            font-size: 20px;
+            font-weight: 450;
+        }
+        .name {
+        background-color: white;
+        margin: 5px auto;
+        width: 90%;
+        border-radius: 5px;
+        }
+        .dis {
+        margin: 2px auto;
+        padding: 4px;
+        font-size: 14px;
+        font-weight: 400;
+        }
+        input[type="text"] {
+            padding: 5px 8px;
+            margin-bottom: 0px;
+            width: 250px;
+            border: 2px solid #0d3b66;
+            border-radius: 20px;
+    
+    }}
     </style>
 </head>
 <body>
@@ -297,9 +369,9 @@ form {
     ?>
 
     </div>
-    <h2>Files</h2>
+    <h2 class="files">Files</h2>
    
-    <form method="POST" action="">
+    <form class="serch" method="POST" action="">
         <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
         <input type="text" name="search" placeholder="Search files here" value="<?= htmlspecialchars($searchTerm) ?>">
         <button class="searchbutton" type="submit">Search</button>
@@ -309,7 +381,7 @@ form {
     <table class="table desktop-view">
         <thead>
             <tr>
-                <th scope="col">Description</th>
+                <th style="width: 55%;" scope="col" scope="col">Description</th>
                 <th style="width: 20%;" scope="col">Uploaded by</th>
                 <th scope="col">File Download</th>
             </tr>
@@ -334,6 +406,7 @@ form {
                         <?php if ($current_owner == $_SESSION['user_id']): ?>
                             <td>
                                 <form method="POST" action="./deletefile.php">
+                                    <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
                                     <input type="hidden" name="file_id" value="<?= htmlspecialchars($file['file_id']) ?>">
                                     <button class="delete-filebutton" type="submit">Delete</button>
                                 </form>
@@ -376,25 +449,6 @@ form {
         <?php endif; ?>
     </div>
 </div>
-
-<style>
-    .mobile-view {
-        display: none;
-    }
-    .desktop-view {
-        display: table;
-    }
-
-    @media (max-width: 768px) {
-        .mobile-view {
-            display: block;
-        }
-        .desktop-view {
-            display: none;
-        }
-    }
-</style>
-
 
   
 </body>

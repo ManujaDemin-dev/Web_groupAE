@@ -77,6 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name_for_file'])) {
 </head>
 <body>
 
+    <form action="./view.php" method="POST">
+        <input type="hidden" name="community_id" value="<?= $community_id ?>">
+        <button clss="nav-button" type="submit">Back</button>
+    </form>
+
      <p>in this system if you are upload a imges it will shows only the wall and other files will be shows in commu.</p>
     <h1>Upload a File</h1>
     <form method="POST" enctype="multipart/form-data">
