@@ -34,7 +34,7 @@ include("navbar.html");
             <p class="welcome">
                 WELCOME TO <br>
             </p>
-            <p class="titleDesName">Skill<span class="desname">Up</span></p>
+            <p class="titleDesName">Focus<span class="desname">Net</span></p>
         </div>
         <div class="title-details">
             <p>Join A Community, Ignite Your Learning Journey</p>
