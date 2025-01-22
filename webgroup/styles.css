@@ -231,7 +231,7 @@ body {
     display: flex;
     max-width: 1200px;
     background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -314,9 +314,10 @@ body {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
+    width: 91%;
     background-color: #f1f1f1;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .Add h2 {
     font-size: 24px;
