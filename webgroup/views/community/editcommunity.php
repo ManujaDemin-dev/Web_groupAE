@@ -93,30 +93,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="./changeowner.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
         <label for="new_owner">Change Owner:</label>
-        <select id="new_owner" name="new_owner" required>
+        <select id="new_owner" name="new_owner_id" required>
             <?php foreach ($members as $member): ?>
                 <option value="<?= $member['user_id'] ?>"><?= htmlspecialchars($member['name']) ?></option>
             <?php endforeach; ?>
         </select>
         <br>
-        <button type="submit">Change Owner</button>
+   
+        <button type="submit" onclick="return confirm('Are you sure you want to change the community admin?')" >Change Owner</button>
     </form>
 
-    <h3>Kick Members</h3>
-    <form method="POST" action="./kickmember.php">
-        <input type="hidden" name="community_id" value="<?= $community_id ?>">
-        <label for="member_to_kick">Member to Kick:</label>
-        <select id="member_to_kick" name="member_to_kick" required>
-            <?php foreach ($members as $member): ?>
-                <option value="<?= $member['user_id'] ?>"><?= htmlspecialchars($member['name']) ?></option>
-            <?php endforeach; ?>
-        </select>
-        <br>
-        <button type="submit">Kick Member</button>
-    </form>
+   
 
     <h3>Delete Community</h3>
-    <form method="POST" action="">
+    <form method="POST" action="deletecomm.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
         <input type="hidden" name="delete_community" value="1">
         <button type="submit" onclick="return confirm('Are you sure you want to delete this community?')">Delete Community</button>
