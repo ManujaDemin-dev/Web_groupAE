@@ -225,7 +225,7 @@ $user_id = $_SESSION['user_id'];
                 </li>
                 <li class="custom-navbar-item">
                    
-                    <a href="/Web_groupAE/webgroup/views/user/userprofile.php?user_id=<?= urlencode($user_id) ?>">Profile</a> 
+                    <a href="/Web_groupAE/webgroup/views/user/userprofile.php?userid=<?= urlencode($user_id) ?>">Profile</a> 
                 </li>
             </ul>
             <a href="/Web_groupAE/webgroup/views/user/logout.php">

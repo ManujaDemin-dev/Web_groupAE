@@ -13,7 +13,7 @@ $username = $_SESSION['username'];
 $User_myid = $_SESSION['user_id'];
 
 
-$thatuserid = $_GET['user_id'];
+$thatuserid = $_GET['userid'];
 
 // echo"that user id  is: $thatuserid";
 
@@ -55,7 +55,7 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
         .subcon p {
             font-size: 17px;
             margin: 10px 0;
-            /* color: #555; */
+          
             text-align: left;
             margin-left: 10px;
         }
@@ -72,7 +72,7 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
             text-decoration: none;
             font-size: 14px;
             color: #ffffff;
-            background-color: #007bff;
+            background-color: rgb(171, 54, 54);
             padding: 10px 20px;
             border-radius: 5px;
             margin-top: 15px;
@@ -80,7 +80,7 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         .subcon a:hover {
-            background-color: #0056b3;
+            background-color: #296b8e;
         }
 
         
@@ -109,11 +109,14 @@ $that_user = $stmt->fetch(PDO::FETCH_ASSOC);
             <p> <?php echo $that_user['name']; ?></p>
             <p> <?php echo $that_user['email']; ?></p>
          
-          <!-- <p> DISCRIPTION </p>   -->
-          <p>  <?php echo $that_user['description']; ?> </p><br>
-            <p>Signup Date: <?php echo $that_user['sign_up_date']; ?></p>  
-            <p>Age : <?php echo $that_user['age'] ?></p>  
-            <p>Gender  <?php echo $that_user['gender'] ?></p>   
+        
+          <p>  <?php echo $that_user['description']; ?> </p>
+            
+            <p>Age  :-  <?php echo $that_user['age'] ?></p>  
+            <p>Gender :-  <?php echo $that_user['gender'] ?></p>  
+            <br>
+            <p>Signup Date <?php echo $that_user['sign_up_date']; ?></p> 
+            <p>Last login  <?php echo $that_user['last_login']; ?></p> 
 
             <?php
             if($User_myid == $thatuserid){

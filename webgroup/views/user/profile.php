@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
 
         } catch (Exception $e) {
-            $error = 'Error updating profile: ' . $e->getMessage();
+            $error = 'Error updating profile ' . $e->getMessage();
         }
     
 }
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" maxlength="300"><?= htmlspecialchars($user['description'] ?? '') ?></textarea>
+            <textarea id="description" name="description" maxlength="210"><?= htmlspecialchars($user['description'] ?? '') ?></textarea>
         </div>
 
         <button type="submit" id="buttonon">Update Profile</button>

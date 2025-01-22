@@ -150,7 +150,7 @@ h1 {
     font-size: 25px;
 }
 .search {
-    flex: 2; /* Make search box take up twice the space */
+    flex: 2;
     display: flex;
     gap: 10px;
     align-items: center;

@@ -85,7 +85,7 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
     <style>
         body {
             font-family: Arial, sans-serif;
-           
+            
             margin: 0;
             padding: 0;
         }
@@ -94,39 +94,189 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
             margin-bottom: 10px;
             width: 300px;
         }
-        button {
+        /* button {
             padding: 8px 12px;
-        }
+        } */
+        /* Table Styling */
+.table {
+    margin: auto;
+    width: 96%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+    
+
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: 'poppins', sans-serif;
+   
+    
+}
+td a {
+    color: #0d3b66;
+    text-decoration: none;
+    font-weight: 500;
+
+    
+}
+
+th {
+    background-color: #f0d78c;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #90d076;
+    transition: background-color 0.2s ease;
+}
+
+form {
+    display: inline-block;
+    
+    
+}
+.nav-button {
+    padding: 9px 14px;
+    cursor: pointer;
+    background-color: #53aa43;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #296b8e;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'poppins', sans-serif;
+    font-size: 13px;
+
+}
+
+.card a {
+    color: #0d3b66;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    color: green;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.6;
+
+}
+.delete-filebutton {
+    padding: 6px 7px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    font-size: 13px;
+   
+    
+}
+
+.namebord {
+   
+    margin: 20px auto;
+    width: 97%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1px;
+    font-family: 'poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 15px;
+}
+.name {
+    background-color: white;
+    margin: 20px auto;
+    width: 54%;
+    border-radius: 15px;
+}
+.p {
+    margin: 0px;
+}
+
+.dis {
+    width: 95%;
+    margin: 5px auto;
+    padding: 4px;
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    
+}   
+.buttonsbar {
+    width: 97%;
+    margin: auto;
+    
+}
+@media (max-width: 768px) {
+    .card {
+        margin: 15px 5px;
+    }
+}
+
     </style>
 </head>
 <body>
-    <h1><?= htmlspecialchars($community['c_name']) ?></h1>
-    <p><?= htmlspecialchars($community['description']) ?></p>
+    <div class="namebord" style="background-color: <?= $community['color'] ?>;">
 
-    
+    <div class="name">
+    <p><?= htmlspecialchars($community['c_name']) ?></p>
+    </div>
+    </div>
+
+
+    <div class="dis"><p><?= htmlspecialchars($community['description']) ?></p>  </div>
+
+    <div class="buttonsbar">
     <form method="POST" action="upload.php">
         <input type="hidden" name="community_id" value="<?=($community_id) ?>">
-        <button type="submit">Upload a File</button>
+        <button class="nav-button" type="submit">Upload a File</button>
     </form>
 
     <form action="./members.php" method="GET">
         <input type="hidden" name="community_id" value="<?= ($community_id) ?>">
-        <button type="submit">Community members</button>
+        <button class="nav-button" type="submit">Community members</button>
     </form>
 
     <form action="chat.php" method="POST">
         <input type="hidden" name="community_id" value="<?= ($community_id) ?>">
         <input type="hidden" name="community_name" value="<?= ($community['c_name']) ?>">
-        <button type="submit">Group Chat</button>
+        <button class="nav-button" type="submit">Group Chat</button>
     </form>
     <form method="POST" action="./gallery.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
-        <button type="submit">Gallery</button>
+        <button class="nav-button" type="submit">Gallery</button>
         </form>
     
         <form method="POST" action="./leave_community.php">
     <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
-    <button type="submit">Leave Community</button>
+    <button class="nav-button" type="submit">Leave Community</button>
 </form>
 
 
@@ -139,54 +289,113 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
     if ($current_owner == $_SESSION['user_id']) {
         echo '<form method="POST" action="./editcommunity.php">
             <input type="hidden" name="community_id" value="' . htmlspecialchars($community_id) . '">
-            <button type="submit">Edit Community</button>
+            <button class="editbutton" type="submit">Edit Community</button>
             </form>';
     }
+
+    
     ?>
+
+    </div>
     <h2>Files</h2>
    
     <form method="POST" action="">
         <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
         <input type="text" name="search" placeholder="Search files here" value="<?= htmlspecialchars($searchTerm) ?>">
-        <button type="submit">Search</button>
+        <button class="searchbutton" type="submit">Search</button>
     </form>
 
-    <ul>
+    <div class="container my-4">
+    <table class="table desktop-view">
+        <thead>
+            <tr>
+                <th scope="col">Description</th>
+                <th style="width: 20%;" scope="col">Uploaded by</th>
+                <th scope="col">File Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (count($files) > 0): ?>
+                <?php foreach ($files as $file): ?>
+                    <tr>
+                    <td><?= htmlspecialchars($file['description']) ?></td>
+                    <td>
+                        <p>
+                        <a href="../user/userprofile.php?userid=<?= urlencode($file['uploaded_by']) ?>">
+                        <?= htmlspecialchars($file['uploader_name']) ?>
+                        </a>
+                        </p><p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
+                    </td>
+                    <td>
+                        <a href="<?= htmlspecialchars($file['file_path']) ?>" download target="_blank">
+                                <?= htmlspecialchars($file['name_for_file']) ?>
+                        </a> <br>(<?= htmlspecialchars($file['file_type']) ?>)
+                    </td>
+                        <?php if ($current_owner == $_SESSION['user_id']): ?>
+                            <td>
+                                <form method="POST" action="./deletefile.php">
+                                    <input type="hidden" name="file_id" value="<?= htmlspecialchars($file['file_id']) ?>">
+                                    <button class="delete-filebutton" type="submit">Delete</button>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr><td colspan="3">No uploaded files. Upload files and get started!</td></tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+    
+    <div class="mobile-view">
         <?php if (count($files) > 0): ?>
-            <?php foreach ($files as $file ): ?>
-
-
-
-                <div class="card">
+        <?php foreach ($files as $file): ?>
+                <div class="card my-2">
                     <a href="<?= htmlspecialchars($file['file_path']) ?>" download target="_blank">
                         <?= htmlspecialchars($file['name_for_file']) ?>
                     </a> (<?= htmlspecialchars($file['file_type']) ?>)
                     <p><?= htmlspecialchars($file['description']) ?></p>
-                    <p>by <a href="../user/userprofile.php?name=<?= urlencode($file['uploader_name']) ?>"><?= htmlspecialchars($file['uploader_name']) ?></a></p>
-                    <p> <?= htmlspecialchars($file['uploaded_at']) ?></p>
-                    
-                     
-                    
+                    <p>
+                        by <a href="../user/userprofile.php?userid=<?= urlencode($file['uploaded_by']) ?>">
+                            <?= htmlspecialchars($file['uploader_name']) ?>
+                        </a>
+                    </p>
+                    <p><?= htmlspecialchars($file['uploaded_at']) ?></p>
+                    <?php if ($current_owner == $_SESSION['user_id']): ?>
+                        <form method="POST" action="./deletefile.php">
+                            <input type="hidden" name="file_id" value="<?= htmlspecialchars($file['file_id']) ?>">
+                            <button class="delete-filebutton" type="submit">Delete</button>
+                        </form>
+                    <?php endif; ?>
                 </div>
-
-
-            <?php endforeach; ?>
+        <?php endforeach; ?>
         <?php else: ?>
-            <li>No files found.</li>
+            <p>No file.</p>
         <?php endif; ?>
-    </ul>
+    </div>
+</div>
+
+<style>
+    .mobile-view {
+        display: none;
+    }
+    .desktop-view {
+        display: table;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-view {
+            display: block;
+        }
+        .desktop-view {
+            display: none;
+        }
+    }
+</style>
+
 
   
-
-  
-   <a href="upload.php?community_id=<?= $community_id ?>">Upload Files</a>
-  
-    
-    <a href="../community/chat.php?community_id=<?= $community_id ?>&community_name=<?= urlencode($community['c_name']) ?>">Group Chat</a>
-    
-    
-    
-
-  //  <a href="members.php?community_id=<?= $community_id ?>">Community Members</a>
 </body>
 </html>
