@@ -72,7 +72,6 @@ if ($searchTerm) {
 $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-//include '../communityhead.html' // navbar  2  we can add nav bar as bottom bar or side bar
 
 // normal nav bar
 // community nav bar
@@ -94,7 +93,7 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
             margin-bottom: 10px;
             width: 500px;
             border: 2px solid #0d3b66;
-            border-radius: 20px;
+            border-radius: 10px;
             font-size: 16px;
         }
         
