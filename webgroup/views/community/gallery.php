@@ -211,6 +211,11 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
+
+            <form action="view.php" method="POST">
+                <input type="hidden" name="community_id" value="<?= $community_id ?>">
+                <button type="submit">meken Back</button>
+            </form>
     <!-- <div class="container">
         <div class="header">
             <h1>Community Posts</h1>
@@ -267,7 +272,13 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No files uploaded yet. Be the first to <a href="upload.php">upload something</a>!</p>
+            <p>No files uploaded yet. Be the first to </p>
+                <form action="upload.php" method="POST">
+            <form action="upload.php" method="POST">
+                <input type="hidden" name="community_id" value="<?= $community_id ?>">
+                <button type="submit"> upload something
+                                    
+            </form>
         <?php endif; ?>
     </div>
 

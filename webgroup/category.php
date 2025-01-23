@@ -8,7 +8,7 @@ if (!isLoggedIn()) {
 }
 include 'views/usernav.php';
 
-// Fetch all categories
+
 $query = "SELECT * FROM categories";
 $statement = $pdo->query($query);
 $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -31,6 +31,8 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     .h11 {
         text-align: center;
+        font-family: 'poppins', sans-serif;
+        font-size: 30px;
 
     }
     .grid-container {
@@ -39,7 +41,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px 40px;
-        background: rgb(165, 196, 223);
+        background: #296b8e;
         width: 99vw;
         padding-top: 30px;
         padding-bottom: 30px;
@@ -58,7 +60,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         display: block;
         border-radius: 12px;
         background: #ffffff;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.15);
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
@@ -83,11 +85,62 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         margin: 0;
     }
 
+    .infoem {
+            background-color: #F0D78C;
+            color: black;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .infoem h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .infoem p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.79);
+        }
+
+     
+        @media (max-width: 768px) {
+            .infoem {
+                padding: 15px;
+            }
+
+            .infoem h3 {
+                font-size: 1.5rem;
+            }
+
+            .infoem p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .infoem {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .infoem h3 {
+                font-size: 1.3rem;
+            }
+
+            .infoem p {
+                font-size: 0.9rem;
+            }
+        }
     
     @media (max-width: 600px) {
         .community-card-alt {
             width: 160px; 
             height: 120px;
+            border: none;
            
         }
         .grid-container {
@@ -115,7 +168,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <h1 class="h11">Categories</h1>
     <div class="grid-container">
         <?php foreach ($categories as $category): ?>
-            <!-- <a href="community.php?category_id=<//?= base64_encode($category['category_id']) ?>" class="community-card-alt"> -->
+            <!-- <a href="community.php?category_id=<//?= base64_encode($category['category_id']) ?>" class="community-card-alt">  thats not a problrem-->
             <a href="community.php?category_id=<?= $category['category_id'] ?>&category_name=<?=urlencode($category['name']) ?>" class="community-card-alt">
                 
                 <div class="card-header"></div>
@@ -125,7 +178,11 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
             </a>
         <?php endforeach; ?>
     </div>
-    <p>Description about categories</p>
-    <p>Footer</p>
+    <div class="infoem">
+        <h3>Hello <?= $_SESSION['username'] ?></h3>
+        <p>Discover what motivates you! Check out different categories that match your interests, like study groups, job opportunities, 
+            hobbies and creative projects. If you want to meet new friends, find helpful resources or be part of a community,
+             you’ll find something for you here.<br> <b>Pick a category and begin your adventure today!<b></p>
+    </div>
 </body>
 </html>

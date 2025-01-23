@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Start transaction to ensure both queries succeed together
     $pdo->beginTransaction();
-  // for community user table 
+  
     try {
-        // Insert the new community into the communities table
+      
         $query = "INSERT INTO communities (c_name, description, category_id, created_by, current_owner_id, color) 
                   VALUES (:c_name, :description, :category_id, :created_by, :current_owner_id, :color)";
         $stmt = $pdo->prepare($query);
@@ -30,10 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'color' => $color
         ]);
 
-        // Get the ID of the newly created community
+      
         $community_id = $pdo->lastInsertId();
 
-        // Insert the creator into the community_members table
         $memberQuery = "INSERT INTO community_members (community_id, user_id, joined_at) 
                         VALUES (:community_id, :user_id, now())";
         $memberStmt = $pdo->prepare($memberQuery);
@@ -46,9 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Commit transaction
         $pdo->commit();
 
-        // Redirect back to the category page
-        // redirect("index.php?category_id=$category_id");
-        //redirect("view.php?community_id=$community_id");
 
 
 
@@ -78,7 +74,6 @@ $jsonData = json_encode($data);
         ?>
     </form>
 
-    <!-- JavaScript to automatically submit the form -->
     <script type="text/javascript">
         document.getElementById('postForm').submit();
     </script>
@@ -91,7 +86,7 @@ $jsonData = json_encode($data);
 <?php
 
     } catch (PDOException $e) {
-        // Rollback transaction on error
+       
         $pdo->rollBack();
         $error = "Error creating community: " . $e->getMessage();
     }
@@ -104,75 +99,13 @@ include '../usernav.php';
 <head>
     <title>Create Community</title>
     <style>
-/*   
-        body {
-            
-            margin: 0;
-            padding: 0;
-            
-        }
 
-        .form {
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            border-radius: 10px;
-            margin: auto;
-            width: 380px;
-        }
-
-        .form label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .formin,
-        .formcolor {
-            padding: 10px;
-            border-radius: 5px;
-            width: 350px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-
-        .formcolor {
-            width: 90%;
-            height: 40px;
-            padding: 0;
-            appearance: none; 
-            border-radius: 10px;
-            cursor: pointer;
-            background-color: transparent; 
-        }
-
-
-        
-        .btn {
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            border: 3px solid blue;
-            background-color: blue;
-            color: white;
-            font-weight: bold;
-            
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: white;
-            color:blue;
-        }
-  */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     body {
-      font-family: poppins;
+      font-family: 'poppins';
       margin: 0;
       padding: 0;
+     
       
      
    
@@ -187,6 +120,7 @@ include '../usernav.php';
       width: 88%;
       max-width: 800px;
       padding: 20px;
+  
  
     }
 
@@ -254,7 +188,59 @@ include '../usernav.php';
       background-color: #0056b3;
     }
 
-           
+    .infoem {
+            background-color: #F0D78C;
+            color: black;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .infoem h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .infoem p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.79);
+        }
+
+     
+        @media (max-width: 768px) {
+            .infoem {
+                padding: 15px;
+            }
+
+            .infoem h3 {
+                font-size: 1.5rem;
+            }
+
+            .infoem p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .infoem {
+                padding: 10px;
+                 margin: 10px;
+                width: 80%;
+            }
+
+            .infoem h3 {
+                font-size: 1.3rem;
+            }
+
+            .infoem p {
+                font-size: 0.9rem;
+            }
+        }
+    
+            
         </style>
 </head>
 <body>
@@ -278,5 +264,17 @@ include '../usernav.php';
     </form> 
     <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
 </div>
+
+</div>
+    <div class="infoem">
+        <h3>Begin Your Own Community  </h3>
+        <p> 
+        Build a place where your ideas and interests can grow! <br>
+        It can be for learning, working together or just having fun. 
+        Your community can unite people. Personalize it, define its goals and start creating valuable friendships now!</p>
+    </div>
+
+
+
 </body>
 </html>

@@ -98,6 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
                         </form>
                     <?php elseif ($member['user_id'] == $_SESSION['user_id']): ?>
                         You
+                    
+                    <?php elseif ($member['user_id'] == $owner['current_owner_id']): ?>
+                        Admin
                     <?php else: ?>
                         
                     <?php endif; ?>

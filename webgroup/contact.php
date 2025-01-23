@@ -50,7 +50,7 @@ include("navbar.html");
 
     .contact-option {
       background-color: #f0d78c;
-      /* Soft yellow */
+      overflow: hidden;
       padding: 20px;
       border-radius: 8px;
       width: 300px;
@@ -93,6 +93,7 @@ include("navbar.html");
 
       .contact-option {
         width: 100%;
+        padding: 5px;
       }
     }
 
@@ -117,15 +118,13 @@ include("navbar.html");
       font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      background: linear-gradient(90deg, #F8F8F8 0%, #F8F8F8 30%, #F8F8F8 30%, #90d076 100%) !important;
-    }
+    
 
     .contactUs {
       position: relative;
       width: 100%;
       padding: 20px 60px;
-      /* Reduced padding for smaller height */
+     
     }
 
     .contactUs .title {
@@ -133,13 +132,13 @@ include("navbar.html");
       justify-content: center;
       align-items: center;
       font-size: 2em;
-      /* Slightly smaller font */
+ 
       margin-bottom: 10px;
-      /* Reduce space below the title */
+   
     }
 
     .contactUs .title h2 {
-      color: #fff;
+      color: #0d3b66;
       font-weight: 500;
     }
 
@@ -148,21 +147,19 @@ include("navbar.html");
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 4fr 3fr;
-      /* Reduced height for rows */
+   
       grid-template-areas:
         "form info"
         "form map";
       grid-gap: 15px;
-      /* Smaller gap between sections */
+   
       margin-top: 20px;
-      /* Adjusted margin */
     }
 
     .form,
     .info,
     .map {
       padding: 20px;
-      /* Reduced padding */
       border-radius: 10px;
     }
 
@@ -172,14 +169,11 @@ include("navbar.html");
 
     .contact h3 {
       color: #0d3b66;
-      /* Deep blue */
       font-weight: 500;
       font-size: 1.4em;
-      /* Slightly smaller text */
       margin-bottom: 10px;
     }
 
-    /* Form styling */
     .formBox {
       position: relative;
       width: 100%;
@@ -188,7 +182,6 @@ include("navbar.html");
     .formBox .row50 {
       display: flex;
       gap: 15px;
-      /* Reduced gap */
     }
 
     .inputBox {
@@ -204,9 +197,7 @@ include("navbar.html");
 
     .inputBox span {
       color: #296b8e;
-      /* Blue */
       margin-top: 5px;
-      /* Reduced spacing */
       margin-bottom: 3px;
       font-weight: 500;
       font-size: 1em;
@@ -214,9 +205,7 @@ include("navbar.html");
 
     .inputBox input {
       padding: 8px;
-      /* Reduced padding */
       font-size: 1em;
-      /* Smaller font size */
       outline: none;
       border: 1px solid #333;
       border-radius: 5px;
@@ -230,7 +219,7 @@ include("navbar.html");
       border-radius: 5px;
       resize: none;
       min-height: 150px;
-      /* Reduced height */
+   
       margin-bottom: 10px;
     }
 
@@ -244,7 +233,7 @@ include("navbar.html");
       font-weight: 500;
       cursor: pointer;
       padding: 10px 12px;
-      /* Reduced button size */
+ 
       border-radius: 5px;
     }
 
@@ -252,17 +241,16 @@ include("navbar.html");
       color: #999;
     }
 
-    /* Info Section */
     .info {
       background: #0d3b66;
-      /* Deep blue */
+      
       padding: 20px;
     }
 
     .info h3 {
       color: black !important;
       font-size: 1.4em;
-      /* Slightly smaller headers */
+ 
       margin-bottom: 15px;
     }
 
@@ -275,11 +263,11 @@ include("navbar.html");
 
     .info .infoBox div span {
       min-width: 40px;
-      /* Smaller icons */
+     
       height: 40px;
       color: #fff;
       background: #53aa43;
-      /* Green */
+   
       display: flex;
       justify-content: center;
       align-items: center;
@@ -289,9 +277,10 @@ include("navbar.html");
     }
 
     .info .infoBox div p {
-      color: black !important;
+      color: black;
       font-size: 1em;
-      /* Smaller text */
+      
+    
     }
 
     /* Map Section */
@@ -331,7 +320,7 @@ include("navbar.html");
     /* Responsive Design */
     @media (max-width: 991px) {
       body {
-        background: #03a9f5;
+        background: white;
       }
 
       .contactUs {
@@ -369,7 +358,6 @@ include("navbar.html");
   </style>
 
 
-  <!-- Hero Section -->
   <div class="hero-section">
     <div class="hero-text">Contact Us</div>
     <div class="hero-image">
@@ -377,7 +365,7 @@ include("navbar.html");
     </div>
   </div>
 
-  <!-- Contact Options -->
+
   <div class="contact-options">
     <div class="contact-option">
       <div class="icon">📧</div>
@@ -429,51 +417,85 @@ include("navbar.html");
       <h2> Get in Touch</h2>
     </div>
     <div class="box">
-      <!-- Form -->
+  
       <div class="contact form">
         <h3>Send a message</h3>
-        <form>
-          <div class="formBox">
+        <form method="POST" action="">
+        <div class="formBox">
             <div class="row50">
-              <div class="inputBox">
-                <span>First name</span>
-                <input type="text">
-              </div>
-              <div class="inputBox">
-                <span>Last name</span>
-                <input type="text" placeholder="Enter the last name">
-              </div>
+                <div class="inputBox">
+                  <span>First name</span>
+                  <input type="text" name="first_name" required>
+                </div>
+                <div class="inputBox">
+                  <span>Last name</span>
+                  <input type="text" name="last_name" placeholder="Enter the last name" required>
+                </div>
             </div>
 
             <div class="row50">
-              <div class="inputBox">
-                <span>Email</span>
-                <input type="text" placeholder="Enter the email">
-              </div>
-              <div class="inputBox">
-                <span>Mobile</span>
-                <input type="text" placeholder="Enter the mobile number">
-              </div>
+                <div class="inputBox">
+                  <span>Email</span>
+                  <input type="text" name="email" placeholder="Enter the email" required>
+                </div>
+                <div class="inputBox">
+                  <span>Mobile</span>
+                  <input type="text" name="mobile" placeholder="Enter the mobile number" required>
+                </div>
             </div>
 
             <div class="row100">
-              <div class="inputBox">
-                <span>Message</span>
-                <textarea placeholder="Write your message here..."></textarea>
-              </div>
+                <div class="inputBox">
+                  <span>Message</span>
+                  <textarea name="message" placeholder="Write your message here..." required></textarea>
+                </div>
             </div>
 
             <div class="row100">
-              <div class="inputBox">
-                <span>Send</span>
+                <div class="inputBox">
                 <input type="submit" value="Send">
-              </div>
+                </div>
             </div>
-          </div>
-        </form>
-      </div>
+        </div>
+    </form>
 
-      <!-- Info Box -->
+      </div>
+    
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $message = $_POST['message'];
+
+   
+    $to = 'myjkian@gmail.com'; 
+
+
+    $subject = 'Message from Contact Form';
+    $body = "
+    First Name: $first_name\n
+    Last Name: $last_name\n
+    Email: $email\n
+    Mobile: $mobile\n\n\n
+    Message:\n$message
+    ";
+
+   
+    $headers = 'From: ' . $email . "\r\n" .
+               'Reply-To: ' . $email . "\r\n" .
+               'X-Mailer: PHP/' . phpversion();
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo 'Message sent successfully!';
+    } else {
+        echo 'Message sending failed. Please try again';
+    }
+}
+?>
+   
       <div class="contact info">
         <h3>Contact Info</h3>
         <div class="infoBox">
@@ -490,7 +512,6 @@ include("navbar.html");
             <a href="tel:+9407765467">+9407765467</a>
           </div>
 
-          <!-- Social Media Links -->
           <ul class="sci">
             <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
@@ -500,7 +521,6 @@ include("navbar.html");
         </div>
       </div>
 
-      <!-- Map -->
       <div class="contact map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.481375056299!2d79.85604919392105!3d6.906103939491147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259706bfa613f%3A0xf79d7adae85305f7!2sCinnamon%20Gardens%2C%20Colombo!5e0!3m2!1sen!2slk!4v1735411581779!5m2!1sen!2slk"
@@ -518,3 +538,4 @@ include("navbar.html");
 <?php
 include("footer.html");
 ?>
+
