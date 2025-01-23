@@ -53,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
     <title>Community Members</title>
     <style>
 
-        body {
-            font-family: 'poppins';
+    body {
+            font-family: 'Poppins';
             margin: 0;
             padding: 0;
         }
-        .comma{
+        .comma {
             margin-top: 50px;
             text-align: center;
         }
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
             background-color: #f1f1f1;
         }
         .removebutton {
-            background-color:  #75b060;
+            background-color: #75b060;
             color: white;
             border: none;
             padding: 6px 10px;
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
         .back-button {
             display: inline-block;
             margin: 20px auto;
-            background : linear-gradient(45deg, #75b060, #d7bc74);
+            background: linear-gradient(45deg, #75b060, #d7bc74);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -105,7 +105,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
             cursor: pointer;
         }
         .back-button:hover {
-            background :linear-gradient(45deg, #d7bc74, #75b060); ;
+            background: linear-gradient(45deg, #d7bc74, #75b060);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            table {
+                width: 100%;
+                font-size: 14px;
+            }
+            table th, table td {
+                padding: 6px;
+            }
+            table th, table td, table {
+                display: block;
+                text-align: left;
+            }
+            table thead {
+                display: none;
+            }
+            table tr {
+                margin-bottom: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+            table tr td {
+                display: block;
+                padding: 8px;
+                text-align: left;
+            }
+            table tr td:first-child {
+                font-weight: bold;
+            }
+            .back-button {
+                width: 90%;
+                font-size: 14px;
+                margin: 10px auto;
+            }
+            .removebutton {
+                padding: 4px 8px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
