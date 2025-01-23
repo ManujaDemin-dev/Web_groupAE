@@ -60,11 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
         }
         .comma {
             margin-top: 50px;
-            text-align: center;
+            text-align: left;
         }
         h1 {
             font-size: 23px;
             margin: 20px 0;
+            text-align: center;
         }
         table {
             width: 85%;
