@@ -361,7 +361,7 @@ include("navbar.html");
   <div class="hero-section">
     <div class="hero-text">Contact Us</div>
     <div class="hero-image">
-      <img src="image9.avif" alt="Support Illustration">
+      <img src="./image/image9.avif" alt="Support Illustration">
     </div>
   </div>
 

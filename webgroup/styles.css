@@ -72,15 +72,15 @@ body {
 
 .machn{
     display: block;
-    height: 490px;
+    height: 360px;
     position: absolute;
-    margin-left: 950px;
-    margin-top: -339px;
+    margin-left: 969px;
+    margin-top: -250px;
     
 }
 
 .machn:hover{
-    height: 500px;
+    height: 370px;
 }
 .title-container {
     display: flex;
