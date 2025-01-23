@@ -22,6 +22,14 @@ $user_id = $_SESSION['user_id'];
             z-index: 50;
         }
 
+        .navtitle{
+            font-weight: 600;
+            color: #f0d78c;
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
+        }
+
         .custom-navbar {
             height: 60px;
             background-color: #0D3B66;
@@ -123,7 +131,12 @@ $user_id = $_SESSION['user_id'];
                 padding: 0;
             }
 
-            .custom-navbar-mob {
+            .custom-navbar-mob{
+                display: block;
+            }
+            
+            .custom-navbar-mob:hover{
+                background-color: #00000000;
                 display: block;
             }
 
@@ -142,6 +155,11 @@ $user_id = $_SESSION['user_id'];
                 background-color: #0D3B66;
                 box-shadow: -5px 0 5px #0000006b;
                 transition: 0.75s ease-out;
+            }
+
+            .navtitle{
+                position: absolute;
+                margin-right: 215px;
             }
 
             .custom-navbar a {
@@ -197,7 +215,7 @@ $user_id = $_SESSION['user_id'];
 </head>
 <body>
     <nav class="custom-navbar">
-        <a href="#" class="custom-navbar-mob">Navigate Menu</a>
+        <p class="navtitle">FocusNet</p>
         <input type="checkbox" id="custom-navbar-sidebar-active">
         <label for="custom-navbar-sidebar-active" class="custom-navbar-open-sidebar-button">
             <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000">
@@ -212,16 +230,13 @@ $user_id = $_SESSION['user_id'];
                     <path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
                 </svg>
             </label>
-            <a href="index.php" class="custom-navbar-home-link">Navigate ></a>
+            <a href="index.php" class="custom-navbar-home-link"></a>
             <ul class="custom-navbar-links">
                 <li class="custom-navbar-item">
                     <a href="/Web_groupAE/webgroup/views/user/dashboard.php">Home</a>
                 </li>
                 <li class="custom-navbar-item">
                     <a href="/Web_groupAE/webgroup/category.php">Categories</a>
-                </li>
-                <li class="custom-navbar-item">
-                    <a href="#">Any</a>
                 </li>
                 <li class="custom-navbar-item">
                    

@@ -74,17 +74,144 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name_for_file'])) {
 <html>
 <head>
     <title>Upload File</title>
+    <style>
+    body {
+           
+           font-family: 'Poppins', sans-serif;
+           margin: 0;
+           padding: 0;
+         
+       }
+
+       h1 {
+           text-align: center;
+           color: black;
+       }
+
+       .formm {
+          
+           margin: auto;
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 8px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           max-width: 800px;
+           box-sizing: border-box;
+       }
+
+       label {
+           display: block;
+           margin-bottom: 5px;
+           color: black;
+           font-weight: bold;
+       }
+
+       input[type="file"],
+       input[type="text"],
+       textarea {
+           width: 100%;
+           padding: 8px;
+           margin-bottom: 15px;
+           border: 1px solid #ccc;
+           border-radius: 4px;
+           font-size: 16px;
+           box-sizing: border-box;
+           
+       }
+
+       textarea {
+           resize: none;
+           height: 120px;
+       }
+
+       .sub {
+           color: white;
+           border: none;
+           padding: 10px 15px;
+           border-radius: 4px;
+           cursor: pointer;
+           width: 40%;
+           background-color: #0d3b66;
+           transition:  transform 0.2s ease;
+           font-size: 16px;
+       }
+
+       .sub:hover {
+           background-color:  #90D076; 
+           color: black;
+           
+       }
+       .nav-button {
+           margin: 20px 30px;
+           padding: 8px 10px;
+           background-color: #0d3b66;
+           color: white;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+           text-decoration: none;
+           font-size: 14px;
+           
+           transition:  transform 0.2s ease;
+       }
+
+       .nav-button:hover {
+           background-color:  #90D076; 
+           color: black;
+       }
+       .textho {
+           text-align: center;
+           color: black;
+           font-family: 'Poppins', sans-serif;
+       }
+      
+       @media (max-width: 480px) {
+           body {
+               padding: 10px;
+           }
+
+           .formm {
+               width: 100%;
+               padding: 0px;
+           }
+
+           .sub {
+               font-size: 14px;
+               padding: 8px 10px;
+           }
+
+           input[type="file"],
+       input[type="text"],
+       textarea {
+           width: 100%;
+           padding: 8px;
+           
+           font-size: 18px;
+           
+           
+       }
+
+       textarea {
+           resize: none;
+           height: 180px;
+           font-size: 14px;
+
+       }
+
+       }
+   </style>
 </head>
 <body>
 
-    <form action="./view.php" method="POST">
+    <form  action="./view.php" method="POST">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
-        <button clss="nav-button" type="submit">Back</button>
+        <button  class="nav-button" type="submit">Back to community</button>
     </form>
 
-     <p>in this system if you are upload a imges it will shows only the wall and other files will be shows in commu.</p>
+    
     <h1>Upload a File</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <p class="textho">Choose a file to upload and share it easily with your community!</p>
+    <form class="formm" method="POST" enctype="multipart/form-data">
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['community_id'])) {
             Echo "<input type='hidden' name='community_id' value='" . $_POST['community_id'] . "'>";
@@ -96,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name_for_file'])) {
         <input type="text" name="name_for_file" required><br>
         <label>Description  200 charaters only</label><br><br>
         <textarea name="description" maxlength="200" ></textarea><br><br>
-        <button type="submit">Upload</button>
+        <button class="sub" type="submit">Upload</button>
     </form>
     <?php if (isset($error)) echo "<p>$error</p>"; ?>
 
