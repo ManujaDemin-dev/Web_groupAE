@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name_for_file'])) {
         }      
         ?>
         <label>Choose a File</label>
-        <input type="file" name="file" required><br>
+        <input type="file" name="file"required><br>
         <label>Name </label><br>
         <input type="text" name="name_for_file" required><br>
         <label>Description  200 charaters only</label><br><br>
