@@ -98,27 +98,32 @@ body {
 }
 
 .containeris {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+     /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; 
+    align-items: center; */
     width: 100%;
     margin: 20px 0;
     padding: 20px 0;
 }
 
-.buttons {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;    
-    margin: 0 0;
+/* .buttons {
+     display: flex; 
+    flex-wrap: wrap;
+    justify-content: right; 
+    gap: 10px;
+    margin: 20px 0;
+    text-decoration: none;
+    
    
-}
+} */
 
 
-.btn {
+.btn1 {
+    display: flex; 
+    flex-wrap: wrap;
+    
     background-color: #296b8e;
     color: white;
     border: none;
@@ -128,9 +133,13 @@ body {
     font-size: 14px;
     width: 200px;
     margin: 20px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    
+    
 }
 
-.btn:hover {
+.btn1:hover {
     background-color: #0d3b66;
 }
 
@@ -151,49 +160,63 @@ body {
 }
 
 .search-bar {
-    display: flex;
+    /* display: flex;
     justify-content:space-between;
-    gap: 10px;
-    width: 60%;
-   
-}
-
-.search-bar input {
+   */
     width: 100%;
-    padding: 7px;
-    border: 2px solid #296b8e;
+    /* flex-wrap: wrap; */
+    margin: 10px 10%;
+    
+   
+}
+.search-bar input[type="text"] {
+    /* flex: 1; */
+    width: 50%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #296b8e;
     border-radius: 5px;
-    margin: auto;
-    font-size: 16px;
+    box-sizing: border-box;
+
    
 }
 
-.search-bar .search-btn {
+
+.search-bar button {
     background-color: #53aa43;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    text-decoration: none;
-   
 }
-
-.search-bar .search-btn:hover {
+.search-bar button:hover {
     background-color: #0d3b66;
 }
 
-#create-btn{
-    background-color: rgb(159, 56, 76);
-    text-decoration: none;
-    padding: 10px 10px;
 
+/* .btn1, */
+#create-btn {
+    background-color: #296b8e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 80%;
+    cursor: pointer;
+    font-size: 14px;
+    width: auto;
+    transition: background-color 0.3s;
+}
+
+#create-btn {
+    background-color: rgb(159, 56, 76);
 }
 
 
 
-@media (max-width: 768px){
+@media (max-width: 800x){
     .containeris{
         padding: 10px 0;
     }
@@ -212,7 +235,7 @@ body {
         
     }
 
-    .btn{
+    .btn1{
         font-size: 15px;
         padding: 10px;
     }
@@ -226,6 +249,9 @@ body {
     .search-bar .search-btn{
         width: 30%;
         margin: 0 auto;
+    }
+    #create-btn{
+        margin-left: 50%;
     }
 }
 
@@ -251,7 +277,7 @@ body {
         text-decoration: none;
     }
 
-    .btn {
+    .btn1 {
         font-size: 13px;
         padding: 5px 10px;
         width: 140px;
@@ -260,33 +286,33 @@ body {
 
     }
 
-    .search-bar input{
-        width: 60%;
+    /* .search-bar input{
+        width: 70%;
         font-size: 12px;
-   
+        padding: 4px 4px 4px 4px;
+        font-size: 12px;
+        
+    } */
+    #create-btn{
+    margin-left: 50%;
+    padding: 4px 4px;
+    font-size: 14px;
 
-       
-    }
-
-    .search-bar .search-btn{
+}
+    .search-bar .#search-btn{
         width: 30%;
         padding: 8px 10px;
        
     }
-    .search-bar{
+    #search-bar{
         width: 85%;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
        
     }
 }
 
-
-
-
-
-        /* body {
-            margin: 0;
-            padding: 0;
-        } */
         .message {
             color: green;
             font-weight: bold;
@@ -351,7 +377,7 @@ body {
         }
 
         .community-card-alt:hover {
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 12px 10px rgba(0, 0, 0, 0.4);
         }
 
        
@@ -434,7 +460,7 @@ body {
         }
 }
 
-    
+
 @media (min-width: 701px) and (max-width: 1100px) {
     .container {
         grid-template-columns: repeat(3, 1fr);
@@ -474,7 +500,7 @@ body {
         padding: 5px 8px;
         font-size: 14px;
        }
-    }
+    } 
     </style>
     
 </head>
@@ -486,8 +512,8 @@ body {
     </div>
 
     <div class="buttons">
-     <a id="btn" href="category.php">Back to Categories</a>
-    <a class="btn" id="create-btn" href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a>
+     <a class="btn1"id="btn1" href="category.php">Back to Categories</a>
+    <a class="btn1" id="create-btn" href="views/community/create.php?category_id=<?= $category_id ?>">Create a new community in this category</a>
     </div>
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
 
@@ -496,7 +522,7 @@ body {
         <input  type="hidden" name="category_id" value="<?= htmlspecialchars($category_id) ?>">
         <input type="hidden" name="category_name" value="<?= htmlspecialchars($category_name) ?>">
         <input class= "input" type="text" name="search" placeholder="Search communities..." value="<?= htmlspecialchars($searchTerm) ?>">
-        <button class="search" type="submit">Search</button>
+        <button class="search" id="search" type="submit">Search</button>
     </form>
     </div>
     </div>
