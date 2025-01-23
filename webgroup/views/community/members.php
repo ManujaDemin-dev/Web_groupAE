@@ -16,7 +16,7 @@ $ownerStmt = $pdo->prepare($ownerQuery);
 $ownerStmt->execute(['community_id' => $community_id]);
 $owner = $ownerStmt->fetch(PDO::FETCH_ASSOC);
 
-$isOwner = $_SESSION['user_id'] == $owner['current_owner_id'];
+$isOwner = $_SESSION['user_id'] == $owner['current_owne r_id'];
 
 
 $query = "SELECT users.user_id, users.name, users.email FROM community_members 
@@ -52,26 +52,65 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
 <head>
     <title>Community Members</title>
     <style>
-        .body {
-            font-family: Arial, sans-serif;
-            margin-top: 500px;
+
+        body {
+            font-family: 'poppins';
+            margin: 0;
+            padding: 0;
+        }
+        .comma{
+            margin-top: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 23px;
+            margin: 20px 0;
         }
         table {
             width: 85%;
             border-collapse: collapse;
             margin: 10px auto;
         }
-        .head {
+        table th, table td {
+            border: 1px solid #333;
+            padding: 8px;
             text-align: center;
-            margin-top: 0px;
-            font-size: 23px;
-
-
+        }
+        table th {
+            background-color: #fff;
+            font-weight: bold;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .removebutton {
+            background-color:  #75b060;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+        .removebutton:hover {
+            background-color: #d7bc74;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            background : linear-gradient(45deg, #75b060, #d7bc74);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background :linear-gradient(45deg, #d7bc74, #75b060); ;
         }
     </style>
 </head>
 <body>
-    
+    <div class="comma">
     <form method="POST" action = "./view.php">
         <input type="hidden" name="community_id" value="<?= $community_id ?>">
         <button type="submit">Back to community</button>
@@ -109,6 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isOwner) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
     
 </body>
 </html>
