@@ -22,6 +22,14 @@ $user_id = $_SESSION['user_id'];
             z-index: 50;
         }
 
+        .navtitle{
+            font-weight: 600;
+            color: #f0d78c;
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
+        }
+
         .custom-navbar {
             height: 60px;
             background-color: #0D3B66;
@@ -126,6 +134,11 @@ $user_id = $_SESSION['user_id'];
             .custom-navbar-mob{
                 display: block;
             }
+            
+            .custom-navbar-mob:hover{
+                background-color: #00000000;
+                display: block;
+            }
 
             .custom-navbar-home-link {
                 display: none;
@@ -142,6 +155,11 @@ $user_id = $_SESSION['user_id'];
                 background-color: #0D3B66;
                 box-shadow: -5px 0 5px #0000006b;
                 transition: 0.75s ease-out;
+            }
+
+            .navtitle{
+                position: absolute;
+                margin-right: 215px;
             }
 
             .custom-navbar a {
@@ -197,7 +215,7 @@ $user_id = $_SESSION['user_id'];
 </head>
 <body>
     <nav class="custom-navbar">
-        <a href="#" class="custom-navbar-mob">FocusNet</a>
+        <p class="navtitle">FocusNet</p>
         <input type="checkbox" id="custom-navbar-sidebar-active">
         <label for="custom-navbar-sidebar-active" class="custom-navbar-open-sidebar-button">
             <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000">
