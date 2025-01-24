@@ -66,8 +66,10 @@ include("navbar.html");
                         </div>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Learn More</button>
-                        <button class="btn">Sign Up</button>
+                        <!-- <button class="btn">Learn More</button>
+                        <button class="btn">Sign Up</button> -->
+                        <a href="./views/auth/signup.php"><button class="btn">Sign Up</button></a>
+                        <a href="./aboutus.php"><button class="btn">Learn More</button></a>
                     </div>
                 </div>
                 <div class="image-placeholder">
@@ -76,9 +78,17 @@ include("navbar.html");
             </div>
         </div>
         <div class="Add">
-            <p>Through innovation, collaboration and positive vibes we want to help every student achieve their academic goals, build meaningful relationships and find the joy of learning, one study session at a time.</p>
+            <p class="Add1">We want to create a fun, supportive environment where students can hang out, share 
+                knowledge and stay motivated. By combining Pomodoro sessions, note sharing and music
+                 driven productivity we want to help students learn, grow and connect with like minded people - 
+                 all while having fun and being inspired.
+            </p><br> <br>
+
+            <p class="Add1">We see a global community of students united by a love of learning and personal growth. Through innovation,
+                 collaboration and positive vibes we want to help every student achieve their academic goals,
+                 build meaningful relationships and find the joy of learning, one study session at a time.</p>
         </div>
-<br><br>
+        <br><br>
         <?php
         include("comment.html");
         ?>
