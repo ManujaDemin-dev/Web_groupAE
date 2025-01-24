@@ -76,13 +76,9 @@ include("navbar.html");
             </div>
         </div>
         <div class="Add">
-                    <h2>Add what you want</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit rerum asperiores atque illo delectus? 
-                        Magni quam blanditiis repellat dolor, molestias suscipit quasi delectus explicabo, possimus aut 
-                        quas recusandae, ex quae.
-                    </p>
-                </div>
-
+            <p>Through innovation, collaboration and positive vibes we want to help every student achieve their academic goals, build meaningful relationships and find the joy of learning, one study session at a time.</p>
+        </div>
+<br><br>
         <?php
         include("comment.html");
         ?>
