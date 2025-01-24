@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="POST">
             <input type="text" name="name" placeholder="Enter Username" required>
             <input type="email" name="email" placeholder="Enter Email" required>
-           >
+           
             <div class="password-container">
                 <input type="password" name="password" placeholder="Create Password" required id="password-input">
                 <img src="hide (1).png" alt="Toggle Password" class="toggle-password" id="togglePassword">
