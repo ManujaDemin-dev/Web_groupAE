@@ -33,6 +33,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         text-align: center;
         font-family: 'poppins', sans-serif;
         font-size: 30px;
+        color: #296b8e
 
     }
     .grid-container {
@@ -41,7 +42,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px 40px;
-        background: #296b8e;
+        background:rgba(83, 85, 86, 0.18);
         width: 99vw;
         padding-top: 30px;
         padding-bottom: 30px;
@@ -64,7 +65,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-        border: 3px solid black;
+       /* border: 3px solid black ;*/
         font-family: Arial, Helvetica, sans-serif; 
         text-decoration: none;
         color: inherit;
@@ -73,7 +74,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
     }
     .card-header {
-        background: linear-gradient(135deg, #58c316, #44ff15);
+        background: #53aa43;
         height: 60px;
     }
     .card-body {
@@ -165,7 +166,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-    <h1 class="h11">Categories</h1>
+    <h1 class="h11">CATEGORIES</h1>
     <div class="grid-container">
         <?php foreach ($categories as $category): ?>
             <!-- <a href="community.php?category_id=<//?= base64_encode($category['category_id']) ?>" class="community-card-alt">  thats not a problrem-->
