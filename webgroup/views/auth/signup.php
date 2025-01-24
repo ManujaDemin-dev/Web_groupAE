@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="POST">
             <input type="text" name="name" placeholder="Enter Username" required>
             <input type="email" name="email" placeholder="Enter Email" required>
-            <!-- Password field with eye icon toggle -->
+           >
             <div class="password-container">
                 <input type="password" name="password" placeholder="Create Password" required id="password-input">
                 <img src="hide (1).png" alt="Toggle Password" class="toggle-password" id="togglePassword">
@@ -81,9 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="number" name="age" placeholder="Enter Your Age" required>
             <select name="gender" required>
                 <option value="" disabled selected>Select Your Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
             </select>
             <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions.</span>
 

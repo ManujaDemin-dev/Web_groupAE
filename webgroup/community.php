@@ -123,7 +123,6 @@ body {
 .btn1 {
     display: flex; 
     flex-wrap: wrap;
-    
     background-color: #296b8e;
     color: white;
     border: none;
@@ -132,9 +131,10 @@ body {
     cursor: pointer;
     font-size: 14px;
     width: 200px;
-    margin: 20px 20px;
+    margin: 10px 20px;
     margin-top: 10px;
     text-decoration: none;
+    font-weight: bold;
     
     
 }
@@ -155,8 +155,9 @@ body {
 }
 
 .main-content h1 {
-    color: white;
+    color: #0d3b66;
     font-size: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .search-bar {
