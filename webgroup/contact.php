@@ -281,7 +281,7 @@ include("navbar.html");
     }
 
     .info .infoBox div p {
-      color: white;
+      color: white !important;
       font-size: 1em;
       
     
@@ -324,7 +324,7 @@ include("navbar.html");
     /* Responsive Design */
     @media (max-width: 991px) {
       body {
-        background: #03a9f5;
+        background:rgb(91, 175, 119) ;
       }
 
       .contactUs {
