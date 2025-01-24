@@ -244,8 +244,10 @@ form {
 }
 
 .files {
-    font-size:22px;
-    margin-left: 8%;
+    font-size:25px;
+    margin-left: 20px;
+    color: #0d3b66;
+
 
 }
 
@@ -323,13 +325,14 @@ form {
 
 
     <div class="dis"><p><?= htmlspecialchars($community['description']) ?></p>  </div>
-
+    
+    <br>
     <div class="buttonsbar">
     <form method="POST" action="upload.php">
         <input type="hidden" name="community_id" value="<?=($community_id) ?>">
         <button class="nav-button" type="submit">Upload a File</button>
     </form>
-
+    
     <form action="./members.php" method="GET">
         <input type="hidden" name="community_id" value="<?= ($community_id) ?>">
         <button class="nav-button" type="submit">Community members</button>
@@ -351,8 +354,6 @@ form {
 </form>
 
 
-
-
         <?php
     $current_owner = $community['current_owner_id']; 
     //echo "Current owner is: $current_owner";
@@ -366,6 +367,8 @@ form {
 
     
     ?>
+    <hr width="100%">
+    <br><br><br>
 
     </div>
     <h2 class="files">Files</h2>
