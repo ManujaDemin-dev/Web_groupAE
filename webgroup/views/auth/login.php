@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Sanitize input
+   
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form><br>
 
     <div>
-        <p>If you Do not have an account?</p><br> <button><a href="signup.php">Sign up</a></button>  <!-- text decoration none danna 
+        <p>If you Do not have an account?</p><br> <button><a href="signup.php">Sign up</a></button>  
     </div> -->
 
 <!DOCTYPE html>
@@ -149,9 +149,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Toggle the eye icon image
             if (type === 'password') {
-                togglePassword.src = 'hide (1).png'; // Show the "hide" image
+                togglePassword.src = 'hide (1).png'; 
             } else {
-                togglePassword.src = 'view (2).png'; // Show the "show" image
+                togglePassword.src = 'view (2).png'; 
             }
         });
 

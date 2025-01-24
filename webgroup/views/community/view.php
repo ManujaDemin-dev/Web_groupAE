@@ -347,7 +347,7 @@ form {
     
         <form method="POST" action="./leave_community.php">
     <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
-    <button class="nav-button" type="submit">Leave Community</button>
+    <button class="nav-button" type="submit" onclick="return confirm('Are you sure you want to leave from this community?')">Leave Community</button>
 </form>
 
 
@@ -407,7 +407,7 @@ form {
                                 <form method="POST" action="./deletefile.php">
                                     <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
                                     <input type="hidden" name="file_id" value="<?= htmlspecialchars($file['file_id']) ?>">
-                                    <button class="delete-filebutton" type="submit">Delete</button>
+                                    <button class="delete-filebutton" type="submit" onclick="return confirm('Are you sure you want to delete this file?')">Delete</button>
                                 </form>
                             </td>
                         <?php endif; ?>
@@ -438,7 +438,7 @@ form {
                     <?php if ($current_owner == $_SESSION['user_id']): ?>
                         <form method="POST" action="./deletefile.php">
                             <input type="hidden" name="file_id" value="<?= htmlspecialchars($file['file_id']) ?>">
-                            <button class="delete-filebutton" type="submit">Delete</button>
+                            <button class="delete-filebutton" type="submit" onclick="return confirm('Are you sure you want to delete this file?')">Delete</button>
                         </form>
                     <?php endif; ?>
                 </div>

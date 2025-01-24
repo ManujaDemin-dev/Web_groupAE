@@ -132,12 +132,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       margin-top: 10px;
     }
     .nav-button {
-      padding: 10px 10px;
+      padding: 5px 10px;
       background: #0d3b66;
       color: white;
       border: none;
+      cursor: pointer;
+      font-size: 16px;
       border-radius: 10px;
-      margin-top: 5px;
+      margin-top: 10px;
+    }
+    .nav-button:hover {
+      background: #53Aa43;
     }
   </style>
 </head>

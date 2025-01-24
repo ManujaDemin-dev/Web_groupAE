@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             justify-content: center;
             height: 100vh;
             background-color: #f4f4f4;
-            padding: 20px; /* Added padding for better layout on mobile */
+            padding: 20px; 
         }
 
         .profile-container {
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 500px;
+            max-width: 900px;
         }
 
         .form-group {
@@ -116,16 +116,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 5px;
             font-size: 16px;
         }
-
+        
         button {
             width: 100%;
             padding: 10px;
             background-color: #75b060;
-            color: #fff;
+            color: black;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         button:hover {
@@ -141,9 +142,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         textarea {
             resize: none;
+            height: 90px;
         }
 
-        /* Mobile responsive styles */
         @media (max-width: 768px) {
             .janathawa {
                 padding: 10px;
@@ -151,12 +152,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             .profile-container {
                 padding: 15px;
-                width: 100%; /* Ensure it takes full width on smaller devices */
+                width: 100%;
             }
 
             input, textarea, select {
-                font-size: 14px; /* Adjust font size for smaller screens */
-                padding: 8px; /* Reduce padding for smaller elements */
+                font-size: 14px;
+                padding: 8px; 
             }
 
             button {
@@ -165,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             label {
-                font-size: 14px; /* Adjust label size */
+                font-size: 14px; 
             }
         }
     </style>
@@ -173,13 +174,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="janathawa">
 
-        <p style="text-align: center; margin-bottom: 20px;">You can update your details below. If you don't want to change something, leave the field as it is.</p>
+        <p style="text-align: center; margin-top: 60px;">You can update your details below. If you don't want to change something, leave the field as it is.</p>
 
         <div class="profile-container">
             <?php if (isset($error)): ?>
-                <div class="message error">
-                    <?= htmlspecialchars($error) ?>
-                </div>
+                <div class="message error"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
 
             <form method="POST">
@@ -215,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" maxlength="210" placeholder="Tell us something about yourself...">
+                    <textarea id="description" name="description" maxlength="220" placeholder="Tell us something about yourself...">
                         <?= htmlspecialchars($user['description'] ?? '') ?>
                     </textarea>
                 </div>
@@ -225,19 +224,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div style="margin-top: 20px; text-align: center;">
-            <form id="deleteForm" method="POST" action="./delete.php">
+            <form id="deleteForm" method="POST" action="./delete.php" >
                 <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
-                <button type="button1" style="background-color: #dc3545;" onclick="del()">Delete My Account</button>
+                <button type="button1" style="background-color: #dc3545;"  onclick="return confirm('Are you sure you want to delete your account?')">Delete My Account</button>
             </form>
         </div>
 
         <script>
-            function del() {
-                const confirmation = confirm("Are you sure you want to delete your account?");
-                if (confirmation) {
-                    document.getElementById('deleteForm').submit();
-                }
-            }
+        //     function del() {
+        // if (confirm("Are you sure you want to delete your account?")) {
+        //     document.getElementById("deleteForm").submit();
+        //  }
+        //  else {
+        //     return false; /// not working
+        //  }
+        //     }
+
+
+        document.getElementById("deleteButton").addEventListener("click", function () {
+      
+        const confirmation = confirm("Are you sure you want to delete your account?");
+        if (confirmation) {
+           
+            document.getElementById("deleteForm").submit(); //also not working
+        }
+      
+    });
         </script>
     </div>
 </body>

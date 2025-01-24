@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="color">Main Color:</label>
         <input type="color" id="color" name="color" value="<?= htmlspecialchars($community['color']) ?>">
         <br>
-        <button type="submit">Update</button>
+        <button type="submit" onclick="return confirm('Are you sure you want to update this community?')">Update</button>
     </form>
 
     <h2>Admin Actions</h2>

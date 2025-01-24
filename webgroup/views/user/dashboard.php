@@ -443,17 +443,16 @@ if (mb_strlen($description) > 170) {
     <div class="card-header" style="background-color: <?= htmlspecialchars($community['color']) ?>;"></div>
 </a>
 
-<!-- Hidden Form -->
+
 <form id="communityForm" method="POST" action="../community/view.php" style="display: none;">
     <input type="hidden" name="community_id" id="community_id">
 </form>
 
 <script>
     function submitForm(communityId, color) {
-        // Populate the hidden form with the necessary data
         document.getElementById('community_id').value = communityId;
         
-        // Submit the form programmatically
+    
         document.getElementById('communityForm').submit();
     }
 </script>

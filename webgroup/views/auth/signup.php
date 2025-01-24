@@ -3,7 +3,7 @@ session_start();
 include '../../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Validate and sanitize input
+  
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -96,20 +96,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </div>
     <script>
-        // Toggle password visibility
+       
         const togglePassword = document.getElementById('togglePassword');
         const passwordField = document.getElementById('password-input');
 
         togglePassword.addEventListener('click', () => {
-            // Toggle password visibility
+        
             const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordField.setAttribute('type', type);
 
-            // Toggle the eye icon image
             if (type === 'password') {
-                togglePassword.src = 'hide (1).png'; // Show the "hide" image
+                togglePassword.src = 'hide (1).png'; 
             } else {
-                togglePassword.src = 'view (2).png'; // Show the "show" image
+                togglePassword.src = 'view (2).png';
             }
         });
     </script>
