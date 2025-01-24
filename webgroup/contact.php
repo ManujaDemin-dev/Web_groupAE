@@ -248,11 +248,15 @@ include("navbar.html");
     }
 
     .info h3 {
-      color: black !important;
+      color: white !important;
       font-size: 1.4em;
  
       margin-bottom: 15px;
     }
+    .info .infoBox div a {
+  color: #FFFFFF; 
+  text-decoration: none; 
+}
 
     .info .infoBox div {
       display: flex;
@@ -277,7 +281,7 @@ include("navbar.html");
     }
 
     .info .infoBox div p {
-      color: black;
+      color: white;
       font-size: 1em;
       
     
