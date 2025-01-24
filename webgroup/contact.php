@@ -324,7 +324,7 @@ include("navbar.html");
     /* Responsive Design */
     @media (max-width: 991px) {
       body {
-        background: white;
+        background: #03a9f5;
       }
 
       .contactUs {
