@@ -10,23 +10,23 @@ include("navbar.html");
 
 <body>
     <div class="all">
-        <img src="newbg.png" class="landing">
+        <img src="./image/newbg.png" class="landing">
 
         <div class="con">
             <div class="slider">
                 <div class="list">
-                    <div class="item" style="--position: 1"><img src="ART.png" alt=""></div>
-                    <div class="item" style="--position: 2"><img src="COM.png" alt=""></div>
-                    <div class="item" style="--position: 3"><img src="computing.png" alt=""></div>
-                    <div class="item" style="--position: 4"><img src="engineering.png" alt=""></div>
-                    <div class="item" style="--position: 5"><img src="SCIENCE.png" alt=""></div>
-                    <div class="item" style="--position: 6"><img src="study.png" alt=""></div>
-                    <div class="item" style="--position: 7"><img src="computing.png" alt=""></div>
-                    <div class="item" style="--position: 8"><img src="SCIENCE.png" alt=""></div>
+                    <div class="item" style="--position: 1"><img src="./image/ART.png" alt=""></div>
+                    <div class="item" style="--position: 2"><img src="./image/COM.png" alt=""></div>
+                    <div class="item" style="--position: 3"><img src="./image/computing.png" alt=""></div>
+                    <div class="item" style="--position: 4"><img src="./image/engineering.png" alt=""></div>
+                    <div class="item" style="--position: 5"><img src="./image/SCIENCE.png" alt=""></div>
+                    <div class="item" style="--position: 6"><img src="./image/study.png" alt=""></div>
+                    <div class="item" style="--position: 7"><img src="./image/computing.png" alt=""></div>
+                    <div class="item" style="--position: 8"><img src="./image/SCIENCE.png" alt=""></div>
                 </div>
             </div>
         </div>
-        <img src="machnpoints.png" class="machn">
+        <img src="./image/machnpoints.png" class="machn">
         <br>
     </div>
     <div class="title-container">
@@ -71,7 +71,7 @@ include("navbar.html");
                     </div>
                 </div>
                 <div class="image-placeholder">
-                    <img src="Thumbnails-3_aZkToGu.webp" alt="Placeholder image" />
+                    <img src="./image/Thumbnails-3_aZkToGu.webp" alt="Placeholder image" />
                 </div>
             </div>
         </div>
