@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 0;
             
         }
-        .nav-button {
+        .nav-button12 {
            margin: 20px 30px;
            padding: 8px 10px;
            background-color: #0d3b66;
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
            transition:  transform 0.2s ease;
        }
 
-       .nav-button:hover {
+       .nav-button12:hover {
            background-color:  #90D076; 
            color: black;
        }
@@ -214,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <form method="POST" action="./view.php">
         <input type="hidden" name="community_id" value="<?= htmlspecialchars($community_id) ?>">
-        <button class="nav-button" type="submit">Back to Community</button>
+        <button class="nav-button12" type="submit">Back to Community</button>
     </form>
 
     <h2>Edit Community</h2>
@@ -247,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button class="ownerb" type="submit" onclick="return confirm('Are you sure you want to change the community admin?')" >Change Owner</button>
     </form>
 
-   
+   <br><br><br>
 
     <h3>Delete Community</h3>
     <form method="POST" action="deletecomm.php">

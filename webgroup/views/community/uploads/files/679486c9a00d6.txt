@@ -1,0 +1,31 @@
+Admin users:
+Have access to admin panel
+Can change users
+Can change role of users (admin or user)
+Transfer community ownership
+Remove accounts 
+
+
+
+Regular users:
+Can create community in any category
+Join with any existing community
+Update profile details
+Delete their account 
+
+
+Within a community users can:
+Upload files to the community (notes/images/documents)
+Search for files in search bar
+Chat with other members
+
+
+
+ Community admin can:
+Remove users
+Change community details
+Delete files uploaded into the community
+Delete the community 
+Transfer admin to another user
+  
+  

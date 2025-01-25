@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         
         <div class="login-help">
-            <p >Don't have an account?</p> <button class="logindir"><a href="signup.php">Sign up</a></button>
+            <p >Don't have an account?</p> <a style="background-color: #0d3b66; color: white; padding: 10px 10px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 30px;" href="signup.php">Sign up</a>
         </div>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
