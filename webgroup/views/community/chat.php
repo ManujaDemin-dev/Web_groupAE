@@ -171,15 +171,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyADKIObzHtPYSmySSCqXNCEWY4X4GdNB2k",
-      authDomain: "grpae-aecc7.firebaseapp.com",
-      databaseURL: "https://grpae-aecc7-default-rtdb.firebaseio.com",
-      projectId: "grpae-aecc7",
-      storageBucket: "grpae-aecc7.firebasestorage.app",
-      messagingSenderId: "363177740692",
-      appId: "1:363177740692:web:b35068e58d8130b8bd6781"
+      apiKey: "AIzaSyCAqkplOCq4EjAF87luWkRdDQ9mepDiaMs",
+      authDomain: "ae-chat-d31df.firebaseapp.com",
+      databaseURL: "https://ae-chat-d31df-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "ae-chat-d31df",
+      storageBucket: "ae-chat-d31df.firebasestorage.app",
+      messagingSenderId: "59507198992",
+      appId: "1:59507198992:web:888cfb7166cd89ff744e95"
     };
 
+    
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     // meken thama firebase ekata names id yanne

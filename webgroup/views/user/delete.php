@@ -4,7 +4,7 @@ include '../../includes/db.php';
 include '../../includes/functions.php';
 
 if (!isLoggedIn()) {
-    redirect('\Web_groupAE\webgroup\views\auth\login.php');
+    redirect('./../../index.php');
 }
 
 
@@ -16,6 +16,6 @@ $delete= "DELETE FROM users WHERE user_id = :user_id";
 $statement = $pdo->prepare($delete);
 $statement->execute(['user_id' => $user_id]);
 
-redirect('\Web_groupAE\webgroup\.');
+redirect('./../../index.php');
 
 ?>

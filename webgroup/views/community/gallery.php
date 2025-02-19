@@ -243,31 +243,8 @@ $files = $filesStmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php endif; ?>
                         </div>
 
-                        <!-- Comments Section -->
-                        <div class="comments-section">
-                            <h4>Comments</h4>
-                            <?php
-                            $commentQuery = $pdo->prepare("
-                                SELECT c.comment, u.username 
-                                FROM comments c 
-                                JOIN users u ON c.user_id = u.user_id 
-                                WHERE c.file_id = :file_id
-                            ");
-                            $commentQuery->execute(['file_id' => $row['file_id']]);
-                            while ($comment = $commentQuery->fetch(PDO::FETCH_ASSOC)): ?>
-                                <div class="comment">
-                                    <span class="username"><?= htmlspecialchars($comment['username']) ?>:</span>
-                                    <?= htmlspecialchars($comment['comment']) ?>
-                                </div>
-                            <?php endwhile; ?>
-
-                            <!-- Add Comment -->
-                            <form action="add_comment.php" method="POST" class="add-comment">
-                                <textarea name="comment" placeholder="Write a comment..." required></textarea>
-                                <input type="hidden" name="file_id" value="<?= $row['file_id'] ?>">
-                                <button type="submit">Add Comment</button>
-                            </form>
-                        </div>
+                       
+                        </div> 
                     </div>
                 </div>
             <?php endforeach; ?>

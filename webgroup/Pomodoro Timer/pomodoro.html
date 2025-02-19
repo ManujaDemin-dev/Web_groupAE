@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Pmodoro timmer</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="timer-msg">Select a timer to get started.</div>
+
+        <div class="container">
+            <div class="timer">
+                <h1> &#127919; Pomodoro Timer</h1>
+
+                <div class="button-container">
+                    <button class="button" id="pomodoro-session">Pomodoro</button>
+                    <button class="button" id="short-brake">Short Brake</button>
+                    <button class="button" id="long-brake">Long Brake</button>
+                </div>
+
+                <main>
+                    <div class="pomodoro">
+                        <div id="pomodoro-timer" class="timer-display" data-duration="25.00">
+                            <h1 class="time">25:00</h1>
+                        </div>
+
+                        <div id="short-timer" class="timer-display" data-duration="5.00">
+                            <h1 class="time">5:00</h1>
+                        </div>
+
+                        <div id="long-timer" class="timer-display" data-duration="10.00">
+                            <h1 class="time">10:00</h1>
+                        </div>
+
+                    </div>
+                </main>
+                <div class="buttons">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <!--This is just to link the js -->
+        <script src="pomo.js"></script>
+    </body>
+</html>

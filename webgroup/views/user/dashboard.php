@@ -399,7 +399,7 @@ font-size: 16px;
 </div>
 
 <div class="row">
-    <button class="feature"><a href="./../../../Pomodoro Timer/pomodoro.html" target="_blank"> Pomodoro timer </a></button>
+    <button class="feature"><a href="./../../Pomodoro Timer/pomodoro.html" target="_blank"> Pomodoro timer </a></button>
     <button class="feature"><a href="./music.php" target="_blank">Listen to music </a></button>
 <?php   $role = $_SESSION['role'];
 if ($role == 'admin') {
