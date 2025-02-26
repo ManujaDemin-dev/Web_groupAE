@@ -9,7 +9,7 @@ include '../../includes/functions.php';
 if (isLoggedIn()) {
     
 } else {
-    redirect('\Web_groupAE\webgroup\index.php');
+    redirect('../../index.php');
 }
 
 $searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
