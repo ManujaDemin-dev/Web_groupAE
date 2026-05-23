@@ -157,7 +157,7 @@ However, the project successfully achieved its primary goal:
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/focusnet.git
+git clone https://github.com/ManujaDemin-dev/Web_groupAE.git
 cd focusnet
 ```
 
