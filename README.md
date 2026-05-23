@@ -158,7 +158,7 @@ However, the project successfully achieved its primary goal:
 
 ```bash
 git clone https://github.com/ManujaDemin-dev/Web_groupAE.git
-cd focusnet
+cd Web_groupAE
 ```
 
 ## 2️⃣ Configure the Database
